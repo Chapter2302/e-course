@@ -34,16 +34,16 @@ const Home = () => {
                 <div className="slider__content">
                   <div className="contentbox">
                     <h2>
-                      Buy <span>your </span>
+                      Get <span>your </span>
                     </h2>
                     <h2>
-                      favourite <span>Book </span>
+                      favourite <span>Courses </span>
                     </h2>
                     <h2>
                       from <span>Here </span>
                     </h2>
                     <a className="shopbtn" href="#">
-                      shop now
+                      go now
                     </a>
                   </div>
                 </div>
@@ -60,16 +60,16 @@ const Home = () => {
                 <div className="slider__content">
                   <div className="contentbox">
                     <h2>
-                      Buy <span>your </span>
+                      Get <span>your </span>
                     </h2>
                     <h2>
-                      favourite <span>Book </span>
+                      favourite <span>Courses </span>
                     </h2>
                     <h2>
                       from <span>Here </span>
                     </h2>
                     <a className="shopbtn" href="#">
-                      shop now
+                      go now
                     </a>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="section__title text-center">
                 <h2 className="title__be--2">
-                  New <span className="color--theme">Products</span>
+                  New <span className="color--theme">Courses</span>
                 </h2>
                 <p>
                   There are many variations of passages of Lorem Ipsum available,
@@ -104,10 +104,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                 <div className="product__thumb">
                   <a className="first__img" href="single-product.html">
-                    <img src="/images/books/1.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <a className="second__img animation1" href="single-product.html">
-                    <img src="/images/books/2.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <div className="hot__box">
                     <span className="hot-label">BEST SALLER</span>
@@ -115,11 +115,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">robin parrish</a>
+                    <a href="single-product.html">Programmer Analyst IV</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$35.00</li>
-                    <li className="old_prize">$35.00</li>
+                    <li>$71.00</li>
+                    <li className="old_prize">$78.00</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -163,7 +163,7 @@ const Home = () => {
                       <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
-                      <li>
+                      <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
                       <li>
@@ -180,10 +180,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                 <div className="product__thumb">
                   <a className="first__img" href="single-product.html">
-                    <img src="/images/books/3.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <a className="second__img animation1" href="single-product.html">
-                    <img src="/images/books/4.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <div className="hot__box color--2">
                     <span className="hot-label">HOT</span>
@@ -191,11 +191,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">The Remainng</a>
+                    <a href="single-product.html">Account Coordinator</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$35.00</li>
-                    <li className="old_prize">$35.00</li>
+                    <li>$83.00</li>
+                    <li className="old_prize">$91.00</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -256,10 +256,10 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                 <div className="product__thumb">
                   <a className="first__img" href="single-product.html">
-                    <img src="/images/books/5.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <a className="second__img animation1" href="single-product.html">
-                    <img src="/images/books/6.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <div className="hot__box">
                     <span className="hot-label">BEST SALLER</span>
@@ -267,11 +267,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Bowen Greenwood</a>
+                    <a href="single-product.html">Financial Analyst</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$40.00</li>
-                    <li className="old_prize">$35.00</li>
+                    <li>$82.00</li>
+                    <li className="old_prize">$90.00</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -315,7 +315,83 @@ const Home = () => {
                       <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
-                      <li>
+                      <li className="on">
+                        <i className="fa fa-star-o" />
+                      </li>
+                      <li className="on">
+                        <i className="fa fa-star-o" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Start Single Product */}
+            {/* Start Single Product */}
+            <div className="product product__style--3">
+              <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div className="product__thumb">
+                  <a className="first__img" href="single-product.html">
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                  </a>
+                  <a className="second__img animation1" href="single-product.html">
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                  </a>
+                  <div className="hot__box">
+                    <span className="hot-label">BEST SALLER</span>
+                  </div>
+                </div>
+                <div className="product__content content--center">
+                  <h4>
+                    <a href="single-product.html">Programmer Analyst IV</a>
+                  </h4>
+                  <ul className="prize d-flex">
+                    <li>$71.00</li>
+                    <li className="old_prize">$78.00</li>
+                  </ul>
+                  <div className="action">
+                    <div className="actions_inner">
+                      <ul className="add_to_links">
+                        <li>
+                          <a className="cart" href="cart.html">
+                            <i className="bi bi-shopping-bag4" />
+                          </a>
+                        </li>
+                        <li>
+                          <a className="wishlist" href="wishlist.html">
+                            <i className="bi bi-shopping-cart-full" />
+                          </a>
+                        </li>
+                        <li>
+                          <a className="compare" href="#">
+                            <i className="bi bi-heart-beat" />
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            data-toggle="modal"
+                            title="Quick View"
+                            className="quickview modal-view detail-link"
+                            href="#productmodal"
+                          >
+                            <i className="bi bi-search" />
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="product__hover--content">
+                    <ul className="rating d-flex">
+                      <li className="on">
+                        <i className="fa fa-star-o" />
+                      </li>
+                      <li className="on">
+                        <i className="fa fa-star-o" />
+                      </li>
+                      <li className="on">
+                        <i className="fa fa-star-o" />
+                      </li>
+                      <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
                       <li>
@@ -332,22 +408,22 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                 <div className="product__thumb">
                   <a className="first__img" href="single-product.html">
-                    <img src="/images/books/7.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <a className="second__img animation1" href="single-product.html">
-                    <img src="/images/books/8.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                   </a>
-                  <div className="hot__box">
+                  <div className="hot__box color--2">
                     <span className="hot-label">HOT</span>
                   </div>
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Lando</a>
+                    <a href="single-product.html">Account Coordinator</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$35.00</li>
-                    <li className="old_prize">$50.00</li>
+                    <li>$83.00</li>
+                    <li className="old_prize">$91.00</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -408,22 +484,22 @@ const Home = () => {
               <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                 <div className="product__thumb">
                   <a className="first__img" href="single-product.html">
-                    <img src="/images/books/9.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <a className="second__img animation1" href="single-product.html">
-                    <img src="/images/books/10.jpg" alt={"product image"} />
+                    <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <div className="hot__box">
-                    <span className="hot-label">HOT</span>
+                    <span className="hot-label">BEST SALLER</span>
                   </div>
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Doctor Wldo</a>
+                    <a href="single-product.html">Financial Analyst</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$35.00</li>
-                    <li className="old_prize">$35.00</li>
+                    <li>$82.00</li>
+                    <li className="old_prize">$90.00</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -467,10 +543,10 @@ const Home = () => {
                       <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
-                      <li>
+                      <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
-                      <li>
+                      <li className="on">
                         <i className="fa fa-star-o" />
                       </li>
                     </ul>
@@ -479,82 +555,6 @@ const Home = () => {
               </div>
             </div>
             {/* Start Single Product */}
-            {/* Start Single Product */}
-            <div className="product product__style--3">
-              <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                <div className="product__thumb">
-                  <a className="first__img" href="single-product.html">
-                    <img src="/images/books/11.jpg" alt={"product image"} />
-                  </a>
-                  <a className="second__img animation1" href="single-product.html">
-                    <img src="/images/books/2.jpg" alt={"product image"} />
-                  </a>
-                  <div className="hot__box">
-                    <span className="hot-label">BEST SALER</span>
-                  </div>
-                </div>
-                <div className="product__content content--center content--center">
-                  <h4>
-                    <a href="single-product.html">Ghost</a>
-                  </h4>
-                  <ul className="prize d-flex">
-                    <li>$50.00</li>
-                    <li className="old_prize">$35.00</li>
-                  </ul>
-                  <div className="action">
-                    <div className="actions_inner">
-                      <ul className="add_to_links">
-                        <li>
-                          <a className="cart" href="cart.html">
-                            <i className="bi bi-shopping-bag4" />
-                          </a>
-                        </li>
-                        <li>
-                          <a className="wishlist" href="wishlist.html">
-                            <i className="bi bi-shopping-cart-full" />
-                          </a>
-                        </li>
-                        <li>
-                          <a className="compare" href="#">
-                            <i className="bi bi-heart-beat" />
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            data-toggle="modal"
-                            title="Quick View"
-                            className="quickview modal-view detail-link"
-                            href="#productmodal"
-                          >
-                            <i className="bi bi-search" />
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="product__hover--content">
-                    <ul className="rating d-flex">
-                      <li className="on">
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li className="on">
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li className="on">
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li>
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li>
-                        <i className="fa fa-star-o" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              {/* Start Single Product */}
-            </div>
           </div>
           {/* End Single Tab Content */}
         </div>
@@ -592,7 +592,7 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="section__title text-center">
                 <h2 className="title__be--2">
-                  All <span className="color--theme">Products</span>
+                  All <span className="color--theme">Category</span>
                 </h2>
                 <p>
                   There are many variations of passages of Lorem Ipsum available,
@@ -622,7 +622,7 @@ const Home = () => {
                   href="#nav-biographic"
                   role="tab"
                 >
-                  BIOGRAPHIC
+                  IT
                 </a>
                 <a
                   className="nav-item nav-link"
@@ -661,29 +661,26 @@ const Home = () => {
               <div className="product__indicator--4 arrows_style owl-carousel owl-theme">
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/1.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/2.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
-                          <span className="hot-label">BEST SALER</span>
+                          <span className="hot-label">BEST SALLER</span>
                         </div>
                       </div>
-                      <div className="product__content content--center content--center">
+                      <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Ghost</a>
+                          <a href="single-product.html">Programmer Analyst IV</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$50.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -727,7 +724,7 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
+                            <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li>
@@ -740,29 +737,26 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/9.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
-                      <div className="product__content content--center content--center">
+                      <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Ghost</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$50.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -821,29 +815,26 @@ const Home = () => {
                 </div>
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/5.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/6.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
+                        <div className="hot__box color--2">
                           <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Doctor Wldo</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$35.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -900,29 +891,334 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/7.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/8.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Financial Analyst</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                </div>
+                <div className="single__product">
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Programmer Analyst IV</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li>
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Financial Analyst</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                </div>
+                <div className="single__product">
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Programmer Analyst IV</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li>
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box color--2">
                           <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Doctor Wldo</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$35.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -981,29 +1277,26 @@ const Home = () => {
                 </div>
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/7.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
+                        <div className="hot__box color--2">
                           <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Lando</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$35.00</li>
-                          <li className="old_prize">$50.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -1060,98 +1353,14 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/11.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/5.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">HOT</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Lando</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$35.00</li>
-                          <li className="old_prize">$50.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/8.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -1159,11 +1368,11 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Financial Analyst</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -1207,249 +1416,10 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/12.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/5.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/2.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
                               <i className="fa fa-star-o" />
                             </li>
                           </ul>
@@ -1471,17 +1441,14 @@ const Home = () => {
               <div className="product__indicator--4 arrows_style owl-carousel owl-theme">
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/1.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -1489,11 +1456,11 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Programmer Analyst IV</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -1537,7 +1504,7 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
+                            <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li>
@@ -1550,189 +1517,26 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/10.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/8.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/5.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/1.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -1791,29 +1595,26 @@ const Home = () => {
                 </div>
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/2.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -1870,17 +1671,14 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/6.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/9.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -1888,11 +1686,319 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Financial Analyst</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                </div>
+                <div className="single__product">
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Programmer Analyst IV</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li>
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Financial Analyst</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                </div>
+                <div className="single__product">
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Programmer Analyst IV</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li>
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Account Coordinator</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -1951,29 +2057,26 @@ const Home = () => {
                 </div>
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/11.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/2.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -2030,17 +2133,14 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/12.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/8.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -2048,11 +2148,11 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Financial Analyst</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -2096,170 +2196,10 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/5.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
                               <i className="fa fa-star-o" />
                             </li>
                           </ul>
@@ -2279,806 +2219,622 @@ const Home = () => {
               role="tabpanel"
             >
               <div className="product__indicator--4 arrows_style owl-carousel owl-theme">
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/8.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/2.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Programmer Analyst IV</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$71.00</li>
+                            <li className="old_prize">$78.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/12.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/6.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/11.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/1.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/5.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/11.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Financial Analyst</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$82.00</li>
+                            <li className="old_prize">$90.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/10.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Programmer Analyst IV</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$71.00</li>
+                            <li className="old_prize">$78.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/1.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Financial Analyst</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$82.00</li>
+                            <li className="old_prize">$90.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Financial Analyst</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$82.00</li>
+                            <li className="old_prize">$90.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/6.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/10.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
               </div>
             </div>
             {/* End Single Tab Content */}
@@ -3091,17 +2847,14 @@ const Home = () => {
               <div className="product__indicator--4 arrows_style owl-carousel owl-theme">
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/1.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -3109,11 +2862,11 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Programmer Analyst IV</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3157,7 +2910,7 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
+                            <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li>
@@ -3170,189 +2923,26 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/6.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/10.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/12.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/9.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3411,29 +3001,26 @@ const Home = () => {
                 </div>
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/2.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/5.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3490,17 +3077,14 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/4.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/2.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -3508,11 +3092,319 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Financial Analyst</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                </div>
+                <div className="single__product">
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Programmer Analyst IV</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li>
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Financial Analyst</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                </div>
+                <div className="single__product">
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box">
+                          <span className="hot-label">BEST SALLER</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Programmer Analyst IV</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
+                        </ul>
+                        <div className="action">
+                          <div className="actions_inner">
+                            <ul className="add_to_links">
+                              <li>
+                                <a className="cart" href="cart.html">
+                                  <i className="bi bi-shopping-bag4" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="wishlist" href="wishlist.html">
+                                  <i className="bi bi-shopping-cart-full" />
+                                </a>
+                              </li>
+                              <li>
+                                <a className="compare" href="#">
+                                  <i className="bi bi-heart-beat" />
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  data-toggle="modal"
+                                  title="Quick View"
+                                  className="quickview modal-view detail-link"
+                                  href="#productmodal"
+                                >
+                                  <i className="bi bi-search" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="product__hover--content">
+                          <ul className="rating d-flex">
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li className="on">
+                              <i className="fa fa-star-o" />
+                            </li>
+                            <li>
+                              <i className="fa fa-star-o" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Start Single Product */}
+                  {/* Start Single Product */}
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                      <div className="product__thumb">
+                        <a className="first__img" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                        </a>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
+                        </div>
+                      </div>
+                      <div className="product__content content--center">
+                        <h4>
+                          <a href="single-product.html">Account Coordinator</a>
+                        </h4>
+                        <ul className="prize d-flex">
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3571,29 +3463,26 @@ const Home = () => {
                 </div>
                 <div className="single__product">
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/12.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/6.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                        <div className="hot__box color--2">
+                          <span className="hot-label">HOT</span>
                         </div>
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Account Coordinator</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$83.00</li>
+                          <li className="old_prize">$91.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3650,17 +3539,14 @@ const Home = () => {
                   </div>
                   {/* Start Single Product */}
                   {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
+                  <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/2.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -3668,11 +3554,11 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Financial Analyst</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$82.00</li>
+                          <li className="old_prize">$90.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3716,170 +3602,10 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/8.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/1.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
-                        </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
                               <i className="fa fa-star-o" />
                             </li>
                           </ul>
@@ -3899,19 +3625,16 @@ const Home = () => {
               role="tabpanel"
             >
               <div className="product__indicator--4 arrows_style owl-carousel owl-theme">
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
+                    <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                       <div className="product__thumb">
                         <a className="first__img" href="single-product.html">
-                          <img src="/images/books/6.jpg" alt={"product image"} />
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
                         </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/3.jpg" alt={"product image"} />
+                        <a className="second__img animation1" href="single-product.html">
+                          <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                         </a>
                         <div className="hot__box">
                           <span className="hot-label">BEST SALLER</span>
@@ -3919,11 +3642,11 @@ const Home = () => {
                       </div>
                       <div className="product__content content--center">
                         <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
+                          <a href="single-product.html">Programmer Analyst IV</a>
                         </h4>
                         <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
+                          <li>$71.00</li>
+                          <li className="old_prize">$78.00</li>
                         </ul>
                         <div className="action">
                           <div className="actions_inner">
@@ -3967,7 +3690,7 @@ const Home = () => {
                             <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
-                            <li>
+                            <li className="on">
                               <i className="fa fa-star-o" />
                             </li>
                             <li>
@@ -3978,727 +3701,700 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/10.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/9.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/6.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/8.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/2.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Financial Analyst</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$82.00</li>
+                            <li className="old_prize">$90.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Programmer Analyst IV</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$71.00</li>
+                            <li className="old_prize">$78.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/9.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Financial Analyst</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$82.00</li>
+                            <li className="old_prize">$90.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/2.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/7.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Programmer Analyst IV</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$71.00</li>
+                            <li className="old_prize">$78.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
-                              </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/6.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/4.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
-                <div className="single__product">
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                  <div className="single__product">
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/8.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/3.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box color--2">
+                            <span className="hot-label">HOT</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Account Coordinator</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$83.00</li>
+                            <li className="old_prize">$91.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                               <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  {/* Start Single Product */}
-                  {/* Start Single Product */}
-                  <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                    {/* Start Single Product */}
+                    {/* Start Single Product */}
                     <div className="product product__style--3">
-                      <div className="product__thumb">
-                        <a className="first__img" href="single-product.html">
-                          <img src="/images/books/2.jpg" alt={"product image"} />
-                        </a>
-                        <a
-                          className="second__img animation1"
-                          href="single-product.html"
-                        >
-                          <img src="/images/books/6.jpg" alt={"product image"} />
-                        </a>
-                        <div className="hot__box">
-                          <span className="hot-label">BEST SALLER</span>
+                      <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div className="product__thumb">
+                          <a className="first__img" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <a className="second__img animation1" href="single-product.html">
+                            <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/632/img/video_cover_image_url-1600230278.crop-730x436.jpg" alt={"product image"} />
+                          </a>
+                          <div className="hot__box">
+                            <span className="hot-label">BEST SALLER</span>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product__content content--center">
-                        <h4>
-                          <a href="single-product.html">Bowen Greenwood</a>
-                        </h4>
-                        <ul className="prize d-flex">
-                          <li>$40.00</li>
-                          <li className="old_prize">$35.00</li>
-                        </ul>
-                        <div className="action">
-                          <div className="actions_inner">
-                            <ul className="add_to_links">
-                              <li>
-                                <a className="cart" href="cart.html">
-                                  <i className="bi bi-shopping-bag4" />
-                                </a>
+                        <div className="product__content content--center">
+                          <h4>
+                            <a href="single-product.html">Financial Analyst</a>
+                          </h4>
+                          <ul className="prize d-flex">
+                            <li>$82.00</li>
+                            <li className="old_prize">$90.00</li>
+                          </ul>
+                          <div className="action">
+                            <div className="actions_inner">
+                              <ul className="add_to_links">
+                                <li>
+                                  <a className="cart" href="cart.html">
+                                    <i className="bi bi-shopping-bag4" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="wishlist" href="wishlist.html">
+                                    <i className="bi bi-shopping-cart-full" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a className="compare" href="#">
+                                    <i className="bi bi-heart-beat" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    data-toggle="modal"
+                                    title="Quick View"
+                                    className="quickview modal-view detail-link"
+                                    href="#productmodal"
+                                  >
+                                    <i className="bi bi-search" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="product__hover--content">
+                            <ul className="rating d-flex">
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="wishlist" href="wishlist.html">
-                                  <i className="bi bi-shopping-cart-full" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a className="compare" href="#">
-                                  <i className="bi bi-heart-beat" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
-                              <li>
-                                <a
-                                  data-toggle="modal"
-                                  title="Quick View"
-                                  className="quickview modal-view detail-link"
-                                  href="#productmodal"
-                                >
-                                  <i className="bi bi-search" />
-                                </a>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
+                              </li>
+                              <li className="on">
+                                <i className="fa fa-star-o" />
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="product__hover--content">
-                          <ul className="rating d-flex">
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li className="on">
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                            <li>
-                              <i className="fa fa-star-o" />
-                            </li>
-                          </ul>
-                        </div>
                       </div>
                     </div>
+                    {/* Start Single Product */}
                   </div>
-                  {/* Start Single Product */}
-                </div>
               </div>
             </div>
             {/* End Single Tab Content */}
@@ -4856,7 +4552,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/1.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -4917,7 +4613,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/2.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -4978,7 +4674,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/3.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -5039,7 +4735,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/4.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -5100,7 +4796,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/5.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1437/img/video_cover_image_url-1555384409.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -5161,7 +4857,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/6.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -5222,7 +4918,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/7.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
@@ -5283,7 +4979,7 @@ const Home = () => {
           <div className="product product__style--3">
             <div className="product__thumb">
               <a className="first__img" href="single-product.html">
-                <img src="/images/best-sell-product/8.jpg" alt={"product image"} />
+                <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1241/img/video_cover_image_url-1600669475.crop-730x436.jpg" alt={"product image"} />
               </a>
             </div>
             <div className="product__content content--center">
