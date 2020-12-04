@@ -143,10 +143,9 @@ const Cart = () => {
                                         const result = await response.json()
                                         console.log("res: ", result)
                                         if(response.status == 200) {
-                                            // localStorage.removeItem("cart")
-                                            // dispatch(setCart()) 
-                                            alert("Success: Redirect To Your Transaction History")
-                                            //router.push("/calendar")
+                                            localStorage.removeItem("cart")
+                                            dispatch(setCart()) 
+                                            router.push("/calendar")
                                         }
                                         else {
                                             alert("Fail: Try Later")

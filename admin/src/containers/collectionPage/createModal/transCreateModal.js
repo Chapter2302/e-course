@@ -18,8 +18,10 @@ const TransModal = (props) => {
     const createData = async () => {
         let createResponse = await api.create(props.collection, data)
         let trans = await createResponse.json()
-        console.log('respone: ', trans)
-        if(createResponse.status === 200) alert("Message: " + trans[0].message)
+        if(createResponse.status === 200) 
+            alert("Message: " + trans[0].message)
+        else 
+            alert("Fail To Create")
         await store.dispatch(getAllData(props.collection))
     }
     return(

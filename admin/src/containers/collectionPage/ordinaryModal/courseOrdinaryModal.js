@@ -40,7 +40,10 @@ const CourseModal = (props) => {
             await deleteFirebaseImgs(props.item._id, 'course')
         let result = await api.remove('course', props.item._id)
         await store.dispatch(getAllData('course'))
-        alert('Response: ' + result.json())
+        if(result.status == 200)
+            alert('Response: Success')
+        else
+            alert('Response: Fail To Delete')
     }
 
     const uploadImages = async (e) => {

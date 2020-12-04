@@ -16,7 +16,8 @@ const Auth = ({login}) => {
                     <div className="col-lg-6">
                         <div className="p-5">
                         <div className="text-center">
-                            <h1 className="h4 text-gray-900 mb-4">dchuong@ute.edu.vn - abc123</h1>
+                            <div className="h5 text-gray-900 mb-4">dchuong@ute.edu.vn - abc123</div>
+                            <div className="h5 text-gray-900 mb-4">tcaselli0@ycombinator.com - abc123</div>
                         </div>
                         <form id='user-form' className="user" onSubmit={e=>e.preventDefault()}>
                                 <div className="form-group">
@@ -45,9 +46,6 @@ const Auth = ({login}) => {
                                         }}>
                                         Login
                                 </button>
-                                <a className="btn btn-primary btn-user btn-block" href='http://localhost:4000/auth/google'>
-                                    Google
-                                </a>
                         </form>
                         <hr/>
                         <div className="text-center">

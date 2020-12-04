@@ -12,6 +12,7 @@ const CourseModal = (props) => {
 
     useEffect(() => {
         setData({
+            isActive: true,
             schedule: {
                 dayInWeek : []
             },
@@ -82,17 +83,6 @@ const CourseModal = (props) => {
                             </div>
                             <input type="file" className="file-upload form-control" multiple
                                    onChange={e => uploadImages(e)}/>
-                        <div className="row d-flex justify-content-center" > 
-                            <ReactStars 
-                                count={5} 
-                                emptyIcon={<i className="far fa-star"></i>}
-                                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                fullIcon={<i className="fa fa-star"></i>}
-                                activeColor="#ffd700"
-                                size={25}
-                                onChange={newRate => data.rating = newRate}
-                            />
-                        </div>
                     </div>
                     <div className= "col-9">
                             <div className="form-row pb-2">
@@ -102,14 +92,11 @@ const CourseModal = (props) => {
                                         <input type="text" className="form-control" 
                                             onChange={e => data.name = e.target.value}
                                         />
-                                        <div className="input-group-append">
-                                            <button className="btn btn-success" type="button" onClick={() => alert(props.item._id)}>Id</button>
-                                        </div>
                                     </div> 
                                 </div>
                                 <div className="col">
                                     <b>Attendable: </b>  
-                                    <input className= "form-control" onChange={e => data.isActive = e.target.value}/>
+                                    <input className= "form-control" defaultValue="true" disabled/>
                                 </div>
                                 <div className="col">
                                     <b>Price: </b>  
@@ -225,13 +212,37 @@ const CourseModal = (props) => {
                                     <span className="row">
                                         <div className="col">
                                             <b>Teacher: </b>
-                                            <input type="text" className="form-control"
-                                            onChange={e => data.teacher =  e.target.value}/>
+                                            {(() => {
+                                                const session = JSON.parse(localStorage.getItem("session"))
+                                                console.log(session)
+                                                if(session.role == "teacher") {
+                                                    data.teacher =  session.id
+                                                    return <input type="text" defaultValue={session.id} className="form-control" disabled/>
+                                                } else {
+                                                    return <input type="text" className="form-control" onChange={e => data.teacher =  e.target.value}/>
+                                                }
+                                            })()}
                                         </div>
                                         <div className="col">
                                             <b>Category: </b>  
-                                            <input className= "form-control" 
-                                            onChange={e => data.category =  e.target.value}/>
+                                            <select className= "form-control" 
+                                                onChange={e => data.category = e.target.value}>
+                                                <option value="Information Technology">
+                                                    Information Technology
+                                                </option>
+                                                <option value="Design">
+                                                    Design
+                                                </option>
+                                                <option value="Marketing">
+                                                    Marketing
+                                                </option>
+                                                <option value="Economy">
+                                                    Economy
+                                                </option>
+                                                <option value="Language">
+                                                    Language
+                                                </option>
+                                            </select>
                                         </div>
                                     </span>
                                 </span>

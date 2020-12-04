@@ -20,6 +20,9 @@ const Login = () => {
             localStorage.setItem("session", JSON.stringify(session))
             router.push('/home')
         }
+        else {
+            alert("Mail Or Password Is Wrong")
+        }
     }
     
     return(

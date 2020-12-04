@@ -40,20 +40,28 @@ router.post('/add', async (req, res) => {
         const newTrans = req.body
         let transactions = []
         let total = 0
-        const session = await db.startSession()
-        await session.startTransaction()
+        //const session = await db.startSession()
+        //await session.startTransaction()
         await newTrans.cids.reduce(async (preTrans, cid) => {
             await preTrans
-            const course = await getCourse(cid, session)
-            const user = await getUser(newTrans.user, session)
+            //const course = await getCourse(cid, session)
+            const course = await getCourse(cid)
+            //const user = await getUser(newTrans.user, session)
+            const user = await getUser(newTrans.user)
             let trans = new Transaction()
             if (course.quantity == course.maxStudent) { 
+                // trans = await createTransaction({ 
+                //     user: newTrans.user, 
+                //     course: cid, 
+                //     date: newTrans.date,
+                //     status: 'FAIL' 
+                // }, session)
                 trans = await createTransaction({ 
                     user: newTrans.user, 
                     course: cid, 
                     date: newTrans.date,
                     status: 'FAIL' 
-                }, session)
+                })
                 transactions.push(trans)
                 return trans
             }
@@ -61,12 +69,18 @@ router.post('/add', async (req, res) => {
                 console.log("total: ", total, "user.balance: ", user.balance)
                 if((total + course.price) <= user.balance)
                 {
+                    // trans = await createTransaction({ 
+                    //     user: newTrans.user, 
+                    //     course: cid, 
+                    //     date: newTrans.date,
+                    //     status: 'SUCCESS' 
+                    // }, session)
                     trans = await createTransaction({ 
                         user: newTrans.user, 
                         course: cid, 
                         date: newTrans.date,
                         status: 'SUCCESS' 
-                    }, session)
+                    })
                     let newCourse = {
                         _id: course._id,
                         quantity: course.quantity + 1,
@@ -76,27 +90,36 @@ router.post('/add', async (req, res) => {
                         _id: user.id,
                         balance: user.balance - course.price
                     }
-                    await updateUser(newUser, session)
-                    await updateCourse(newCourse, session)
+                    //await updateUser(newUser, session)
+                    await updateUser(newUser)
+                    //await updateCourse(newCourse, session)
+                    await updateCourse(newCourse)
                     total = total + course.price
                     transactions.push(trans)
                     return trans
                 } 
                 else {
+                    // trans = await createTransaction({ 
+                    //     user: newTrans.user, 
+                    //     course: cid, 
+                    //     date: newTrans.date,
+                    //     status: 'PENDING' 
+                    // }, session)
                     trans = await createTransaction({ 
                         user: newTrans.user, 
                         course: cid, 
                         date: newTrans.date,
                         status: 'PENDING' 
-                    }, session)
+                    })
+
                     transactions.push(trans)
                     return trans
                 }
             }
         }, Promise.resolve())
 
-        await session.commitTransaction()
-        await session.endSession()
+        //await session.commitTransaction()
+        //await session.endSession()
         res.status(200).json(transactions)
     }
     catch(e) {
@@ -107,10 +130,12 @@ router.post('/add', async (req, res) => {
 
 router.put('/update', async (req, res) => {
     try {
-        const session = await db.startSession()
-        session.startTransaction()
-        let course = await getCourse(req.body.course, session)
-        let message = await updateTransaction(req.body , session)
+        //const session = await db.startSession()
+        //session.startTransaction()
+        //let course = await getCourse(req.body.course, session)
+        let course = await getCourse(req.body.course)
+        //let message = await updateTransaction(req.body , session)
+        let message = await updateTransaction(req.body)
         switch(req.body.status) {
             case 'SUCCESS':
                 if(course.quantity < course.maxStudent)
@@ -125,14 +150,16 @@ router.put('/update', async (req, res) => {
                         balance: user.balance - course.price
                     }
                     if(req.body.rating) newCourse.rating = (req.body.rating + course.rating)/2
-                    await updateUser(newUser, session)
-                    await updateCourse(newCourse, session)
+                    // await updateUser(newUser, session)
+                    // await updateCourse(newCourse, session)
+                    await updateUser(newUser)
+                    await updateCourse(newCourse)
                 }
                 break
             default: break
         }
-        await session.commitTransaction()
-        session.endSession()
+        //await session.commitTransaction()
+        //session.endSession()
         res.status(200).json(message)
     }
     catch {

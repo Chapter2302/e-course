@@ -1,12 +1,11 @@
-import {useEffect} from 'react'
-import HeadContent from '../../component/head'
+import HeadContent from '../../../component/head'
 import Header from '../../../component/header'
 import Footer from '../../../component/footer'
 
 const Validate = () => {
     return(
         <>
-        <HeadContent title={'Register'}/>
+        <HeadContent title={'Validate'}/>
         <Header/>
         {/* Start Bradcaump area */}
         <div className="ht__bradcaump__area bg-image--5">

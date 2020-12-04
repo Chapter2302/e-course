@@ -7,8 +7,8 @@ const {createUser , getAllUsers, getUser, getUserHistoryTransaction, updateUser,
 
 router.post('/add', async (req,res) => {
     try {
-        await createUser(req.body)
-        res.json("Success")
+        const newUser = await createUser(req.body)
+        res.status(200).json(newUser)
     }
     catch {
         res.status(404).json("Fail")

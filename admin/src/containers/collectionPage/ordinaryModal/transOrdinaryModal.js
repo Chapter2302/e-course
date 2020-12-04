@@ -32,7 +32,10 @@ const TransModal = (props) => {
     const deleteData = async () => {
         let result = await api.remove('trans', props.item._id)
         await store.dispatch(getAllData('trans'))
-        await alert('Response: ' + await result.json())
+        if(result.status == 200)
+            alert('Response: Success')
+        else
+            alert('Response: Fail To Delete')
     }
 
     const onCheck = (status) => {

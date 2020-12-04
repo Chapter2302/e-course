@@ -21,9 +21,7 @@ const Profile = () => {
             })
             if(response.status == 200) {
                 const profile = await response.json()
-                //(() => {
-                    setData(profile)
-                //}, 000);
+                setData(profile)
             }
             else {
                 router.push('/account/login')
@@ -80,7 +78,10 @@ const Profile = () => {
             photoUser: data.photoUser
         }
         localStorage.setItem("session", JSON.stringify(newSession))
-        await alert('Response: ' + result)
+        if(response.status == 200)
+            alert('Response: Success To Update')
+        else 
+            alert('Response: Fail To Update')
     }
 
     return (<>
@@ -168,16 +169,25 @@ const Profile = () => {
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div className="input_box">
-                                                        <label>
-                                                        Birthday <span>*</span>
-                                                        </label>
-                                                        <input 
-                                                            type="date" 
-                                                            placeholder="DD-MM-YYYY"
-                                                            pattern='^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$'
-                                                            defaultValue= {data.birthday} 
-                                                            onChange={e => data.birthday =  e.target.value}/>
+                                                    <div className="margin_between">
+                                                        <div className="input_box space_between">
+                                                            <label>
+                                                                Birthday <span>*</span>
+                                                            </label>
+                                                            <input 
+                                                                type="date" 
+                                                                placeholder="DD-MM-YYYY"
+                                                                pattern='^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$'
+                                                                defaultValue= {data.birthday} 
+                                                                onChange={e => data.birthday =  e.target.value}
+                                                            />
+                                                        </div>
+                                                        <div className="input_box space_between">
+                                                            <label>
+                                                                Balance
+                                                            </label>
+                                                            <input defaultValue={data.balance} disabled/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

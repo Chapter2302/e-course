@@ -2,7 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 import { logout } from "../actionCreator"
 
-const TopBar = () => {
+const TopBar = ({logout}) => {
     const user = JSON.parse(localStorage.getItem("session"))
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -176,7 +176,13 @@ const TopBar = () => {
                     <div className="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div className="modal-footer">
                         <button className="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button onClick={logout} className="btn btn-primary" data-dismiss="modal">Logout</button>
+                        <button 
+                            onClick={() => logout()} 
+                            className="btn btn-primary" 
+                            data-dismiss="modal"
+                        >
+                            Logout
+                        </button>
                     </div>
                 </div>
             </div>

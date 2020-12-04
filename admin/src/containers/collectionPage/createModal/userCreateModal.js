@@ -15,7 +15,7 @@ const UserModal = (props) => {
             authenticateMethod: {
                 local: {
                     email: '',
-                    password: '',
+                    password: 'abc123',
                 },
                 facebook: {
                     name: '',
@@ -40,17 +40,20 @@ const UserModal = (props) => {
     
     const createData = async () => {
         let createResponse = await api.create(props.collection, data)
-        if(createResponse.json()._id) {
+        if(createResponse.status == 200) {
             if(imgs.length > 0) {
                 let result = await createResponse.json()
                 const tempPics = await getDownloadImageURLs(imgs, result[0]._id, 'user')
-                data.pictures[0] = await tempPics[0]
-                data.pictures[1] = await tempPics[1]
-                data.pictures[2] = await tempPics[2]
+                data.photoUser = await tempPics[0]
                 data._id = result[0]._id
-                let updateResult = await api.update('user', data)
-                if(updateResult.status === 200) alert('Response: Success')
-                else alert('Response: Fail To Save Images')
+                const res = await api.update('user', data)
+                console.log(res.status)
+                if(res.status == 200) {
+                    alert('Response: Success')
+                }
+                else {
+                    alert('Response: Fail To Save Images')
+                }
             }
         }
         else alert('Response: Fail To Create')
@@ -102,14 +105,21 @@ const UserModal = (props) => {
                                 </div>
                             </div>
                             <div className="form-row pb-2">                          
-                                <div className="col">
+                                <div className="col-4">
                                     <b>Sex: </b>
                                     <select className= "form-control" defaultValue="Male" onChange={e => setData({...data, sex: e.target.value})}>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
                                 </div>
-                                <div className="col">
+                                <div className="col-4">
+                                    <b>Role: </b>
+                                    <select className= "form-control" defaultValue="student" onChange={e => setData({...data, role: e.target.value})}>
+                                        <option value="student">Student</option>
+                                        <option value="teacher">Teacher</option>
+                                    </select>
+                                </div>
+                                <div className="col-4">
                                     <b>Birthday: </b>
                                     <input 
                                         type="date" className="form-control" 
@@ -117,19 +127,6 @@ const UserModal = (props) => {
                                         onChange={e => {
                                             data.birthday = e.target.value
                                             }}/>
-                                </div>
-                                <div className="col">
-                                    <b>Rating: </b>
-                                    <ReactStars
-                                        edit={true}
-                                        count={5} 
-                                        emptyIcon={<i className="far fa-star"></i>}
-                                        halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                        fullIcon={<i className="fa fa-star"></i>}
-                                        activeColor="#ffd700"
-                                        size={25}
-                                        onChange={newRate => data.rating = newRate}
-                                    />
                                 </div>
                             </div>
                             <div className="form-row pb-2">

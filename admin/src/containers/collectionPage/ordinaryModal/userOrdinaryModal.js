@@ -38,10 +38,17 @@ const UserModal = (props) => {
     } 
 
     const deleteData = async () => {
-        await deleteFirebaseImgs(props.item._id, 'user')
-        let result = await api.remove('user', props.item._id)
-        await store.dispatch(getAllData('user'))
-        alert('Response: ' + await result.json())
+        try {
+            await deleteFirebaseImgs(props.item._id, 'user')
+            let result = await api.remove('user', props.item._id)
+            await store.dispatch(getAllData('user'))
+            if(result.status == 200)
+                alert('Response: Success')
+            else
+                alert('Response: Fail To Delete')
+        } catch(e) {
+            console.log("Error: ", e)
+        }
     }
 
     const uploadImages = async (e) => {

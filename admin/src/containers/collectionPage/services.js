@@ -122,7 +122,7 @@ const getDownloadImageURLs = async (imgs, id, folder) => {
 
 const deleteFirebaseImgs = async (id, folder) => {
     const deleteImgs = []
-    for(let i=0; i<3; i++) {
+    for(let i=0; i< (folder == "user" ? 1 : 3); i++) {
         const storageRef = storage.ref(`/${folder}/${id}_${i}`)
         deleteImgs.push(storageRef)
     }

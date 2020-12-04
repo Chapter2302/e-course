@@ -27,13 +27,12 @@ const login = (email, password) => async dispatch => {
 }
 
 const logout = () => async dispatch => {
-    const res = await localLogout()
+    //const res = await localLogout()
     localStorage.removeItem("session")
-    if(res.status == 200) {
-        dispatch({
-            type: LOGOUT
-        })
-    } 
+    dispatch({
+        type: LOGOUT
+    })
+    window.location.href = "/"
 }
 
 const getAllData = (collection) => async dispatch => {

@@ -1,13 +1,13 @@
 import firebase from 'firebase/app'
 import 'firebase/storage'
 const firebaseConfig = {
-  apiKey: "AIzaSyBICSDXcjC2PmIV8ol_bGybzMRy9TuzrLw",
-  authDomain: "notifykhtn.firebaseapp.com",
-  databaseURL: "https://notifykhtn.firebaseio.com",
-  projectId: "notifykhtn",
-  storageBucket: "notifykhtn.appspot.com",
-  messagingSenderId: "351701477317",
-  appId: "1:351701477317:web:cd2aba311c203192008dac"
+  apiKey: "AIzaSyDAYQl2W27B3FBu3oLLfSzVqPexXGXHzlQ",
+  authDomain: "onlinecourse-d8a99.firebaseapp.com",
+  databaseURL: "https://onlinecourse-d8a99.firebaseapp.com",
+  projectId: "onlinecourse-d8a99",
+  storageBucket: "onlinecourse-d8a99.appspot.com",
+  messagingSenderId: "47916480839",
+  appId: "1:47916480839:web:8006fda8af3851b67a7462"
 }
 
 if (!firebase.apps.length) {

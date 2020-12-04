@@ -15,8 +15,8 @@ const {
 
 router.post('/add', async (req,res) => {
     try {
-        await createCourse(req.body)
-        res.json("Success")
+        const newCourse = await createCourse(req.body)
+        res.status(200).json(newCourse)
     }
     catch {
         res.status(404).json("Fail")

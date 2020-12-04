@@ -50,7 +50,7 @@ const SideBar = () => {
 
                     { user.role == "admin" ? <Link className="collapse-item" to="/collection/user">User</Link> : <></> }
                     <Link className="collapse-item" to="/collection/course">Course</Link>
-                    <Link className="collapse-item" to="/collection/trans">Transaction</Link>
+                    { user.role == "admin" ? <Link className="collapse-item" to="/collection/trans">Transaction</Link> : <></> }
                   </div>
                 </div> 
             </li>
