@@ -10,6 +10,6 @@ Full Project: Backend, Admin, User
   * folder user: npm install
  
 # implement
-api: npm start
-admin: npm run start
-user: npm run dev
+* api: npm start
+* admin: npm run start
+* user: npm run dev
