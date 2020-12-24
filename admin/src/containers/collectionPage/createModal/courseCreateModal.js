@@ -14,7 +14,8 @@ const CourseModal = (props) => {
         setData({
             isActive: true,
             schedule: {
-                dayInWeek : []
+                dayInWeek : [],
+                shift: []
             },
             pictures: ['', '', ''],
         })
@@ -102,13 +103,7 @@ const CourseModal = (props) => {
                                     <b>Price: </b>  
                                     <input className= "form-control" onChange={e => data.price = e.target.value}/>
                                 </div>
-                                <div className="col">
-                                    <b>Shift: </b>  
-                                    <input className= "form-control" onChange={e => data.schedule.shift = e.target.value}/>
-                                </div>
-                            </div>
-                            <div className="form-row pb-2">
-                                <div className="col-6">
+                                <div className="col"> 
                                     <b> Days In Week</b>
                                     <div className="form-row">
                                         <div className="col">
@@ -165,6 +160,41 @@ const CourseModal = (props) => {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="form-row pb-2">
+                                <div className="col-6">
+                                <b>Shift: </b>  
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <select className= "form-control" 
+                                                onChange={e => data.schedule.shift[0] = e.target.value}>
+                                                <option value="1">
+                                                    8AM - 11AM
+                                                </option>
+                                                <option value="2">
+                                                    14PM - 17PM
+                                                </option>
+                                                <option value="2">
+                                                    14PM - 17PM
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div className="col">
+                                            <select className= "form-control" 
+                                                onChange={e => data.schedule.shift[1] = e.target.value}>
+                                                <option value="1">
+                                                    8AM - 11AM
+                                                </option>
+                                                <option value="2">
+                                                    14PM - 17PM
+                                                </option>
+                                                <option value="2">
+                                                    14PM - 17PM
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="col-3">
                                     <b>Quantity of Course: </b>
                                     <input type="text" className="form-control" disabled={true} onChange={e => data.quantity = e.target.value} />
@@ -214,7 +244,6 @@ const CourseModal = (props) => {
                                             <b>Teacher: </b>
                                             {(() => {
                                                 const session = JSON.parse(localStorage.getItem("session"))
-                                                console.log(session)
                                                 if(session.role == "teacher") {
                                                     data.teacher =  session.id
                                                     return <input type="text" defaultValue={session.id} className="form-control" disabled/>

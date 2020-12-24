@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux"
 import {useState, useEffect} from "react"
 import Cookies from "js-cookie"
 import {setCart} from "../store/cart"
+import {setNation} from "../store/language"
 import styled from "styled-components"
 
 const LinkWrapper = styled.div` 
@@ -17,7 +18,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const [session, setSession] = useState(null)
   const cart = useSelector(state => state.cart)
-
+  const language = useSelector(state => state.language.nation)
   useEffect(() => {
     (() => {
       if(localStorage.getItem("session")) {
@@ -69,7 +70,7 @@ const Header = () => {
             <Link href="/account/profile">
               <a>
                 <i className="zmdi zmdi-settings" /> 
-                <div>Profile</div>
+                <div>{language == "eng" ? "Profile" : "Hồ Sơ" }</div>
               </a>
             </Link>
             </li>
@@ -77,7 +78,7 @@ const Header = () => {
               <Link href="/calendar">
                 <a>
                   <i className="zmdi zmdi-calendar" /> 
-                  <div>Calendar</div>
+                  <div>{language == "eng" ? "Calendar" : "Lịch Học" }</div>
                 </a>
               </Link>
             </li>
@@ -87,14 +88,14 @@ const Header = () => {
               <LinkWrapper>
                 <a>
                   <i className="zmdi zmdi-account-o" /> 
-                  <div onClick={onLogOutClick}>Logout</div>
+                  <div onClick={onLogOutClick}>{language == "eng" ? "Logout" : "Thoát" }</div>
                 </a>
               </LinkWrapper>
             </li>
             <li className="col-6">
                 <a>
                   <i className="zmdi zmdi-delete" /> 
-                  <div>Delete</div>
+                  <div>{language == "eng" ? "Delete" : "Xóa TK" }</div>
                 </a>
             </li>
           </div>
@@ -104,16 +105,16 @@ const Header = () => {
     : <div className="content-inner">
       <div className="switcher-currency mt-2">
         <strong className="label switcher-label">
-          <span>My Account</span>
+          <span>{language == "eng" ? "My Account" : "Tài Khoản" }</span>
         </strong>
         <div className="switcher-options">
           <div className="switcher-currency-trigger">
             <div className="setting__menu">
               <span>
-                <Link href='/account/login'><a>Sign In</a></Link> 
+                <Link href='/account/login'><a>{language == "eng" ? "Sign In" : "Đăng Nhập" }</a></Link> 
               </span>
               <span>
-                <Link href='/account/register'><a>Create An Account</a></Link>
+                <Link href='/account/register'><a>{language == "eng" ? "Create An Account" : "Tạo Tài Khoản" }</a></Link>
               </span>
             </div>
           </div>
@@ -139,72 +140,75 @@ const Header = () => {
                 <nav className="mainmenu__nav">
                   <ul className="meninmenu d-flex justify-content-start">
                     <li className="drop with--one--item">
-                      <Link href="/home"><a>Home</a></Link>
+                      <Link href="/home"><a>{language == "eng" ? "Home" : "Trang Chủ" }</a></Link>
                     </li>
                     <li className="drop">
-                        <a href="/shop">Courses</a>
+                        <a href="/shop">{language == "eng" ? "Courses" : "Khóa Học" }</a>
                       <div className="megamenu mega02">
                         <ul className="item item02">
-                          <li className="title">Category</li>
+                          <li className="title">{language == "eng" ? "Categories" : "Danh Mục" }</li>
                           <li>
-                            <a href="/shop">All</a>
+                            <a href="/shop">{language == "eng" ? "All" : "Tất Cả" }</a>
                           </li>
                           <li>
-                            <a href="/shop?category=information+technology">Information Technology</a>
+                            <a href="/shop?category=information+technology">{language == "eng" ? "Information Technology" : "Công Nghệ Thông Tin" }</a>
                           </li>
                           <li>
-                            <a href="/shop?category=economy">Economy</a>
+                            <a href="/shop?category=economy">{language == "eng" ? "Economy" : "Kinh Tế" }</a>
                           </li>
                           <li>
-                            <a href="/shop?category=design">Design</a>
+                            <a href="/shop?category=design">{language == "eng" ? "Design" : "Thiết Kế" }</a>
                           </li>
                           <li>
                             <a href="/shop?category=marketing">Marketing</a>
                           </li>
                           <li>
-                            <a href="/shop?category=language">Language</a>
+                            <a href="/shop?category=language">{language == "eng" ? "Language" : "Ngôn Ngữ" }</a>
                           </li>
                         </ul>
                         <ul className="item item02">
-                          <li className="title">Day In Week</li>
+                          <li className="title">{language == "eng" ? "Day In Week" : "Ngày Trong Tuần" }</li>
                           <li>
-                            <a href="/shop?dayInWeek=monday">Monday</a>
+                            <a href="/shop?dayInWeek=monday">{language == "eng" ? "Monday" : "Thứ Hai" }</a>
                           </li>
                           <li>
-                            <a href="/shop?dayInWeek=tuesday">Tuesday</a>
+                            <a href="/shop?dayInWeek=tuesday">{language == "eng" ? "Tuesday" : "Thứ Ba" }</a>
                           </li>
                           <li>
-                            <a href="/shop?dayInWeek=wednesday">Wednesday</a>
+                            <a href="/shop?dayInWeek=wednesday">{language == "eng" ? "Wednesday" : "Thứ Tư" }</a>
                           </li>
                           <li>
-                            <a href="/shop?dayInWeek=thursday">Thursday</a>
+                            <a href="/shop?dayInWeek=thursday">{language == "eng" ? "Thursday" : "Thứ Năm" }</a>
                           </li>
                           <li>
-                            <a href="/shop?dayInWeek=friday">Friday</a>
+                            <a href="/shop?dayInWeek=friday">{language == "eng" ? "Friday" : "Thứ Sáu" }</a>
                           </li>
                           <li>
-                            <a href="/shop?dayInWeek=saturday">Saturday</a>
+                            <a href="/shop?dayInWeek=saturday">{language == "eng" ? "Saturday" : "Thứ Bảy" }</a>
                           </li>
                           <li>
-                            <a href="/shop?dayInWeek=sunday">Sunday</a>
+                            <a href="/shop?dayInWeek=sunday">{language == "eng" ? "Sunday" : "Chủ Nhật" }</a>
                           </li>
                         </ul>
                       </div>
                     </li>
                     <li className="drop">
-                      <a href="shop-grid.html">About</a>
+                      <a href="shop-grid.html">{language == "eng" ? "About" : "Giới Thiệu" }</a>
                     </li>
                     <li>
-                      <a href="contact.html">Contact</a>
+                      <a href="contact.html">{language == "eng" ? "Contact" : "Liên Hệ" }</a>
                     </li>
                   </ul>
+                  <img style={{width: "45px", height: "25px", padding: "0px 10px", cursor: "pointer"}} src="/images/icons/vietnam.png"
+                    onClick={() => {dispatch(setNation("vie"))}}
+                  />
+                  <img style={{width: "45px", height: "25px", padding: "0px 10px", cursor: "pointer"}} src="/images/icons/united-kingdom.png"
+                    onClick={() => {dispatch(setNation("eng"))}}
+                  />
                 </nav>
               </div>
               <div className="col-md-6 col-sm-6 col-6 col-lg-2">
                 <ul className="header__sidebar__right d-flex justify-content-end align-items-center">
-                  <li className="shop_search">
-                    <a className="search__active" href="#" />
-                  </li>
                   <li className="wishlist">
                     <a href="#" />
                   </li>
@@ -216,14 +220,16 @@ const Header = () => {
                     <div className="block-minicart minicart__active">
                       <div className="minicart-content-wrapper">
                         <div className="micart__close">
-                          <span>close</span>
+                          <span>{language == "eng" ? "Close" : "Đóng" }</span>
                         </div>
                         <div className="items-total d-flex justify-content-between">
-                          <span>{cart.qty} items</span>
-                          <span>Cart Subtotal</span>
+                          <span>{cart.qty} {language == "eng" ? "Items" : "Khóa Học" }</span>
+                          <span>{language == "eng" ? "Cart Total" : "Tổng Tiền" }</span>
                         </div>
                         <div className="total_amount text-right">
-                          <span>${cart.total}.00</span>
+                          <span>
+                            {language == "eng" ? `$${cart.total}.00` : `${cart.total*23/1000} Triệu VNĐ` }
+                          </span>
                         </div>
                         <div className="mini_action cart">
                           <Link href="/cart">

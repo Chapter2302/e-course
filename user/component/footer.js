@@ -1,4 +1,7 @@
+import {useDispatch, useSelector} from "react-redux"
+
 const Footer = () => {
+    const language = useSelector(state => state.language.nation)
     return(
         <footer id="wn__footer" className="footer__area bg__cat--8 brown--color">
             <div className="footer-static-top">
@@ -7,13 +10,13 @@ const Footer = () => {
                     <div className="col-lg-12">
                     <div className="footer__widget footer__menu">
                         <div className="ft__logo">
-                        <a href="index.html">
-                            <img src="/images/logo/3.png" alt={"logo"} />
-                        </a>
                         <p>
-                            There are many variations of passages of Lorem Ipsum available,
+                            {language == "eng" 
+                            ? `There are many variations of passages of Lorem Ipsum available,
                             but the majority have suffered duskam alteration variations of
-                            passages
+                            passages` 
+                            : `Có rất nhiều biến thể của các đoạn văn của Lorem Ipsum có sẵn, 
+                            nhưng phần lớn đã phải chịu đựng các biến thể thay đổi hoàng hôn của các đoạn văn`}
                         </p>
                         </div>
                         <div className="footer__content">
@@ -46,22 +49,22 @@ const Footer = () => {
                         </ul>
                         <ul className="mainmenu d-flex justify-content-center">
                             <li>
-                            <a href="index.html">Trending</a>
+                            <a href="index.html">{language == "eng" ? "Trending" : "Xu Hướng"}</a>
                             </li>
                             <li>
-                            <a href="index.html">Best Seller</a>
+                            <a href="index.html">{language == "eng" ? "Best Seller" : "Bán Chạy Nhất"}</a>
                             </li>
                             <li>
-                            <a href="index.html">All Product</a>
+                            <a href="index.html">{language == "eng" ? "All Product" : "Tất Cả Khóa Học"}</a>
                             </li>
                             <li>
-                            <a href="index.html">Wishlist</a>
+                            <a href="index.html">{language == "eng" ? "Wishlist" : "Ưa Thích"}</a>
                             </li>
                             <li>
                             <a href="index.html">Blog</a>
                             </li>
                             <li>
-                            <a href="index.html">Contact</a>
+                            <a href="index.html">{language == "eng" ? "Contact" : "Liên Hệ"}</a>
                             </li>
                         </ul>
                         </div>

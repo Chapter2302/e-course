@@ -13,7 +13,7 @@ const Calendar = () => {
             {
                 courses.map((course, i) => {
                     if( course.schedule.dayInWeek.includes(day) 
-                        && course.schedule.shift == shift 
+                        && (course.schedule.shift[0] == shift || course.schedule.shift[1] == shift) 
                         && course.isActive == true
                         && course.status == "SUCCESS"
                     ) {
@@ -31,7 +31,6 @@ const Calendar = () => {
     useEffect(() => {
         (async () => {
             const courses = await getUserHistoryTransaction()
-            console.log(courses)
             if(courses) setCourses(courses)
         })()
     }, [])
@@ -40,23 +39,6 @@ const Calendar = () => {
         <>
             <HeadContent title={'Login'}/>
             <Header/>
-            {/* Start Search Popup */}
-            <div className="box-search-content search_active block-bg close__top">
-                <form id="search_mini_form" className="minisearch" action="#">
-                <div className="field__search">
-                    <input type="text" placeholder="Search entire store here..." />
-                    <div className="action">
-                    <a href="#">
-                        <i className="zmdi zmdi-search" />
-                    </a>
-                    </div>
-                </div>
-                </form>
-                <div className="close__wrap">
-                <span>close</span>
-                </div>
-            </div>
-            {/* End Search Popup */}
             {/* Start Bradcaump area */}
             <div className="ht__bradcaump__area bg-image--6">
                 <div className="container">
@@ -147,6 +129,32 @@ const Calendar = () => {
                                     </td>
                                     <td className="table-danger">
                                         <Cell day="sunday" shift={2}/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row" className="table-light text-center">
+                                        <b>6PM <div>To</div> 9PM</b>
+                                    </td>
+                                    <td className="table-primary">
+                                        <Cell day="monday" shift={3}/>
+                                    </td>
+                                    <td className="table-warning">
+                                        <Cell day="tuesday" shift={3}/>
+                                    </td>
+                                    <td className="table-success">
+                                        <Cell day="wednesday" shift={3}/>
+                                    </td>
+                                    <td className="table-danger">
+                                        <Cell day="thursday" shift={3}/>
+                                    </td>
+                                    <td className="table-warning">
+                                        <Cell day="friday" shift={3}/>
+                                    </td>
+                                    <td className="table-info">
+                                        <Cell day="saturday" shift={3}/>
+                                    </td>
+                                    <td className="table-danger">
+                                        <Cell day="sunday" shift={3}/>
                                     </td>
                                 </tr>
                             </tbody>

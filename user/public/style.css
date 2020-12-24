@@ -1839,10 +1839,10 @@ Header Styles
       padding-left: 0px;
       padding-right: 26px;
       position: relative; }
-	  .header__area .header__sidebar__right > li.wishlist {
-	  padding-left: 25px;
-	  padding-right: 25px;
-	}
+	    .header__area .header__sidebar__right > li.wishlist {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
       .header__area .header__sidebar__right > li.shopcart > a {
         position: relative; }
         .header__area .header__sidebar__right > li.shopcart > a span.product_qun {

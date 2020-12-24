@@ -84,8 +84,9 @@ const OptionModal = ({
                                 <select className= "form-control" defaultValue=""
                                         onChange={e => setFilter({...filter, courseShift: e.target.value})}>
                                     <option value="">--All--</option>
-                                    <option value="1">1st (8am - 11am)</option>
-                                    <option value="2">2nd (2pm - 5pm)</option>
+                                    <option value="1">8AM - 11AM</option>
+                                    <option value="2">14PM - 17PM</option>
+                                    <option value="3">18PM - 21PM</option>
                                 </select>
                             </div>
                             <div className="col-sm-12 col-md-4">

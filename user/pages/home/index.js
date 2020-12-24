@@ -1,29 +1,15 @@
+import {useDispatch, useSelector} from "react-redux"
 import HeadContent from '../../component/head'
 import Header from '../../component/header'
 import Footer from '../../component/footer'
 
 const Home = () => {
-    return(
+  const language = useSelector(state => state.language.nation)
+    
+  return(
     <>
       <HeadContent title={'Home'}/>
       <Header/>
-      {/* Start Search Popup */}
-      <div className="brown--color box-search-content search_active block-bg close__top">
-        <form id="search_mini_form" className="minisearch" action="#">
-          <div className="field__search">
-            <input type="text" placeholder="Search entire store here..." />
-            <div className="action">
-              <a href="#">
-                <i className="zmdi zmdi-search" />
-              </a>
-            </div>
-          </div>
-        </form>
-        <div className="close__wrap">
-          <span>close</span>
-        </div>
-      </div>
-      {/* End Search Popup */}
       {/* Start Slider area */}
       <div className="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
         {/* Start Single Slide */}
@@ -34,16 +20,16 @@ const Home = () => {
                 <div className="slider__content">
                   <div className="contentbox">
                     <h2>
-                      Get <span>your </span>
+                      {language=="eng" ? "Get" : "Mua"} <span>{language=="eng" ? "your" : "Khóa Học"} </span>
                     </h2>
                     <h2>
-                      favourite <span>Courses </span>
+                      {language=="eng" ? "favourite" : "Yêu Thích"} <span> {language=="eng" ? "Courses" : "Của Bạn"} </span>
                     </h2>
                     <h2>
-                      from <span>Here </span>
+                      {language=="eng" ? "from" : "Ở"} <span>{language=="eng" ? "Here" : "Đây"} </span>
                     </h2>
                     <a className="shopbtn" href="#">
-                      go now
+                      {language=="eng" ? "go now" : "Đi Đến"}
                     </a>
                   </div>
                 </div>
@@ -59,17 +45,17 @@ const Home = () => {
               <div className="col-lg-12">
                 <div className="slider__content">
                   <div className="contentbox">
-                    <h2>
-                      Get <span>your </span>
+                  <h2>
+                      {language=="eng" ? "Get" : "Mua"} <span>{language=="eng" ? "your" : "Khóa Học"} </span>
                     </h2>
                     <h2>
-                      favourite <span>Courses </span>
+                      {language=="eng" ? "favourite" : "Yêu Thích"} <span> {language=="eng" ? "Courses" : "Của Bạn"} </span>
                     </h2>
                     <h2>
-                      from <span>Here </span>
+                      {language=="eng" ? "from" : "Ở"} <span>{language=="eng" ? "Here" : "Đây"} </span>
                     </h2>
                     <a className="shopbtn" href="#">
-                      go now
+                      {language=="eng" ? "go now" : "Đi Đến"}
                     </a>
                   </div>
                 </div>
@@ -87,12 +73,13 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="section__title text-center">
                 <h2 className="title__be--2">
-                  New <span className="color--theme">Courses</span>
+                  { language == "eng" ? "New" : "Khóa học" } <span className="color--theme">{ language == "eng" ? "Courses" : "Mới" }</span> 
                 </h2>
                 <p>
-                  There are many variations of passages of Lorem Ipsum available,
-                  but the majority have suffered lebmid alteration in some ledmid
-                  form
+                  {language == "eng" 
+                  ? "There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form"
+                  : "Có nhiều biến thể của các đoạn Lorem Ipsum có sẵn, nhưng phần lớn đã bị biến đổi lebmid ở một số dạng ledmid" 
+                  }
                 </p>
               </div>
             </div>
@@ -110,16 +97,16 @@ const Home = () => {
                     <img src="https://media-kyna.cdn.vccloud.vn/uploads/courses/1844/img/image_url-1596773606.crop-730x436.jpg" alt={"product image"} />
                   </a>
                   <div className="hot__box">
-                    <span className="hot-label">BEST SALLER</span>
+                    <span className="hot-label">{ language == "eng" ? "BEST SALLER" : "BÁN CHẠY" }</span>
                   </div>
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Programmer Analyst IV</a>
+                    <a href="single-product.html">{ language == "eng" ? "Programmer Analyst IV" : "Phân Tích Lập Trình IV" }</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$71.00</li>
-                    <li className="old_prize">$78.00</li>
+                    <li>{language == "eng" ? "$71.00" : "1.6 Triệu VNĐ"} </li>
+                    <li className="old_prize">{language == "eng" ? "$78.00" : "1.8 Triệu VNĐ"}</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -191,11 +178,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Account Coordinator</a>
+                    <a href="single-product.html">{language == "eng" ? "Account Coordinator" : "Điều Phối Tài Khoản"}</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$83.00</li>
-                    <li className="old_prize">$91.00</li>
+                    <li>{language == "eng" ? "$83.00" : "1.9 Triệu VNĐ"}</li>
+                    <li className="old_prize">{language == "eng" ? "$91.00" : "2.1 Triệu VNĐ"}</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -267,11 +254,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Financial Analyst</a>
+                    <a href="single-product.html">{language == "eng" ? "Financial Analyst" : "Phân Tích Tài Chính"}</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$82.00</li>
-                    <li className="old_prize">$90.00</li>
+                    <li>{language == "eng" ? "$82.00" : "1.9 Triệu VNĐ"}</li>
+                    <li className="old_prize">{language == "eng" ? "$90.00" : "2.0 Triệu VNĐ"}</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -343,11 +330,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Programmer Analyst IV</a>
+                    <a href="single-product.html">{language == "eng" ? "Programmer Analyst IV" : "Phân Tích Lập Trình IV"}</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$71.00</li>
-                    <li className="old_prize">$78.00</li>
+                    <li>{language == "eng" ? "$71.00" : "1.6 Triệu VNĐ"}</li>
+                    <li className="old_prize">{language == "eng" ? "$78.00" : "1.8 Triệu VNĐ"}</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -419,11 +406,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Account Coordinator</a>
+                    <a href="single-product.html">{language == "eng" ? "Account Coordinator" : "Điều Phối Tài Khoản"}</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$83.00</li>
-                    <li className="old_prize">$91.00</li>
+                    <li>{language == "eng" ? "$83.00" : "1.9 Triệu VNĐ"}</li>
+                    <li className="old_prize">{language == "eng" ? "$91.00" : "2.1 Triệu VNĐ"}</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -495,11 +482,11 @@ const Home = () => {
                 </div>
                 <div className="product__content content--center">
                   <h4>
-                    <a href="single-product.html">Financial Analyst</a>
+                    <a href="single-product.html">{language == "eng" ? "Financial Analyst" : "Phân Tích Tài Chính"}</a>
                   </h4>
                   <ul className="prize d-flex">
-                    <li>$82.00</li>
-                    <li className="old_prize">$90.00</li>
+                    <li>{language == "eng" ? "$82.00" : "1.9 Triệu VNĐ"}</li>
+                    <li className="old_prize">{language == "eng" ? "$90.00" : "2.1 Triệu VNĐ"}</li>
                   </ul>
                   <div className="action">
                     <div className="actions_inner">
@@ -566,17 +553,20 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
               <div className="section__title text-center">
-                <h2>Stay With Us</h2>
+                <h2>{language == "eng" ? "Stay With Us" : "Nhận Thông Báo"}</h2>
               </div>
               <div className="newsletter__block text-center">
                 <p>
-                  Subscribe to our newsletters now and stay up-to-date with new
-                  collections, the latest lookbooks and exclusive offers.
+                  {language == "eng" 
+                  ? `Subscribe to our newsletters now and stay up-to-date with new 
+                  collections, the latest lookbooks and exclusive offers.` 
+                  : `Theo dõi thông tin mới nhất của chúng tôi ngay bây giờ và được
+                  cập nhật những khóa học mới nhất, cùng với những chương trình khuyến mãi`}
                 </p>
                 <form action="#">
                   <div className="newsletter__box">
-                    <input type="email" placeholder="Enter your e-mail" />
-                    <button>Subscribe</button>
+                    <input type="email" placeholder={language == "eng" ? "Enter your e-mail" : "Điền e-mail của bạn"}/>
+                    <button>{language == "eng" ? "Subscribe" : "Theo Dõi"}</button>
                   </div>
                 </form>
               </div>
@@ -592,12 +582,15 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="section__title text-center">
                 <h2 className="title__be--2">
-                  All <span className="color--theme">Category</span>
+                {language == "eng" ? "All" : "Tất Cả"} <span className="color--theme">{language == "eng" ? "Category" : "Danh Mục"}</span>
                 </h2>
                 <p>
-                  There are many variations of passages of Lorem Ipsum available,
+                  {language == "eng" 
+                  ? `There are many variations of passages of Lorem Ipsum available,
                   but the majority have suffered lebmid alteration in some ledmid
-                  form
+                  form` 
+                  : `Có nhiều biến thể của đoạn văn Lorem Ipsum có sẵn, 
+                  nhưng phần lớn đã bị biến đổi lebmid ở một số dạng ledmid`}
                 </p>
               </div>
             </div>
@@ -614,7 +607,7 @@ const Home = () => {
                   href="#nav-all"
                   role="tab"
                 >
-                  ALL
+                  {language == "eng" ? "All" : "Tất Cả"}
                 </a>
                 <a
                   className="nav-item nav-link"
@@ -622,7 +615,7 @@ const Home = () => {
                   href="#nav-biographic"
                   role="tab"
                 >
-                  IT
+                  {language == "eng" ? "IT" : "CNTT"}
                 </a>
                 <a
                   className="nav-item nav-link"
@@ -630,7 +623,7 @@ const Home = () => {
                   href="#nav-adventure"
                   role="tab"
                 >
-                  ADVENTURE
+                  {language == "eng" ? "ECONOMY" : "KINH TẾ"}
                 </a>
                 <a
                   className="nav-item nav-link"
@@ -638,7 +631,15 @@ const Home = () => {
                   href="#nav-children"
                   role="tab"
                 >
-                  CHILDREN
+                  {language == "eng" ? "DESIGN" : "THIẾT KẾ"}
+                </a>
+                <a
+                  className="nav-item nav-link"
+                  data-toggle="tab"
+                  href="#nav-marketing"
+                  role="tab"
+                >
+                  MARKETING
                 </a>
                 <a
                   className="nav-item nav-link"
@@ -646,7 +647,7 @@ const Home = () => {
                   href="#nav-cook"
                   role="tab"
                 >
-                  COOK
+                  {language == "eng" ? "LANGUAGES" : "NGÔN NGỮ"}
                 </a>
               </div>
             </div>
@@ -1443,12 +1444,15 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="section__title text-center">
                 <h2 className="title__be--2">
-                  Our <span className="color--theme">Blog</span>
+                  {language == "eng" ? "Our" : "Blog"} <span className="color--theme">{language == "eng" ? "Blog" : "Của Chúng Ta"}</span>
                 </h2>
                 <p>
-                  There are many variations of passages of Lorem Ipsum available,
+                  {language == "eng" 
+                  ? `There are many variations of passages of Lorem Ipsum available,
                   but the majority have suffered lebmid alteration in some ledmid
-                  form
+                  form` 
+                  : `Có nhiều biến thể của đoạn văn Lorem Ipsum có sẵn, 
+                  nhưng phần lớn đã bị biến đổi lebmid ở một số dạng ledmid`}
                 </p>
               </div>
             </div>
@@ -1459,13 +1463,16 @@ const Home = () => {
                 <div className="content">
                   <h3>
                     <a href="blog-details.html">
-                      International activities of the Frankfurt Book{" "}
+                      {language == "eng" ? `International activities of the Frankfurt Courses` : `Hoạt động Quốc Tế diễn ra tại Frankfurt`}{" "}
                     </a>
                   </h3>
                   <p>
-                    We are proud to announce the very first the edition of the
+                  {language == "eng" 
+                  ? `We are proud to announce the very first the edition of the
                     frankfurt news.We are proud to announce the very first of
-                    edition of the fault frankfurt news for us.
+                    edition of the fault frankfurt news for us.` 
+                  : `Chúng tôi tự hào thông báo ấn bản đầu tiên của tin tức Frankfurt Chúng tôi tự hào thông báo 
+                    ấn bản đầu tiên của tin tức Frankfurt lỗi cho chúng tôi.`}
                   </p>
                   <div className="post__time">
                     <span className="day">Dec 06, 18</span>
@@ -1494,13 +1501,19 @@ const Home = () => {
                 <div className="content">
                   <h3>
                     <a href="blog-details.html">
-                      Reading has a signficant info number of benefits
+                    {language == "eng" ? `Reading has a signficant info number of benefits` : `Một số lợi ích hấp dẫn của việc đọc sách`}
                     </a>
                   </h3>
                   <p>
-                    Find all the information you need to ensure your experience.Find
-                    all the information you need to ensure your experience . Find
-                    all the information you of.
+                    {
+                      language == "eng" 
+                      ? `Find all the information you need to ensure your experience.Find
+                      all the information you need to ensure your experience . Find
+                      all the information you of.`
+                      : `Tìm tất cả thông tin bạn cần để đảm bảo trải nghiệm của bạn. 
+                      Tìm tất cả thông tin bạn cần để đảm bảo trải nghiệm của bạn. 
+                      Tìm tất cả thông tin của bạn.`
+                    }
                   </p>
                   <div className="post__time">
                     <span className="day">Mar 08, 18</span>
@@ -1529,13 +1542,16 @@ const Home = () => {
                 <div className="content">
                   <h3>
                     <a href="blog-details.html">
-                      The London Book Fair is to be packed with exciting{" "}
+                    {language == "eng" ? `The London Book Fair is to be packed with exciting` : `Hội Chợ Sách ở London sẽ được tổ chức rất thú vị`}{" "}
                     </a>
                   </h3>
                   <p>
-                    The London Book Fair is the global area inon marketplace for
+                  {language == "eng" 
+                  ? `The London Book Fair is the global area inon marketplace for
                     rights negotiation.The year London Book Fair is the global area
-                    inon forg marketplace for rights.
+                    inon forg marketplace for rights.`
+                  : `Hội chợ sách London là thị trường đàm phán về quyền ở khu vực toàn cầu. 
+                    Hội chợ sách London năm là thị trường toàn cầu về quyền. Chợ sách hứa hẹn nhiều điều thú vị`}
                   </p>
                   <div className="post__time">
                     <span className="day">Nov 11, 18</span>
@@ -1570,12 +1586,15 @@ const Home = () => {
             <div className="col-lg-12">
               <div className="section__title text-center pb--50">
                 <h2 className="title__be--2">
-                  Best <span className="color--theme">Seller </span>
+                {language == "eng" ? `Best` : `Bán Chạy`} <span className="color--theme">{language == "eng" ? `Seller` : `Hàng Đầu`} </span>
                 </h2>
                 <p>
-                  There are many variations of passages of Lorem Ipsum available,
-                  but the majority have suffered lebmid alteration in some ledmid
-                  form
+                {language == "eng" 
+                ? `There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered lebmid alteration in some ledmid
+                form` 
+                : `Có nhiều biến thể của đoạn văn Lorem Ipsum có sẵn, 
+                nhưng phần lớn đã bị biến đổi lebmid ở một số dạng ledmid`}
                 </p>
               </div>
             </div>

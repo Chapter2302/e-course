@@ -128,13 +128,7 @@ const CourseModal = (props) => {
                                     <input className= "form-control" defaultValue = {props.item.price} disabled={!onCheck(props.optionType)} onChange={e => data.price= e.target.value}/>
                                 </div>
                                 <div className="col">
-                                    <b>Shift: </b>  
-                                    <input className= "form-control" defaultValue = {props.item.schedule.shift} disabled={!onCheck(props.optionType)} onChange={e => data.shift= e.target.value}/>
-                                </div>
-                            </div>
-                            <div className="form-row pb-2">
-                                <div className="col-6">
-                                    <b> Days In Week</b>
+                                <b> Days In Week</b>
                                     <div className="form-row">
                                         <div className="col">
                                             <select className= "form-control" 
@@ -189,6 +183,43 @@ const CourseModal = (props) => {
                                                 </option>
                                                 <option value="sunday">
                                                     Sunday
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form-row pb-2">
+                                <div className="col-6">
+                                <b>Shift: </b>  
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <select className= "form-control" defaultValue={props.item.schedule.shift[0]}
+                                                disabled={!onCheck(props.optionType)} 
+                                                onChange={e => data.schedule.shift[0] = e.target.value}>
+                                                <option value="1">
+                                                    8AM - 11AM
+                                                </option>
+                                                <option value="2">
+                                                    14PM - 17PM
+                                                </option>
+                                                <option value="3">
+                                                    14PM - 17PM
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div className="col">
+                                            <select className= "form-control" defaultValue={props.item.schedule.shift[1]}
+                                                disabled={!onCheck(props.optionType)} 
+                                                onChange={e => data.schedule.shift[1] = e.target.value}>
+                                                <option value="1">
+                                                    8AM - 11AM
+                                                </option>
+                                                <option value="2">
+                                                    14PM - 17PM
+                                                </option>
+                                                <option value="3">
+                                                    14PM - 17PM
                                                 </option>
                                             </select>
                                         </div>

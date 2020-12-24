@@ -50,10 +50,12 @@ const filterAndSortTableItems = (state, filter) => {
         }
         case 'course': {
             tableItems = state.listItems.filter(item => {
+                console.log("cc: ", filter.courseShift, item.schedule.shift)
                 return (
                     (item.schedule.dayInWeek[0].includes(filter.courseDayInWeek) 
                     || item.schedule.dayInWeek[1].includes(filter.courseDayInWeek))
-                    && String(item.schedule.shift).includes(filter.courseShift)
+                    && (String(item.schedule.shift[0]).includes(filter.courseShift) 
+                    || String(item.schedule.shift[1]).includes(filter.courseShift))
                     && String(item.category).includes(filter.courseCategory)
                     && String(item.isActive).includes(filter.courseStatus)
                 )

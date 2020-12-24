@@ -3,11 +3,13 @@ import { combineReducers } from 'redux'
 import cart from "./cart"
 import filter from "./filter"
 import sort from "./sort"
+import language from "./language"
 
 const reducer = combineReducers({
   cart,
   filter,
-  sort
+  sort,
+  language
 })
 
 const store = configureStore({

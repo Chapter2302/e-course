@@ -20,21 +20,26 @@ const Shop = ({courses}) => {
     const [quickviewCourse, setQuickViewCourse] = useState(null)
 
     const compareName = (nameA, nameB, opt) => {
-        if(nameA > nameB) return opt*1
-        if(nameA < nameB) return opt*(-1)
-        if(nameA == nameB) return 0
+        if(nameA > nameB) 
+            return opt*1
+        if(nameA < nameB) 
+            return opt*(-1)
+        if(nameA == nameB) 
+            return 0
     }
 
     const ShopGrid = () => {
         let _showedCourses = []
-        _showedCourses = courses.filter(item => 
-            item.name.includes(filter.search)
+        
+        _showedCourses = courses.filter(item => {
+            return item.name.includes(filter.search)
             && (item.schedule.dayInWeek[0].includes(filter.dayInWeek) 
             || item.schedule.dayInWeek[1].includes(filter.dayInWeek))
-            && String(item.schedule.shift).includes(filter.shift)
+            && (String(item.schedule.shift[0]).includes(filter.shift) 
+            || String(item.schedule.shift[1]).includes(filter.shift))
             && String(item.category).includes(filter.category)
             && (item.price >= filter.minPrice && item.price <= filter.maxPrice)
-        )
+        })
         switch(sort.type) {
             case "name-A-Z": _showedCourses.sort((a, b) => compareName(a.name, b.name, 1)); break    
             case "name-Z-A": _showedCourses.sort((a, b) => compareName(a.name, b.name, -1)); break
@@ -104,23 +109,6 @@ const Shop = ({courses}) => {
     <>
         <HeadContent title={'Shop'}/>
         <Header/>
-        {/* Start Search Popup */}
-        <div className="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" className="minisearch" action="#">
-            <div className="field__search">
-                <input type="text" placeholder="Search entire store here..." />
-                <div className="action">
-                <a href="#">
-                    <i className="zmdi zmdi-search" />
-                </a>
-                </div>
-            </div>
-            </form>
-            <div className="close__wrap">
-            <span>close</span>
-            </div>
-        </div>
-        {/* End Search Popup */}
         {/* Start Bradcaump area */}
         <div className="ht__bradcaump__area bg-image--6">
             <div className="container">
@@ -234,8 +222,9 @@ const Shop = ({courses}) => {
                                             value={filter.shift} 
                                             onChange={e => dispatch(setFilter({...filter, shift: e.target.value}))}>
                                             <option value="">All</option>
-                                            <option value="1">1st</option>
-                                            <option value="2">2nd</option>
+                                            <option value="1">8AM - 11AM</option>
+                                            <option value="2">2PM - 5PM</option>
+                                            <option value="3">6PM - 9PM</option>
                                         </select>
                                 </div>
                                 <div className="col-md-6 col-sm-12">
@@ -253,6 +242,14 @@ const Shop = ({courses}) => {
                                             <option value="saturday">Saturday</option>
                                             <option value="sunday">Sunday</option>
                                         </select>
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="col-md-6 col-sm-12">
+                                    <div>Shift</div>
+                                </div>
+                                <div className="col-md-6 col-sm-12">
+                                    <div>Day In Week</div>
                                 </div>
                             </div>
                     </aside>
