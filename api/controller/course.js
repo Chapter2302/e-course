@@ -12,6 +12,25 @@ const getAllCourses = async (user, session) => {
         : await Course.find({})
 }
 
+// const getAllCourses = async (user, session) => {
+//     const response
+//     if(user.role == "teacher") {
+//         if(session) {
+//             response = await Course.find({ "teacher": user.id }).session(session)
+//         }
+//         else {
+//             response = await Course.find({ "teacher": user.id })
+//         }
+//     } else {
+//         if(session) {
+//             response = await Course.find({}).session(session)
+//         } else {
+//             response = await Course.find({})
+//         }
+//     }
+//     return response
+// }
+
 const getCourse = async (cid, session) => {
     return session ? await Course.findOne({ "_id": cid }).session(session) : await Course.findOne({ "_id": cid })
 }
@@ -30,6 +49,16 @@ const createCourse = async (data, session) => {
     ? await Course.create([ data ], { session: session })
     : await Course.create([ data ])
 }
+
+// const createCourse = async (data, session) => {
+//     const response
+//     if(session) {
+//         response = await Course.create([ data ], { session: session })
+//         return resposne
+//     }
+//     response = await Course.create([ data ])
+//     return response
+// }
 
 const updateCourse = async (data, session) => {
     return session 

@@ -6,7 +6,7 @@ const courseSchema = new Schema({
     schedule: {
         dayInWeek : [{type: String, enum: ['monday','tuesday','wednesday'
                                          ,'thursday','friday','saturday','sunday']}],
-        shift: {type: Number, enum: [1,2]},
+        shift: [{type: Number, enum: [1,2,3]}],
         startDate: {type: String},
         endDate: {type: String}
     },

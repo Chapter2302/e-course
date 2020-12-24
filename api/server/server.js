@@ -1,5 +1,9 @@
-const express = require('express')
-const app      = express()
+const express     = require('express')
+const app         = express()
+const User        = require('../model/user')
+const Course      = require('../model/course')
+const Transaction = require('../model/transaction')
+const notiService = require('../util.js/noti-service')
 
 require('dotenv').config()
 
@@ -68,6 +72,53 @@ app.use('/auth', authRoute)
 app.use('/user', userRoute)
 app.use('/course', courseRoute)
 app.use('/trans', transRoute)
+
+setInterval(async () => { 
+    const today = new Date();
+    const dayMapping = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
+
+    const doSendMail = async shift => {
+        const condition = {
+            'isActive': true,
+            'schedule.shift': shift,
+            'schedule.dayInWeek': dayMapping[today.getDay()]
+        }
+    
+        const courses = await Course.find(condition)
+    
+        courses.forEach(async course => {
+            const teacher = await User.findOne({_id: course.teacher})
+            notiService.sendMail(teacher, course)
+            const transactions = await Transaction.find({course: course._id})
+    
+            transactions.map(async tran => {
+                const user = await User.findOne({_id: tran.user})
+                notiService.sendMail(user, course)
+            })
+        })
+    }
+    // const u = {
+    //     role: "student",
+    //     authenticateMethod: { 
+    //         local: {
+    //             email: "tranhanam1999hn@gmail.com"
+    //         }
+    //     }
+    // }
+    // const c = {
+    //     name: "Web Programming",
+    //     link: "https://meet.google.com/pzc-rokm-qjb"
+    // }
+    // notiService.sendMail(u, c)
+
+    if(today.getHours() === 6 && today.getMinutes() === 30) {
+        doSendMail(1)
+    } else if (today.getHours() === 13 && today.getMinutes() === 30) {
+        doSendMail(2)
+    } else if (today.getHours() === 18 && today.getMinutes() === 30) {
+        doSendMail(3)
+    }
+}, 2000)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
