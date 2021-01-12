@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {Modal} from 'react-bootstrap'
 import ReactStars from 'react-rating-stars-component'
-import * as api from "../../../api"
-import {getAllData} from "../../../actionCreator"
-import store from "../../../store"
-import {getInputImages, getDownloadImageURLs} from "../services"
+import * as api from '../../../../../api'
+import {getAllData} from '../../../../../actionCreator'
+import store from '../../../../../store'
+import {getInputImages, getDownloadImageURLs} from '../services'
 
 const CourseModal = (props) => {
     const [data, setData] = useState({})
@@ -12,10 +12,8 @@ const CourseModal = (props) => {
 
     useEffect(() => {
         setData({
-            isActive: true,
             schedule: {
-                dayInWeek : [],
-                shift: []
+                dayInWeek : []
             },
             pictures: ['', '', ''],
         })
@@ -58,19 +56,19 @@ const CourseModal = (props) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <form id='courseform' onSubmit={ e => { e.preventDefault(); createData() }}>
+            <form id='course-form' onSubmit={e => e.preventDefault()}>
                 <div className = "row">
                     <div className= "col-3">
                         <div id="carouselExampleControls" className="carousel slide">
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img className="d-block w-100" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKFSgdhQvBlZO6I8s-jtKIYOED1NqEs4xEjA&usqp=CAU"} height={200} alt="First slide"/>
+                                    <img className="d-block w-100" src={"https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg"} height={200} alt="First slide"/>
                                 </div>
                                 <div className="carousel-item">
-                                    <img className="d-block w-100" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKFSgdhQvBlZO6I8s-jtKIYOED1NqEs4xEjA&usqp=CAU"} height={200} alt="Second slide"/>
+                                    <img className="d-block w-100" src={"https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg"} height={200} alt="Second slide"/>
                                 </div>
                                 <div className="carousel-item">
-                                    <img className="d-block w-100" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKFSgdhQvBlZO6I8s-jtKIYOED1NqEs4xEjA&usqp=CAU"} height={200} alt="Third slide"/>
+                                    <img className="d-block w-100" src={"https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg"} height={200} alt="Third slide"/>
                                 </div>
                                 </div>
                                 <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -84,33 +82,46 @@ const CourseModal = (props) => {
                             </div>
                             <input type="file" className="file-upload form-control" multiple
                                    onChange={e => uploadImages(e)}/>
+                        <div className="row d-flex justify-content-center" > 
+                            <ReactStars 
+                                count={5} 
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fa fa-star"></i>}
+                                activeColor="#ffd700"
+                                size={25}
+                                onChange={newRate => data.rating = newRate}
+                            />
+                        </div>
                     </div>
                     <div className= "col-9">
                             <div className="form-row pb-2">
                                 <div className="col">
                                     <b>Name: </b>
                                     <div className="input-group">
-                                        <input type="text" className="form-control" required={true}
+                                        <input type="text" className="form-control" 
                                             onChange={e => data.name = e.target.value}
                                         />
+                                        <div className="input-group-append">
+                                            <button className="btn btn-success" type="button" onClick={() => alert(props.item._id)}>Id</button>
+                                        </div>
                                     </div> 
                                 </div>
                                 <div className="col">
                                     <b>Attendable: </b>  
-                                    <select className= "form-control" disabled>
-                                        <option value={true}>
-                                            True
-                                        </option>
-                                        <option value={false}>
-                                            False
-                                        </option>
-                                    </select>
+                                    <input className= "form-control" onChange={e => data.isActive = e.target.value}/>
                                 </div>
                                 <div className="col">
                                     <b>Price: </b>  
-                                    <input className="form-control" required={true} onChange={e => data.price = e.target.value}/>
+                                    <input className= "form-control" onChange={e => data.price = e.target.value}/>
                                 </div>
-                                <div className="col"> 
+                                <div className="col">
+                                    <b>Shift: </b>  
+                                    <input className= "form-control" onChange={e => data.schedule.shift = e.target.value}/>
+                                </div>
+                            </div>
+                            <div className="form-row pb-2">
+                                <div className="col-6">
                                     <b> Days In Week</b>
                                     <div className="form-row">
                                         <div className="col">
@@ -167,41 +178,6 @@ const CourseModal = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="form-row pb-2">
-                                <div className="col-6">
-                                <b>Shift: </b>  
-                                    <div className="form-row">
-                                        <div className="col">
-                                            <select className= "form-control" 
-                                                onChange={e => data.schedule.shift[0] = e.target.value}>
-                                                <option value="1">
-                                                    8AM - 11AM
-                                                </option>
-                                                <option value="2">
-                                                    14PM - 17PM
-                                                </option>
-                                                <option value="2">
-                                                    14PM - 17PM
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div className="col">
-                                            <select className= "form-control" 
-                                                onChange={e => data.schedule.shift[1] = e.target.value}>
-                                                <option value="1">
-                                                    8AM - 11AM
-                                                </option>
-                                                <option value="2">
-                                                    14PM - 17PM
-                                                </option>
-                                                <option value="2">
-                                                    14PM - 17PM
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="col-3">
                                     <b>Quantity of Course: </b>
                                     <input type="text" className="form-control" disabled={true} onChange={e => data.quantity = e.target.value} />
@@ -249,36 +225,13 @@ const CourseModal = (props) => {
                                     <span className="row">
                                         <div className="col">
                                             <b>Teacher: </b>
-                                            {(() => {
-                                                const session = JSON.parse(localStorage.getItem("session"))
-                                                if(session.role == "teacher") {
-                                                    data.teacher =  session.id
-                                                    return <input type="text" defaultValue={session.id} className="form-control" disabled/>
-                                                } else {
-                                                    return <input type="text" className="form-control" onChange={e => data.teacher =  e.target.value}/>
-                                                }
-                                            })()}
+                                            <input type="text" className="form-control"
+                                            onChange={e => data.teacher =  e.target.value}/>
                                         </div>
                                         <div className="col">
                                             <b>Category: </b>  
-                                            <select className= "form-control" 
-                                                onChange={e => data.category = e.target.value}>
-                                                <option value="Information Technology">
-                                                    Information Technology
-                                                </option>
-                                                <option value="Design">
-                                                    Design
-                                                </option>
-                                                <option value="Marketing">
-                                                    Marketing
-                                                </option>
-                                                <option value="Economy">
-                                                    Economy
-                                                </option>
-                                                <option value="Language">
-                                                    Language
-                                                </option>
-                                            </select>
+                                            <input className= "form-control" 
+                                            onChange={e => data.category =  e.target.value}/>
                                         </div>
                                     </span>
                                 </span>
@@ -288,7 +241,7 @@ const CourseModal = (props) => {
             </form>
             </Modal.Body>
             <Modal.Footer>
-                <button type={"submit"} form='courseform' className="btn btn-info">Create</button>
+                <button form='user-form' className="btn btn-info" onClick={createData}>Create</button>
                 <button className="btn btn-primary" onClick={props.onHide}>Close</button>
             </Modal.Footer>
         </Modal>

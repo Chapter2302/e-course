@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import OrdinaryModal from "./ordinaryModal"
 import {updateTableItems} from "../../actionCreator"
 import {searchTableItem, filterAndSortTableItems} from "./services"
+import ChatBoxModal from "../../components/chatBoxModal"
 
 const UserBody = ({pageItems}) => {
     const [optionType, setOptionType] = useState('detail')
@@ -16,6 +17,8 @@ const UserBody = ({pageItems}) => {
         }
     })
     const [modalShow, setModalShow] = useState(false)
+    const [chatModalShow, setChatModalShow] = useState(false)
+    const [recieverID, setRecieverID] = useState(null)
     return (
         <>
         <table className="table table-bordered dataTable" width="100%" cellSpacing="0" role="grid" aria-describedby="dataTable_info">
@@ -34,25 +37,30 @@ const UserBody = ({pageItems}) => {
                     return (
                         <tr key={value._id} role= "row">
                             <td>
-                                <img src={value.photoUser} alt='Nam Kiki' width='100' height='100'></img>
+                                <img src={value.photoUser ? value.photoUser : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKFSgdhQvBlZO6I8s-jtKIYOED1NqEs4xEjA&usqp=CAU"} width='100' height='100'></img>
                             </td>
                             <td>{value.fullName}</td>
                             <td>{value.role}</td>
                             <td>{value.authenticateMethod.local.email}</td> 
-                            <td style={{textAlign:'center'}}>
-                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('detail') }} className="btn btn-info col-md-3"> 
-                                    <span className="icon text-center">
+                            <td className="d-flex justify-content-between mb-1">
+                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('detail') }} className="btn btn-info col-md-2"> 
+                                    <span className="icon d-flex justify-content-center">
                                         <i className="fas fa-info"></i>
                                     </span>
                                 </button>
-                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-3 ml-1 mr-1">
-                                    <span className="icon text-center">
-                                        <i className="fas fa-edit"></i>
+                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-2">
+                                    <span className="icon d-flex justify-content-center">
+                                        <i className="fas fa-pen"></i>
                                     </span>
                                 </button>
-                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('delete')}} className="btn btn-danger col-md-3"> 
-                                    <span className="icon">
+                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('delete')}} className="btn btn-danger col-md-2"> 
+                                    <span className="icon d-flex justify-content-center">
                                         <i className="fas fa-trash"></i>
+                                    </span>
+                                </button>
+                                <button onClick={() => { setChatModalShow(true); setRecieverID(value._id) }} className="btn btn-success col-md-2">
+                                    <span className="icon d-flex justify-content-center">
+                                        <i className="fas fa-inbox"></i>
                                     </span>
                                 </button>
                             </td>
@@ -63,6 +71,7 @@ const UserBody = ({pageItems}) => {
             </tbody>
         </table>
         <OrdinaryModal collection='user' optionType={optionType} item={currentItem} show={modalShow} onHide={() => setModalShow(false)}/>
+        <ChatBoxModal show={chatModalShow} onHide={() => setChatModalShow(false)} recieverID={recieverID}/>
         </>
     )
 }
@@ -89,7 +98,7 @@ const CourseBody = ({pageItems}) => {
                         return(
                             <tr key={value._id} role= "row">
                                 <td>
-                                    <img src={value.pictures[0]} alt="First Picture" width='150' height='100'></img>
+                                    <img src={value.pictures[0]} alt="Picture" width='150' height='100'></img>
                                 </td>
                                 <td>{value.name}</td>
                                 <td>{value.category}</td>
@@ -105,15 +114,21 @@ const CourseBody = ({pageItems}) => {
                                         size={25}
                                     />
                                 </td>
-                                <td style={{textAlign:'center'}}>
+                                <td className="d-flex justify-content-between">
                                     <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('detail') }} className="btn btn-info col-md-3"> 
-                                        <i className="fas fa-info"></i>
+                                        <span className="icon d-flex justify-content-center">
+                                            <i className="fas fa-info"></i>
+                                        </span>
                                     </button>
-                                    <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-3 ml-1 mr-1">
-                                        <i className="fas fa-edit"></i>
+                                    <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-3">
+                                        <span className="icon d-flex justify-content-center">
+                                            <i className="fas fa-pen"></i>
+                                        </span>
                                     </button>
                                     <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('delete')}} className="btn btn-danger col-md-3"> 
-                                        <i className="fas fa-trash"></i>
+                                        <span className="icon d-flex justify-content-center">
+                                            <i className="fas fa-trash"></i>
+                                        </span>
                                     </button>
                                 </td>
                             </tr>
@@ -165,19 +180,19 @@ const TransBody = ({pageItems}) => {
                                     <input  className="form-control" type="date" 
                                             defaultValue= {value.date}/>
                                 </td>
-                                <td style={{textAlign:'center'}}>
+                                <td className="d-flex justify-content-between">
                                     <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('detail') }} className="btn btn-info col-md-3"> 
-                                        <span className="icon text-center">
+                                        <span className="icon d-flex justify-content-center">
                                             <i className="fas fa-info"></i>
                                         </span>
                                     </button>
                                     <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-3 ml-1 mr-1">
-                                        <span className="icon text-center">
-                                            <i className="fas fa-edit"></i>
+                                        <span className="icon d-flex justify-content-center">
+                                            <i className="fas fa-pen"></i>
                                         </span>
                                     </button>
                                     <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('delete')}} className="btn btn-danger col-md-3"> 
-                                        <span className="icon">
+                                        <span className="icon d-flex justify-content-center">
                                             <i className="fas fa-trash"></i>
                                         </span>
                                     </button>

@@ -1,9 +1,73 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import {connect} from "react-redux"
+import { getAll } from "../api"
 import { logout } from "../actionCreator"
+import ChatBoxModal from "./chatBoxModal"
+import socketIOClient from "socket.io-client";
+const ENDPOINT = "http://localhost:4000";
+
+const socket = socketIOClient(ENDPOINT);
+
+const MessagesDropdownItem = (props) => {
+    const { senderID, senderName, content, senderPhoto } = props.messageItem
+    const setModalShow = props.setModalShow
+    const setRecieverID = props.setRecieverID 
+
+    return(
+        <a className="dropdown-item d-flex align-items-center" href="#">
+            <div className="dropdown-list-image mr-3">
+                <img className="rounded-circle" src={senderPhoto ? senderPhoto : "https://source.unsplash.com/fn_BT9fwg_E/60x60"} alt=""/>
+                <div className="status-indicator bg-success"></div>
+            </div>
+            <div className="font-weight-bold" 
+                onClick={
+                    ()=>{
+                        setModalShow(true); 
+                        setRecieverID(senderID)
+                    }
+                }
+            >
+                <div className="text-truncate">{content}</div>
+                <div className="small text-gray-500">{senderName}</div>
+            </div>
+        </a>
+    )
+}
 
 const TopBar = ({logout}) => {
+    const [modalShow, setModalShow] = useState(false)
+    const [recieverID, setRecieverID] = useState(null)
+    const [messageDropdownItems, setMessageDropdownItems] = useState([])
     const user = JSON.parse(localStorage.getItem("session"))
+
+    useEffect(() => {
+        socket.emit('joinRoom', { userID: user.id, recieverID: null })
+        socket.on("message", data => {
+            console.log('recieve: ', data)
+            const newMessageItem = {
+                senderID: data.senderID,
+                senderName: data.senderName,
+                content: data.message,
+                senderPhoto: data.senderPhoto
+            }
+            let isExist = false
+            const newList = messageDropdownItems.map(item => {
+                if(item.senderID === data.senderID) {
+                    isExist = true
+                    return newMessageItem
+                } else {
+                    return item
+                }
+            })
+
+            if(!isExist) {
+                newList.push(newMessageItem)
+            }
+
+            setMessageDropdownItems(newList)
+        });
+    }, [])
+
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
               <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
@@ -85,56 +149,23 @@ const TopBar = ({logout}) => {
           </li>
 
           <li className="nav-item dropdown no-arrow mx-1">
-          <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i className="fas fa-envelope fa-fw"></i>
-              <span className="badge badge-danger badge-counter">7</span>
-          </a>
-          <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-              <h6 className="dropdown-header">
-              Message Center
-              </h6>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-              <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt=""/>
-                  <div className="status-indicator bg-success"></div>
-              </div>
-              <div className="font-weight-bold">
-                  <div className="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                  <div className="small text-gray-500">Emily Fowler · 58m</div>
-              </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-              <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt=""/>
-                  <div className="status-indicator"></div>
-              </div>
-              <div>
-                  <div className="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                  <div className="small text-gray-500">Jae Chun · 1d</div>
-              </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-              <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt=""/>
-                  <div className="status-indicator bg-warning"></div>
-              </div>
-              <div>
-                  <div className="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                  <div className="small text-gray-500">Morgan Alvarez · 2d</div>
-              </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-              <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt=""/>
-                  <div className="status-indicator bg-success"></div>
-              </div>
-              <div>
-                  <div className="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                  <div className="small text-gray-500">Chicken the Dog · 2w</div>
-              </div>
-              </a>
-              <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-          </div>
+            <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i className="fas fa-envelope fa-fw"></i>
+            </a>
+            <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 className="dropdown-header">
+                    Message Center
+                </h6>
+                {
+                    (() => {
+                        return messageDropdownItems.map(item => {
+                            console.log('hello: ', item)
+                            return <MessagesDropdownItem key={item.recieverID} messageItem={item} setModalShow={setModalShow} setRecieverID={setRecieverID}/>
+                        })
+                    })()
+                }
+                <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+            </div>
           </li>
 
           <div className="topbar-divider d-none d-sm-block"></div>
@@ -187,6 +218,7 @@ const TopBar = ({logout}) => {
                 </div>
             </div>
         </div>
+        <ChatBoxModal show={modalShow} onHide={() => setModalShow(false)} recieverID={recieverID}/>
     </nav>
     )
 }

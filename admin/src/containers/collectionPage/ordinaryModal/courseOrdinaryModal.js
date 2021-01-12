@@ -121,7 +121,19 @@ const CourseModal = (props) => {
                                 </div>
                                 <div className="col">
                                     <b>Attendable: </b>  
-                                    <input className= "form-control" defaultValue = {props.item.isActive} disabled={!onCheck(props.optionType)} onChange={e => data.isActive= e.target.value}/>
+                                    <select className= "form-control" 
+                                        defaultValue = {props.item.isActive} 
+                                        disabled={!onCheck(props.optionType)}
+                                        onChange={e => data.isActive= e.target.value}
+                                    >
+                                        <option value="true">
+                                            True
+                                        </option>
+                                        <option value="false">
+                                            False
+                                        </option>
+                                    </select>
+                                    {/* <input className= "form-control" defaultValue = {props.item.isActive} disabled={!onCheck(props.optionType)} onChange={e => data.isActive= e.target.value}/> */}
                                 </div>
                                 <div className="col">
                                     <b>Price: </b>  

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {Modal} from 'react-bootstrap'
 import ReactStars from 'react-rating-stars-component'
-import * as api from "../../../api"
-import {getAllData} from "../../../actionCreator"
-import store from "../../../store"
-import {getInputImages, getDownloadImageURLs} from "../services"
+import * as api from '../../../../../api'
+import {getAllData} from '../../../../../actionCreator'
+import store from '../../../../../store'
+import {getInputImages, getDownloadImageURLs} from '../services'
 
 const UserModal = (props) => {
     const [data, setData] = useState({})
@@ -15,7 +15,7 @@ const UserModal = (props) => {
             authenticateMethod: {
                 local: {
                     email: '',
-                    password: 'abc123',
+                    password: '',
                 },
                 facebook: {
                     name: '',
@@ -40,19 +40,17 @@ const UserModal = (props) => {
     
     const createData = async () => {
         let createResponse = await api.create(props.collection, data)
-        if(createResponse.status == 200) {
-            let result = await createResponse.json()
-            console.log('imgs: ', imgs.length)
-            const tempPics = await getDownloadImageURLs(imgs, result[0]._id, 'user')
-            data.photoUser = await tempPics[0]
-            data._id = result[0]._id
-            const res = await api.update('user', data)
-            console.log(res.status)
-            if(res.status == 200) {
-                alert('Created Success')
-            }
-            else {
-                alert('Created But Fail To Save Images')
+        if(createResponse.json()._id) {
+            if(imgs.length > 0) {
+                let result = await createResponse.json()
+                const tempPics = await getDownloadImageURLs(imgs, result[0]._id, 'user')
+                data.pictures[0] = await tempPics[0]
+                data.pictures[1] = await tempPics[1]
+                data.pictures[2] = await tempPics[2]
+                data._id = result[0]._id
+                let updateResult = await api.update('user', data)
+                if(updateResult.status === 200) alert('Response: Success')
+                else alert('Response: Fail To Save Images')
             }
         }
         else alert('Response: Fail To Create')
@@ -67,7 +65,7 @@ const UserModal = (props) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form id='userform' onSubmit={e => { e.preventDefault(); createData() }}>
+                <form id='user-form' onSubmit={(e) => {e.preventDefault()}}>
                     <div className = "row">
                         <div className= "col-3">
                             <div id="carouselExampleControls" className="carousel slide pb-3" data-ride="carousel">
@@ -90,13 +88,12 @@ const UserModal = (props) => {
                             <div className="form-row pb-2">
                                 <div className="col">
                                     <b>Full Name: </b>
-                                    <input type="text" required={true} className="form-control" onChange= {e => data.fullName = e.target.value}/>
+                                    <input type="text" required className="form-control" onChange= {e => data.fullName = e.target.value}/>
                                 </div>
                                 <div className="col">
                                     <b>Email: </b>  
                                     <input 
                                         type="email" className= "form-control" 
-                                        required={true}
                                         pattern='^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$'
                                         onChange={e => {
                                             data.authenticateMethod.local.email = e.target.value
@@ -105,28 +102,34 @@ const UserModal = (props) => {
                                 </div>
                             </div>
                             <div className="form-row pb-2">                          
-                                <div className="col-4">
+                                <div className="col">
                                     <b>Sex: </b>
                                     <select className= "form-control" defaultValue="Male" onChange={e => setData({...data, sex: e.target.value})}>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
                                 </div>
-                                <div className="col-4">
-                                    <b>Role: </b>
-                                    <select className= "form-control" defaultValue="student" onChange={e => setData({...data, role: e.target.value || "student"})}>
-                                        <option value="student">Student</option>
-                                        <option value="teacher">Teacher</option>
-                                    </select>
-                                </div>
-                                <div className="col-4">
+                                <div className="col">
                                     <b>Birthday: </b>
                                     <input 
                                         type="date" className="form-control" 
                                         pattern='^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$'
                                         onChange={e => {
                                             data.birthday = e.target.value
-                                        }}/>
+                                            }}/>
+                                </div>
+                                <div className="col">
+                                    <b>Rating: </b>
+                                    <ReactStars
+                                        edit={true}
+                                        count={5} 
+                                        emptyIcon={<i className="far fa-star"></i>}
+                                        halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                        fullIcon={<i className="fa fa-star"></i>}
+                                        activeColor="#ffd700"
+                                        size={25}
+                                        onChange={newRate => data.rating = newRate}
+                                    />
                                 </div>
                             </div>
                             <div className="form-row pb-2">
@@ -154,7 +157,7 @@ const UserModal = (props) => {
                 </form>
             </Modal.Body>
             <Modal.Footer>
-                <button type={"submit"} form='userform' className="btn btn-info">Create</button>
+                <button form='user-form' className="btn btn-info" onClick={createData}>Create</button>
                 <button className="btn btn-primary" onClick={props.onHide}>Close</button>
             </Modal.Footer>
         </Modal>  
