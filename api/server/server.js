@@ -1,5 +1,6 @@
 const express     = require('express')
 const app         = express()
+const http        = require('http').Server(app);
 const User        = require('../model/user')
 const Course      = require('../model/course')
 const Transaction = require('../model/transaction')
@@ -17,7 +18,15 @@ const transRoute = require('../api/route/transaction')
 const cookieParser = require('cookie-parser')
 const bodyParser   = require('body-parser')
 const session      = require('express-session')
-const cors = require('cors')
+const cors = require('cors');
+const { use } = require('../config/passport');
+
+const io = require('socket.io')(http, {
+    cors: {
+        origin: "http://localhost:5000",
+        methods: ["GET", "POST"]
+    }
+});
 
 app.use(express.json());
 mongoose.connect(process.env.DATABASE_URL).then(() => console.log('DB Connected!')) // connect tới database 
@@ -120,6 +129,27 @@ setInterval(async () => {
     }
 }, 2000)
 
-app.listen(port, () => {
+io.on('connection', (socket) => {
+    console.log('a user connected ');
+
+    socket.on('joinRoom', data => {
+        console.log('join: ', data, socket.id)
+        if(data.userID) 
+            socket.join(data.userID)
+        if(data.recieverID)
+            socket.join(data.recieverID)
+    })
+
+    socket.on('message', data => {
+        console.log('message: ', data)
+        socket.to(data.recieverID).emit('message', { message: data.message, senderName: data.userName, senderID: data.userID, senderPhoto: data.userPhoto })
+    })
+
+    socket.on('disconnect', reason => {
+        console.log('deleted: ', socket.id)
+    })
+});
+
+http.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
