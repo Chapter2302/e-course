@@ -48,7 +48,7 @@ const SideBar = () => {
                   <div className="bg-white py-2 collapse-inner rounded">
                     <h6 className="collapse-header">Options:</h6>
 
-                    { user.role == "admin" ? <Link className="collapse-item" to="/collection/user">User</Link> : <></> }
+                    <Link className="collapse-item" to="/collection/user">User</Link>
                     <Link className="collapse-item" to="/collection/course">Course</Link>
                     { user.role == "admin" ? <Link className="collapse-item" to="/collection/trans">Transaction</Link> : <></> }
                   </div>

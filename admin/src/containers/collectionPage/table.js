@@ -19,6 +19,8 @@ const UserBody = ({pageItems}) => {
     const [modalShow, setModalShow] = useState(false)
     const [chatModalShow, setChatModalShow] = useState(false)
     const [recieverID, setRecieverID] = useState(null)
+    const user = JSON.parse(localStorage.getItem("session"))
+
     return (
         <>
         <table className="table table-bordered dataTable" width="100%" cellSpacing="0" role="grid" aria-describedby="dataTable_info">
@@ -43,21 +45,26 @@ const UserBody = ({pageItems}) => {
                             <td>{value.role}</td>
                             <td>{value.authenticateMethod.local.email}</td> 
                             <td className="d-flex justify-content-between mb-1">
-                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('detail') }} className="btn btn-info col-md-2"> 
-                                    <span className="icon d-flex justify-content-center">
-                                        <i className="fas fa-info"></i>
-                                    </span>
-                                </button>
-                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-2">
-                                    <span className="icon d-flex justify-content-center">
-                                        <i className="fas fa-pen"></i>
-                                    </span>
-                                </button>
-                                <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('delete')}} className="btn btn-danger col-md-2"> 
-                                    <span className="icon d-flex justify-content-center">
-                                        <i className="fas fa-trash"></i>
-                                    </span>
-                                </button>
+                                {
+                                    user.role == "admin" 
+                                    ? <>
+                                        <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('detail') }} className="btn btn-info col-md-2"> 
+                                            <span className="icon d-flex justify-content-center">
+                                                <i className="fas fa-info"></i>
+                                            </span>
+                                        </button>
+                                        <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('update')}} className="btn btn-primary col-md-2">
+                                            <span className="icon d-flex justify-content-center">
+                                                <i className="fas fa-pen"></i>
+                                            </span>
+                                        </button>
+                                        <button onClick={() => {setCurrentItem(value); setModalShow(true); setOptionType('delete')}} className="btn btn-danger col-md-2"> 
+                                            <span className="icon d-flex justify-content-center">
+                                                <i className="fas fa-trash"></i>
+                                            </span>
+                                        </button>
+                                    </> : <></>
+                                }
                                 <button onClick={() => { setChatModalShow(true); setRecieverID(value._id) }} className="btn btn-success col-md-2">
                                     <span className="icon d-flex justify-content-center">
                                         <i className="fas fa-inbox"></i>
