@@ -209,9 +209,6 @@ const Header = () => {
               </div>
               <div className="col-md-6 col-sm-6 col-6 col-lg-2">
                 <ul className="header__sidebar__right d-flex justify-content-end align-items-center">
-                  <li className="wishlist">
-                    <a href="#" />
-                  </li>
                   <li className="shopcart">
                     <a className="cartbox_active" href="#">
                       <span className="product_qun">{cart.qty}</span>
@@ -228,7 +225,7 @@ const Header = () => {
                         </div>
                         <div className="total_amount text-right">
                           <span>
-                            {language == "eng" ? `$${cart.total}.00` : `${cart.total*23/1000} Triệu VNĐ` }
+                            {language == "eng" ? `$${cart.total}.00` : `${parseFloat(cart.total*0.023).toFixed(1)} Triệu VNĐ` }
                           </span>
                         </div>
                         <div className="mini_action cart">

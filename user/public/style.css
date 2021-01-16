@@ -6276,3 +6276,28 @@ section.wn_contact_area {
   padding-bottom: 60px;
 }
 }
+
+.chat_button {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 2147483647;
+  background: #e59285;
+  color: #fff;
+  bottom: 40px;
+  right: 100px;
+  border-radius: 100px;
+  height: 45px;
+  font-size: 12px;
+  text-align: center;
+  padding: 9px 0;
+  box-shadow: 0 0 15px 0px rgba(50, 50, 50, 0.2);
+  transition: 0.3s; 
+  padding: 0 10px;
+}
+
+.chat_button:hover {
+  background: #fff;
+  color: #e59285; 
+  cursor: pointer;
+}

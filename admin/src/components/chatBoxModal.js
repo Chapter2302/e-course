@@ -6,6 +6,7 @@ const ENDPOINT = "http://localhost:4000";
 
 const MessageBox = styled.div`
     height: ${window.innerHeight - 250}px;
+    overflow: auto;
 `
 
 const Message = (props) => {
@@ -16,6 +17,7 @@ const Message = (props) => {
                 ? "d-flex align-items-center justify-content-end"
                 : "d-flex align-items-center justify-content-start"
             }
+            style={{paddingTop: "5px"}}
         >
             <div 
                 className = {

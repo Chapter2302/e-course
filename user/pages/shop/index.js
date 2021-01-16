@@ -13,6 +13,7 @@ import {setSortType} from "../../store/sort"
 const Shop = ({courses}) => {
     const router = useRouter()
     const dispatch = useDispatch()
+    const language = useSelector(state => state.language.nation)
     //const searchFilter = useSelector(state => state.filter.search)
     const filter = useSelector(state => state.filter)
     const sort = useSelector(state => state.sort)
@@ -118,7 +119,7 @@ const Shop = ({courses}) => {
                     <h2 className="bradcaump-title">Shop Grid</h2>
                     <nav className="bradcaump-content">
                     <a className="breadcrumb_item" href="index.html">
-                        Home
+                        {language == "eng" ? "Home" : "Trang Chủ"}
                     </a>
                     <span className="brd-separetor">/</span>
                     <span className="breadcrumb_item active">Shop Grid</span>
@@ -136,11 +137,11 @@ const Shop = ({courses}) => {
                 <div className="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
                 <div className="shop__sidebar">
                     <aside className="wedget__categories poroduct--cat">
-                    <h3 className="wedget__title">Filter By Categories</h3>
+                    <h3 className="wedget__title">{language == "eng" ? "Filter By Categories" : "Lọc Theo Danh Mục"}</h3>
                     <ul>
                     <li>
                         <a href="#">
-                            All <span>
+                            {language == "eng" ? "All" : "Tất Cả"} <span>
                                 <input 
                                     name="category" 
                                     checked={filter.category == "" ? true : false} 
@@ -152,7 +153,7 @@ const Shop = ({courses}) => {
                         </li>
                         <li>
                         <a href="#">
-                            Information Technology <span>
+                            {language == "eng" ? "Information Technology" : "Công Nghệ Thông Tin"}<span>
                                 <input 
                                     name="category" 
                                     type="radio"
@@ -176,7 +177,7 @@ const Shop = ({courses}) => {
                         </li>
                         <li>
                         <a href="#">
-                            Economy <span>
+                            {language == "eng" ? "Economy" : "Kinh Tế"}<span>
                                 <input 
                                     name="category" 
                                     type="radio" 
@@ -188,7 +189,7 @@ const Shop = ({courses}) => {
                         </li>
                         <li>
                         <a href="#">
-                            Design <span>
+                            {language == "eng" ? "Design" : "Thiết Kế"}<span>
                                 <input 
                                     name="category" 
                                     type="radio" 
@@ -200,7 +201,7 @@ const Shop = ({courses}) => {
                         </li>
                         <li>
                         <a href="#">
-                            Language <span>
+                            {language == "eng" ? "Language" : "Ngôn Ngữ"}<span>
                                 <input 
                                     name="category" 
                                     type="radio" 
@@ -213,10 +214,10 @@ const Shop = ({courses}) => {
                     </ul>
                     </aside>
                     <aside className="wedget__categories pro--range">
-                        <h3 className="wedget__title">Filter By Schedule</h3>
+                        <h3 className="wedget__title">{language == "eng" ? "Filter By Schedule" : "Lọc Theo Lịch"}</h3>
                             <div className="form-row">
                                 <div className="col-md-6 col-sm-12">
-                                    <div>Shift</div>
+                                    <div>{language == "eng" ? "Shift" : "Ca Học"}</div>
                                         <select 
                                             className="shot__byselect col-12" 
                                             value={filter.shift} 
@@ -228,7 +229,7 @@ const Shop = ({courses}) => {
                                         </select>
                                 </div>
                                 <div className="col-md-6 col-sm-12">
-                                    <div>Day In Week</div>
+                                    <div>{language == "eng" ? "Day In Week" : "Thứ Trong Tuần"}</div>
                                         <select 
                                             className="shot__byselect col-12" 
                                             value={filter.dayInWeek} 
@@ -244,17 +245,9 @@ const Shop = ({courses}) => {
                                         </select>
                                 </div>
                             </div>
-                            <div className="form-row">
-                                <div className="col-md-6 col-sm-12">
-                                    <div>Shift</div>
-                                </div>
-                                <div className="col-md-6 col-sm-12">
-                                    <div>Day In Week</div>
-                                </div>
-                            </div>
                     </aside>
                     <aside className="wedget__categories pro--range">
-                        <h3 className="wedget__title">Filter by price</h3>
+                        <h3 className="wedget__title">{language == "eng" ? "Filter By Price" : "Lọc Theo Giá"}</h3>
                         <div className="content-shopby">
                             <div className="price_filter s-filter clear">
                             <form action="#" method="GET">
@@ -265,7 +258,7 @@ const Shop = ({courses}) => {
                                 <div className="slider__range--output">
                                 <div className="price__output--wrap">
                                     <div className="price--output">
-                                        <span>Price :</span> 
+                                        <span>{language == "eng" ? "Price: " : "Giá: "} </span> 
                                         $<span id="minPrice">{filter.minPrice}</span> - 
                                         $<span id="maxPrice">{filter.maxPrice}</span>
                                     </div>
@@ -288,7 +281,7 @@ const Shop = ({courses}) => {
                     <ul>
                     <li>
                         <a href="#">
-                            Information Technology
+                            {language == "eng" ? "Information Technology" : "Công Nghệ Thông Tin"}
                         </a>
                         </li>
                         <li>
@@ -298,17 +291,17 @@ const Shop = ({courses}) => {
                         </li>
                         <li>
                         <a href="#">
-                            Economy
+                            {language == "eng" ? "Economy" : "Kinh Tế"}
                         </a>
                         </li>
                         <li>
                         <a href="#">
-                            Design
+                            {language == "eng" ? "Design" : "Thiết Kế"}
                         </a>
                         </li>
                         <li>
                         <a href="#">
-                            Language
+                            {language == "eng" ? "Language" : "Ngôn Ngữ"}
                         </a>
                         </li>
                     </ul>
@@ -351,13 +344,13 @@ const Shop = ({courses}) => {
                                             <i className="fa fa-list" />
                                         </a>
                                     </div>
-                                    Show: 1–12 of 40 results
+                                    {language == "eng" ? `Show: 1-9 of ${courses.length} results` : `Hiện: 1-9 trên ${courses.length} sản phẩm`}
                                 </div>
                             </div>
                             
                             <div className="col-md-4 col-sm-12 mb-2">
                                 <input 
-                                    className="shot__byselect col-12" type="text" placeholder="Search"
+                                    className="shot__byselect col-12" type="text" placeholder={language == "eng" ? "Search" : "Tìm Kiếm"}
                                     value={filter.search} 
                                     onChange={e => dispatch(setFilter({...filter, search: e.target.value}))}
                                 />
@@ -367,17 +360,17 @@ const Shop = ({courses}) => {
                                     className="shot__byselect col-12"
                                     value={sort.type}  
                                     onChange={e => dispatch(setSortType(e.target.value))}>
-                                    <option value="">Default Sorting</option>
-                                    <option value="name-A-Z">From A To Z</option>
-                                    <option value="name-Z-A">From Z To A</option>
-                                    <option value="price-asc">Price: Ascending</option>
-                                    <option value="price-des">Price: Descending</option>
-                                    <option value="rate-asc">Rate: Ascending</option>
-                                    <option value="rate-des">Rate: Descending</option>
-                                    <option value="mstudent-asc">Max Student: Ascending</option>
-                                    <option value="mstudent-des">Max Student: Descending</option>
-                                    <option value="quantity-asc">Quantity: Ascending</option>
-                                    <option value="qauntity-des">Quantity: Descending</option>
+                                    <option value="">{language == "eng" ? "Default Sorting" : "Sắp Xếp Mặc Định"}</option>
+                                    <option value="name-A-Z">{language == "eng" ? "From A To Z" : "Từ A Đến Z"}</option>
+                                    <option value="name-Z-A">{language == "eng" ? "From Z To A" : "Từ Z Đến A"}</option>
+                                    <option value="price-asc">{language == "eng" ? "Price: Ascending" : "Giá: Tăng Dần"}</option>
+                                    <option value="price-des">{language == "eng" ? "Price: Descending" : "Giá: Giảm Dần"}</option>
+                                    <option value="rate-asc">{language == "eng" ? "Rate: Ascending" : "Đánh Giá: Tăng Dần"}</option>
+                                    <option value="rate-des">{language == "eng" ? "Rate: Descending" : "Đánh Giá: Giảm Dần"}</option>
+                                    <option value="mstudent-asc">{language == "eng" ? "Max Student: Ascending" : "Số Lượng: Tăng Dần"}</option>
+                                    <option value="mstudent-des">{language == "eng" ? "Max Student: Descending" : "Số Lượng: Giảm Dần"}</option>
+                                    <option value="quantity-asc">{language == "eng" ? "Quantity: Ascending" : "Sỉ Số: Giảm Dần"}</option>
+                                    <option value="qauntity-des">{language == "eng" ? "Quantity: Descending" : "Sỉ Số: Giảm Dần"}</option>
                                 </select>
                             </div>
                         </div>

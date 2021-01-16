@@ -19,7 +19,7 @@ const Calendar = () => {
                     ) {
                         return(<React.Fragment key={course._id}>
                             <div><b>Subject: </b><div><a href={`/product/${course._id}`}>{course.name}</a></div></div>
-                            <div><b>Link: </b><div><a href={course.link}><u>Google Meet</u></a></div></div>
+                            <div><b>Link: </b><div><a href={"https://meet.google.com/dii-szkk-voe"}><u>Google Meet</u></a></div></div>
                             <hr className="mt-2 mb-2"/>
                         </React.Fragment>)
                     }

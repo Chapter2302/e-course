@@ -14,19 +14,19 @@ const MessagesDropdownItem = (props) => {
     const setRecieverID = props.setRecieverID 
 
     return(
-        <a className="dropdown-item d-flex align-items-center" href="#">
+        <a className="dropdown-item d-flex align-items-center" href="#" 
+            onClick={
+                ()=>{
+                    setModalShow(true); 
+                    setRecieverID(senderID)
+                }
+            }
+        >
             <div className="dropdown-list-image mr-3">
                 <img className="rounded-circle" src={senderPhoto ? senderPhoto : "https://source.unsplash.com/fn_BT9fwg_E/60x60"} alt=""/>
                 <div className="status-indicator bg-success"></div>
             </div>
-            <div className="font-weight-bold" 
-                onClick={
-                    ()=>{
-                        setModalShow(true); 
-                        setRecieverID(senderID)
-                    }
-                }
-            >
+            <div className="font-weight-bold">
                 <div className="text-truncate">{content}</div>
                 <div className="small text-gray-500">{senderName}</div>
             </div>
@@ -159,7 +159,6 @@ const TopBar = ({logout}) => {
                 {
                     (() => {
                         return messageDropdownItems.map(item => {
-                            console.log('hello: ', item)
                             return <MessagesDropdownItem key={item.recieverID} messageItem={item} setModalShow={setModalShow} setRecieverID={setRecieverID}/>
                         })
                     })()

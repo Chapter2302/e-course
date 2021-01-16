@@ -23,7 +23,7 @@ const { use } = require('../config/passport');
 
 const io = require('socket.io')(http, {
     cors: {
-        origin: "http://localhost:5000",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
@@ -136,7 +136,7 @@ io.on('connection', (socket) => {
         console.log('join: ', data, socket.id)
         if(data.userID) 
             socket.join(data.userID)
-        if(data.recieverID)
+        if(data.recieverID) 
             socket.join(data.recieverID)
     })
 
