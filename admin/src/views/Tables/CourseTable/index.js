@@ -38,12 +38,12 @@ import {
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
-import UserModal from "./UserTable/UserModal";
+import CourseModal from "./CourseModal";
 import { getAll } from "api";
 
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
-const Tables = () => {
+const CourseTable = () => {
   const [userList, setUserList] = useState([]);
   const [renderUsers, setRenderUsers] = useState([]);
   const [pages, setPages] = useState(0);
@@ -86,7 +86,7 @@ const Tables = () => {
 
   return (
     <>
-      <UserModal
+      <CourseModal
         show = {modalShow}
         isEdit = {isEdit}
         user = {selectedUser}
@@ -259,4 +259,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default CourseTable;

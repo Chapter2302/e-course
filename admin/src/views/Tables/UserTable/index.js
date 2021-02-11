@@ -38,15 +38,19 @@ import {
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
-import { getAll } from "api"
+import UserModal from "./UserModal";
+import { getAll } from "api";
 
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
-const Tables = () => {
+const UserTable = () => {
   const [userList, setUserList] = useState([]);
   const [renderUsers, setRenderUsers] = useState([]);
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [modalShow, setModalShow] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
 
   const renderPaginationItems = () => {
     let paginationItems = [];
@@ -82,6 +86,12 @@ const Tables = () => {
 
   return (
     <>
+      <UserModal
+        show = {modalShow}
+        isEdit = {isEdit}
+        user = {selectedUser}
+        onHide = {() => setModalShow(false)} 
+      />
       <Header />
       {/* Page content */}
       <Container className="mt--7" fluid>
@@ -152,18 +162,38 @@ const Tables = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                   <DropdownItem
-                                    onClick={}
+                                    onClick={
+                                      (e) => {
+                                        e.preventDefault(); 
+                                        setModalShow(true);
+                                        setSelectedUser(user);
+                                        setIsEdit(false);
+                                      }
+                                    }
                                   >
                                     Detail
                                   </DropdownItem>
                                   <DropdownItem
-                                    onClick={(e) => e.preventDefault()}
+                                    onClick={
+                                      (e) => {
+                                        e.preventDefault(); 
+                                        setModalShow(true);
+                                        setSelectedUser(user);
+                                        setIsEdit(true);
+                                      }
+                                    }
                                   >
                                     Edit
                                   </DropdownItem>
                                   <DropdownItem
-                                    href="#pablo"
-                                    onClick={(e) => e.preventDefault()}
+                                    onClick={
+                                      (e) => {
+                                        e.preventDefault(); 
+                                        setModalShow(true);
+                                        setSelectedUser(user);
+                                        setIsEdit(false);
+                                      }
+                                    }
                                   >
                                     Delete
                                   </DropdownItem>
@@ -229,4 +259,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default UserTable;

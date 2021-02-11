@@ -31,11 +31,10 @@ const Header = () => {
               <Col lg="6" xl="3">
                 <Card className="card-stats mb-4 mb-xl-0">
                   <CardBody>
-                    <Row>
-                      <div className="col">
+                    <div className="d-flex justify-content-between">
+                      <div>
                         <CardTitle
-                          tag="h6"
-                          className="text-uppercase text-muted mb-0"
+                          className="text-uppercase text-muted mb-0 h5"
                         >
                           Traffic
                         </CardTitle>
@@ -43,12 +42,10 @@ const Header = () => {
                           350,897
                         </span>
                       </div>
-                      <Col className="col-auto">
-                        <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
-                          <i className="fas fa-chart-bar" />
-                        </div>
-                      </Col>
-                    </Row>
+                      <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i className="fas fa-chart-bar" />
+                      </div>
+                    </div>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-success mr-2">
                         <i className="fa fa-arrow-up" /> 3.48%
@@ -61,22 +58,19 @@ const Header = () => {
               <Col lg="6" xl="3">
                 <Card className="card-stats mb-4 mb-xl-0">
                   <CardBody>
-                    <Row>
-                      <div className="col">
+                  <div className="d-flex justify-content-between">
+                      <div>
                         <CardTitle
-                          tag="h6"
-                          className="text-uppercase text-muted mb-0"
+                          className="text-uppercase text-muted mb-0 h5"
                         >
                           New users
                         </CardTitle>
                         <span className="h4 font-weight-bold mb-0">2,356</span>
                       </div>
-                      <Col className="col-auto">
-                        <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
-                          <i className="fas fa-chart-pie" />
-                        </div>
-                      </Col>
-                    </Row>
+                      <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i className="fas fa-chart-pie" />
+                      </div>
+                    </div>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-danger mr-2">
                         <i className="fas fa-arrow-down" /> 3.48%
@@ -89,22 +83,19 @@ const Header = () => {
               <Col lg="6" xl="3">
                 <Card className="card-stats mb-4 mb-xl-0">
                   <CardBody>
-                    <Row>
-                      <div className="col">
+                    <div className="d-flex justify-content-between">
+                      <div>
                         <CardTitle
-                          tag="h6"
-                          className="text-uppercase text-muted mb-0"
+                          className="text-uppercase text-muted mb-0 h5"
                         >
                           Sales
                         </CardTitle>
                         <span className="h4 font-weight-bold mb-0">924</span>
                       </div>
-                      <Col className="col-auto">
-                        <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                          <i className="fas fa-users" />
-                        </div>
-                      </Col>
-                    </Row>
+                      <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                        <i className="fas fa-users" />
+                      </div>
+                    </div>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-warning mr-2">
                         <i className="fas fa-arrow-down" /> 1.10%
@@ -117,22 +108,19 @@ const Header = () => {
               <Col lg="6" xl="3">
                 <Card className="card-stats mb-4 mb-xl-0">
                   <CardBody>
-                    <Row>
-                      <div className="col">
+                    <div className="d-flex justify-content-between">
+                      <div>
                         <CardTitle
-                          tag="h6"
-                          className="text-uppercase text-muted mb-0"
+                          className="text-uppercase text-muted mb-0 h5"
                         >
                           Performance
                         </CardTitle>
                         <span className="h4 font-weight-bold mb-0">49,65%</span>
                       </div>
-                      <Col className="col-auto">
-                        <div className="icon icon-shape bg-info text-white rounded-circle shadow">
-                          <i className="fas fa-percent" />
-                        </div>
-                      </Col>
-                    </Row>
+                      <div className="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i className="fas fa-percent" />
+                      </div>
+                    </div>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-success mr-2">
                         <i className="fas fa-arrow-up" /> 12%

@@ -20,7 +20,9 @@ import Profile from "views/Profile";
 import Maps from "views/Maps";
 import Register from "views/Register";
 import Login from "views/Login";
-import Tables from "views/Tables";
+import UserTable from "views/Tables/UserTable";
+import CourseTable from "views/Tables/CourseTable";
+import TransactionTable from "views/Tables/TransactionTable";
 import Icons from "views/Icons";
 
 var routes = [
@@ -53,10 +55,24 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/tables",
-    name: "Tables",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: Tables,
+    path: "/table/user",
+    name: "User List",
+    icon: "fas fa-users text-blue",
+    component: UserTable,
+    layout: "/admin",
+  },
+  {
+    path: "/table/course",
+    name: "Course List",
+    icon: "fas fa-graduation-cap text-orange",
+    component: CourseTable,
+    layout: "/admin",
+  },
+  {
+    path: "/table/transaction",
+    name: "Transaction List",
+    icon: "fas fa-money-check-alt text-red",
+    component: TransactionTable,
     layout: "/admin",
   },
   {

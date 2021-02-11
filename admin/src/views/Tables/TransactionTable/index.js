@@ -42,7 +42,7 @@ import Header from "components/Headers/Header.js";
 import { getAll } from "api"
 
 
-const Tables = () => {
+const TransactionTable = () => {
   const [users, setUsers] = useState([]) 
 
   useEffect(() => {
@@ -112,10 +112,7 @@ const Tables = () => {
                             <img
                               alt="..."
                               className="rounded-circle"
-                              src={
-                                require("../../assets/img/theme/team-1-800x800.jpg")
-                                  .default
-                              }
+                              src={""}
                             />
                           </a>
                           <UncontrolledTooltip
@@ -133,10 +130,7 @@ const Tables = () => {
                             <img
                               alt="..."
                               className="rounded-circle"
-                              src={
-                                require("../../assets/img/theme/team-2-800x800.jpg")
-                                  .default
-                              }
+                              src={""}
                             />
                           </a>
                           <UncontrolledTooltip
@@ -154,10 +148,7 @@ const Tables = () => {
                             <img
                               alt="..."
                               className="rounded-circle"
-                              src={
-                                require("../../assets/img/theme/team-3-800x800.jpg")
-                                  .default
-                              }
+                              src={""}
                             />
                           </a>
                           <UncontrolledTooltip
@@ -175,10 +166,7 @@ const Tables = () => {
                             <img
                               alt="..."
                               className="rounded-circle"
-                              src={
-                                require("../../assets/img/theme/team-4-800x800.jpg")
-                                  .default
-                              }
+                              src={""}
                             />
                           </a>
                           <UncontrolledTooltip
@@ -299,4 +287,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default TransactionTable;
