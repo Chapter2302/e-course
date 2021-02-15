@@ -230,7 +230,6 @@ const Tables = () => {
                       </PaginationLink>
                     </PaginationItem>
                     { renderPaginationItems() }
-                    {console.log(currentPage, pages)}
                     <PaginationItem className={ currentPage == pages ? "disabled" : "" }>
                       <PaginationLink
                         href="#pablo"

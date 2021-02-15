@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react"
 import { Modal } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 import {
@@ -12,16 +13,82 @@ import {
     Row,
     Col,
     CardFooter,
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
   } from "reactstrap";
 
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
 const CourseModal = (props) => {
-    const user  = props.user;
-    const isEdit = props.isEdit;
+    const [thisCourse, setThisCourse]  = useState(null);
+    const [isUpdating, setIsUpdating] = useState(false)
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+
+    const [carouselItems, setCarpuselItems] = useState([]);
+
+    useEffect(() => {
+        setThisCourse(props.course ? props.course : null);
+        setIsUpdating(false);
+    }, [props])
+
+    useEffect(() => {
+        setCarpuselItems([
+            {
+                src: thisCourse ? thisCourse.pictures[0] : DefaultAvatar,
+                altText: 'Slide 1'
+            },
+            {
+              src: thisCourse ? thisCourse.pictures[1] : DefaultAvatar,
+              altText: 'Slide 2'
+            },
+            {
+              src: thisCourse ? thisCourse.pictures[2] : DefaultAvatar,
+              altText: 'Slide 3'
+            }
+        ]);
+    }, [thisCourse])
+
+    const goToIndex = (newIndex) => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+    }
+
+    const inputFileChange = (e) => {
+        let reader = new FileReader()
+        if(e.target.files[0]) {
+            reader.onload = () => {
+                let newPictures = {...thisCourse.pictures};
+                newPictures[activeIndex] = reader.result;
+                setThisCourse({ ...thisCourse, pictures: newPictures });
+            }
+            reader.readAsDataURL(e.target.files[0])
+        }
+    }
+
+    const clickUpdateBtn = () => {
+        setIsUpdating(true);
+    }
+
+    const slides = carouselItems.map((item, index) => {
+        return (
+          <CarouselItem
+            onExiting={() => setAnimating(true)}
+            onExited={() => setAnimating(false)}
+            key={'picture_' + index}
+          >
+            <div className="d-flex justify-content-center">
+                <img className="rounded m-auto" src={item.src} alt={item.altText} style={{width: "100%", maxWidth: "300px"}}/>
+            </div>
+          </CarouselItem>
+        );
+    });
 
     return(
-        !props.user ? <></> : 
+        !props.course ? <></> : 
         <Modal {...props}  size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header><p></p></Modal.Header>
             <Modal.Body>
@@ -29,28 +96,22 @@ const CourseModal = (props) => {
                     <Col className="order-xl-2 mb-5 mb-xl-0" xl="4">
                         <Card className="card-profile shadow">
                             <Row className="justify-content-center">
-                                <Col className="order-lg-2" lg="3">
-                                    <div className="card-profile-image">
-                                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        <img
-                                            alt="..."
-                                            className="rounded-circle"
-                                            width="180px" height="180px"
-                                            style={{backgroundColor: "rgb(173,181,189)"}}
-                                            src={user.photoUser ? user.photoUser : DefaultAvatar}
-                                        />
-                                        </a>
-                                    </div>
+                                <Col className="col-10 pt-4">
+                                    <Carousel
+                                        activeIndex={activeIndex}
+                                        interval={false}
+                                    >
+                                        <CarouselIndicators items={carouselItems} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                                        {slides}
+                                    </Carousel>
                                 </Col>
                             </Row>
-                            <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                <div className="d-flex justify-content-between"></div>
-                            </CardHeader>
-                            <CardBody className="pt-0 pt-md-4">
+                            <CardBody className="">
                                 <Row>
-                                    <div className="col mt-4">
-                                        <div className="card-profile-stats d-flex justify-content-center mt-md-5">
-                                            <input className="btn btn-primary" type="file"/>
+                                    <div className="col">
+                                        { isUpdating ? <div className="text-red text-sm font-weight-bold">Updating...</div> : <></> }
+                                        <div className="card-profile-stats d-flex justify-content-center">
+                                            <input className="btn btn-primary" type="file" multiple={false} onChange={e => inputFileChange(e)}/>
                                         </div>
                                         <div className="d-flex justify-content-center">
                                             <ReactStars
@@ -67,7 +128,7 @@ const CourseModal = (props) => {
                             </CardBody>
                             <CardFooter>
                                 <Row className="d-flex justify-content-center">
-                                    <button className="btn btn-lg btn-primary">CONFIRM</button>{' '}
+                                    <button className="btn btn-lg btn-primary" onClick={() => clickUpdateBtn()}>CONFIRM</button>{' '}
                                     <button className="btn btn-lg btn-secondary" onClick={props.onHide}>CANCEL</button>
                                 </Row>
                             </CardFooter>
@@ -78,40 +139,99 @@ const CourseModal = (props) => {
                         <CardBody>
                             <Form>
                             <h6 className="heading-small text-muted mb-4">
-                                User information
+                                Course information
                             </h6>
                             <div className="pl-lg-4">
-                                <Row>
+                            <Row>
                                     <Col lg="6">
                                         <FormGroup>
                                         <label
                                             className="form-control-label"
                                             htmlFor="input-username"
                                         >
-                                            Username
+                                            Course Name
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            defaultValue="lucky.jesse"
-                                            id="input-username"
-                                            placeholder="Username"
+                                            defaultValue="Basic Programming"
                                             type="text"
                                         />
                                         </FormGroup>
                                     </Col>
                                     <Col lg="6">
                                         <FormGroup>
+                                            <label
+                                                className="form-control-label"
+                                            >
+                                                Category
+                                            </label>
+                                            <Input
+                                                className="form-control-alternative"
+                                                type="select"
+                                            >
+                                                <option value="Information Technology">Information Technology</option>
+                                                <option value="Language">Language</option>
+                                                <option value="Economy">Economy</option>
+                                                <option value="Design">Design</option>
+                                            </Input>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col lg="4">
+                                        <FormGroup>
+                                            <label
+                                                className="form-control-label"
+                                                htmlFor="input-city"
+                                            >
+                                                Active
+                                            </label>
+                                            <Input
+                                                className="form-control-alternative"
+                                                type="select"
+                                            >
+                                                <option value={true}>True</option>
+                                                <option value={false}>False</option>
+                                            </Input>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormGroup>
+                                            <label
+                                                className="form-control-label"
+                                                htmlFor="input-country"
+                                            >
+                                                Max Student
+                                            </label>
+                                            <Input className="form-control-alternative" type="number" defaultValue={0}/>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormGroup>
+                                            <label
+                                                className="form-control-label"
+                                                htmlFor="input-country"
+                                            >
+                                                
+                                                Quantity
+                                            </label>
+                                            <Input className="form-control-alternative" type="number" defaultValue={0}/>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md="12">
+                                        <FormGroup>
                                         <label
                                             className="form-control-label"
-                                            htmlFor="input-email"
+                                            htmlFor="input-address"
                                         >
-                                            Email address
+                                            Teacher
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            id="input-email"
-                                            placeholder="jesse@example.com"
-                                            type="email"
+                                            defaultValue="Teacher ID"
+                                            type="text"
                                         />
                                         </FormGroup>
                                     </Col>
@@ -188,92 +308,20 @@ const CourseModal = (props) => {
                                             className="form-control-label"
                                             htmlFor="input-address"
                                         >
-                                            Workplace
+                                            Link Room
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                                            placeholder="Workplace Address"
+                                            defaultValue="https://meet.google.com/"
                                             type="text"
                                         />
                                         </FormGroup>
                                     </Col>
-                                </Row>
-                                <Row>
-                                    <Col md="12">
-                                        <FormGroup>
-                                        <label
-                                            className="form-control-label"
-                                            htmlFor="input-address"
-                                        >
-                                            Address
-                                        </label>
-                                        <Input
-                                            className="form-control-alternative"
-                                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                                            placeholder="Home Address"
-                                            type="text"
-                                        />
-                                        </FormGroup>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                <Col lg="4">
-                                    <FormGroup>
-                                        <label
-                                            className="form-control-label"
-                                            htmlFor="input-city"
-                                        >
-                                            Balance
-                                        </label>
-                                        <Input
-                                            className="form-control-alternative"
-                                            placeholder="300"
-                                            type="number"
-                                        />
-                                    </FormGroup>
-                                </Col>
-                                <Col lg="4">
-                                    <FormGroup>
-                                    <label
-                                        className="form-control-label"
-                                        htmlFor="input-country"
-                                    >
-                                        Gender
-                                    </label>
-                                    <Input
-                                        className="form-control-alternative"
-                                        type="select"
-                                    >   
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                    </Input>
-                                    </FormGroup>
-                                </Col>
-                                <Col lg="4">
-                                    <FormGroup>
-                                    <label
-                                        className="form-control-label"
-                                        htmlFor="input-country"
-                                    >
-                                        Role
-                                    </label>
-                                    <Input
-                                        className="form-control-alternative"
-                                        type="select"
-                                        id="input-postal-code"
-                                    >   
-                                        <option value="student">Student</option>
-                                        <option value="teacher">Teacher</option>
-                                        <option value="admin">Admin</option>
-                                    </Input>
-                                    </FormGroup>
-                                </Col>
                                 </Row>
                             </div>
                             <div className="pl-lg-4">
                                 <FormGroup>
-                                    <label>Biology</label>
+                                    <label>Decsription</label>
                                 <Input
                                     className="form-control-alternative"
                                     placeholder="A few words about you ..."

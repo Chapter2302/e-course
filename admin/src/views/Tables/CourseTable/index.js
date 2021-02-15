@@ -38,17 +38,18 @@ import {
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
+import ReactStars from "react-rating-stars-component";
 import CourseModal from "./CourseModal";
 import { getAll } from "api";
 
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
 const CourseTable = () => {
-  const [userList, setUserList] = useState([]);
-  const [renderUsers, setRenderUsers] = useState([]);
+  const [courseList, setCourseList] = useState([]);
+  const [renderCourses, setRenderCourses] = useState([]);
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState(null);
   const [modalShow, setModalShow] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
 
@@ -63,7 +64,7 @@ const CourseTable = () => {
               (e) => { 
                 e.preventDefault();
                 setCurrentPage(index);
-                setRenderUsers(userList.slice((index - 1) * 10, index * 10));
+                setRenderCourses(courseList.slice((index - 1) * 10, index * 10));
               }
             }
           >
@@ -77,10 +78,10 @@ const CourseTable = () => {
   }
 
   useEffect(() => {
-    getAll('user').then(res => { 
-      setUserList(res);
+    getAll('course').then(res => { 
+      setCourseList(res);
       setPages(res.length % 10 == 0 ? Math.floor(res.length / 10) : Math.floor(res.length / 10) + 1);
-      setRenderUsers(res.slice((currentPage - 1) * 10, currentPage * 10));
+      setRenderCourses(res.slice((currentPage - 1) * 10, currentPage * 10));
     })
   }, [])
 
@@ -89,7 +90,7 @@ const CourseTable = () => {
       <CourseModal
         show = {modalShow}
         isEdit = {isEdit}
-        user = {selectedUser}
+        course = {selectedCourse}
         onHide = {() => setModalShow(false)} 
       />
       <Header />
@@ -98,7 +99,7 @@ const CourseTable = () => {
         {/* Table */}
         <Row>
           {
-            renderUsers.length == 0 
+            renderCourses.length == 0 
             ? (<div className="col">
               Waiting For Data
             </div>)
@@ -111,42 +112,45 @@ const CourseTable = () => {
                   <thead className="thead-light">
                     <tr>
                       <th scope="col">Photo</th>
-                      <th scope="col">Fullname</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Gender</th>
-                      <th scope="col">Role</th>
+                      <th scope="col">Course Name</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Max Student</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Active</th>
                       <th scope="col" />
                     </tr>
                   </thead>
                   <tbody>
                     {
-                      renderUsers.map((user, index) => {
+                      renderCourses.map((course, index) => {
                         return(
-                          <tr key={'user_' + index}>
+                          <tr key={'course_' + index}>
                             <th scope="row">
                               <Media className="align-items-center">
                                 <a
-                                  className="avatar rounded-circle mr-3"
                                   href="#"
                                   onClick={(e) => e.preventDefault()}
                                 >
                                   <img
-                                    style={{height: "100%"}}
                                     alt="..."
-                                    src={user.photoUser ? user.photoUser : DefaultAvatar}
+                                    style={{maxHeight: "80px", width: "100px"}}
+                                    src={course.pictures[0] ? course.pictures[0] : DefaultAvatar}
                                   />
                                 </a>
                               </Media>
                             </th>
-                            <td>{user.fullName}</td>
+                            <td>{course.name}</td>
                             <td>
-                              {user.authenticateMethod.local.email || user.authenticateMethod.google.email}
+                              {course.category}
                             </td>
                             <td>
-                              {user.sex}
+                              {course.maxStudent}
                             </td>
                             <td>
-                              {(user.role)[0].toUpperCase() + (user.role).slice(1)}
+                              ${course.price}
+                            </td>
+                            <td className="icon icon-sm text-center">
+                              <i className={course.isActive ? "ni ni-check-bold text-green" : "ni ni-fat-remove text-red"}></i>
                             </td>
                             <td className="text-right">
                               <UncontrolledDropdown>
@@ -166,7 +170,7 @@ const CourseTable = () => {
                                       (e) => {
                                         e.preventDefault(); 
                                         setModalShow(true);
-                                        setSelectedUser(user);
+                                        setSelectedCourse(course);
                                         setIsEdit(false);
                                       }
                                     }
@@ -178,7 +182,7 @@ const CourseTable = () => {
                                       (e) => {
                                         e.preventDefault(); 
                                         setModalShow(true);
-                                        setSelectedUser(user);
+                                        setSelectedCourse(course);
                                         setIsEdit(true);
                                       }
                                     }
@@ -190,7 +194,7 @@ const CourseTable = () => {
                                       (e) => {
                                         e.preventDefault(); 
                                         setModalShow(true);
-                                        setSelectedUser(user);
+                                        setSelectedCourse(course);
                                         setIsEdit(false);
                                       }
                                     }
@@ -220,7 +224,7 @@ const CourseTable = () => {
                             e.preventDefault();
                             const newCurrentPage = currentPage == 1 ? currentPage : currentPage - 1
                             setCurrentPage(newCurrentPage)
-                            setRenderUsers(userList.slice((newCurrentPage - 1) * 10, newCurrentPage * 10));
+                            setRenderCourses(courseList.slice((newCurrentPage - 1) * 10, newCurrentPage * 10));
                           }
                         }
                         tabIndex="-1"
@@ -230,7 +234,6 @@ const CourseTable = () => {
                       </PaginationLink>
                     </PaginationItem>
                     { renderPaginationItems() }
-                    {console.log(currentPage, pages)}
                     <PaginationItem className={ currentPage == pages ? "disabled" : "" }>
                       <PaginationLink
                         href="#pablo"
@@ -239,7 +242,7 @@ const CourseTable = () => {
                             e.preventDefault();
                             const newCurrentPage = currentPage == pages ? currentPage : currentPage + 1
                             setCurrentPage(newCurrentPage)
-                            setRenderUsers(userList.slice((newCurrentPage - 1) * 10, newCurrentPage * 10));
+                            setRenderCourses(courseList.slice((newCurrentPage - 1) * 10, newCurrentPage * 10));
                           }
                         }
                       >
