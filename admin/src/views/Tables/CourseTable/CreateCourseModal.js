@@ -2,55 +2,67 @@ import React, { useEffect, useState } from "react"
 import { Modal } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 import {
-    Button,
     Card,
-    CardHeader,
     CardBody,
     FormGroup,
     Form,
     Input,
-    Container,
     Row,
     Col,
     CardFooter,
     Carousel,
     CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption
+    CarouselIndicators
   } from "reactstrap";
 
-const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
+const DefaultAvatar = 'https://www.chanchao.com.tw/VietnamPrintPack/images/default.jpg';
 
-const CourseModal = (props) => {
+const CreateCourseModal = (props) => {
     const [thisCourse, setThisCourse]  = useState(null);
-    const [isUpdating, setIsUpdating] = useState(false)
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
-
+    const [isCreating, setIsCreating] = useState(false);
     const [carouselItems, setCarpuselItems] = useState([]);
 
     useEffect(() => {
-        setThisCourse(props.course ? props.course : null);
-        setIsUpdating(false);
-    }, [props])
-
-    useEffect(() => {
+        setThisCourse({
+            name: "",
+            schedule: {
+                dayInWeek : [],
+                shift: [],
+                startDate: "",
+                endDate: ""
+            },
+            link: "",
+            rating: 0,
+            description: "",
+            category: "",
+            price: 0,
+            pictures: [],
+            teacher: "",
+            maxStudent: 0,
+            quantity: 0,
+            isActive: false
+        })
         setCarpuselItems([
             {
-                src: thisCourse ? thisCourse.pictures[0] : DefaultAvatar,
+                src: DefaultAvatar,
                 altText: 'Slide 1'
             },
             {
-              src: thisCourse ? thisCourse.pictures[1] : DefaultAvatar,
+              src: DefaultAvatar,
               altText: 'Slide 2'
             },
             {
-              src: thisCourse ? thisCourse.pictures[2] : DefaultAvatar,
+              src: DefaultAvatar,
               altText: 'Slide 3'
             }
         ]);
-    }, [thisCourse])
+    }, [])
+
+    useEffect(() => {
+        setIsCreating(false);
+    }, [props.show])
 
     const goToIndex = (newIndex) => {
         if (animating) return;
@@ -61,7 +73,7 @@ const CourseModal = (props) => {
         let reader = new FileReader()
         if(e.target.files[0]) {
             reader.onload = () => {
-                let newPictures = {...thisCourse.pictures};
+                let newPictures = [];
                 newPictures[activeIndex] = reader.result;
                 setThisCourse({ ...thisCourse, pictures: newPictures });
             }
@@ -70,7 +82,7 @@ const CourseModal = (props) => {
     }
 
     const clickUpdateBtn = () => {
-        setIsUpdating(true);
+        setIsCreating(true)
     }
 
     const slides = carouselItems.map((item, index) => {
@@ -109,7 +121,7 @@ const CourseModal = (props) => {
                             <CardBody className="">
                                 <Row>
                                     <div className="col">
-                                        { isUpdating ? <div className="text-red text-sm font-weight-bold">Updating...</div> : <></> }
+                                        { isCreating ? <div className="text-red text-sm font-weight-bold">Creating...</div> : <></> }
                                         <div className="card-profile-stats d-flex justify-content-center">
                                             <input className="btn btn-primary" type="file" multiple={false} onChange={e => inputFileChange(e)}/>
                                         </div>
@@ -117,7 +129,6 @@ const CourseModal = (props) => {
                                             <ReactStars
                                                 count={5}
                                                 // onChange={ratingChanged}
-                                                value={thisCourse.rating}
                                                 size={30}
                                                 emptyIcon={<i className="far fa-star"></i>}
                                                 fullIcon={<i className="fas fa-star"></i>}
@@ -154,7 +165,6 @@ const CourseModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            defaultValue={thisCourse.name}
                                             type="text"
                                         />
                                         </FormGroup>
@@ -168,7 +178,6 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                defaultValue={thisCourse.category}
                                                 type="select"
                                             >
                                                 <option value="Information Technology">Information Technology</option>
@@ -190,7 +199,6 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                defaultValue={thisCourse.isActive}
                                                 type="select"
                                             >
                                                 <option value={true}>True</option>
@@ -206,7 +214,7 @@ const CourseModal = (props) => {
                                             >
                                                 Max Student
                                             </label>
-                                            <Input className="form-control-alternative" type="number" defaultValue={thisCourse.maxStudent}/>
+                                            <Input className="form-control-alternative" type="number"/>
                                         </FormGroup>
                                     </Col>
                                     <Col lg="4">
@@ -218,7 +226,7 @@ const CourseModal = (props) => {
                                                 
                                                 Quantity
                                             </label>
-                                            <Input className="form-control-alternative" type="number" defaultValue={thisCourse.quantity}/>
+                                            <Input className="form-control-alternative" type="number"/>
                                         </FormGroup>
                                     </Col>
                                 </Row>
@@ -233,7 +241,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                type="date" defaultValue={thisCourse.schedule.startDate}
+                                                type="date"
                                             />
                                         </FormGroup>
                                     </Col>
@@ -247,7 +255,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                type="date" defaultValue={thisCourse.schedule.endDate}
+                                                type="date" 
                                             />
                                         </FormGroup>
                                     </Col>
@@ -260,7 +268,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                type="select" defaultValue={thisCourse.schedule.dayInWeek[0]}
+                                                type="select"
                                             >
                                                 <option value={"monday"}>Monday</option>
                                                 <option value={"tuesday"}>Tuesday</option>
@@ -279,7 +287,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                type="select" defaultValue={thisCourse.schedule.shift[0]}
+                                                type="select"
                                             >
                                                 <option value={1}>8.AM - 11.AM</option>
                                                 <option value={2}>14.PM - 17.PM</option>
@@ -296,7 +304,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                type="select" defaultValue={thisCourse.schedule.dayInWeek[1]}
+                                                type="select"
                                             >
                                                 <option value={"monday"}>Monday</option>
                                                 <option value={"tuesday"}>Tuesday</option>
@@ -315,7 +323,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
-                                                type="select" defaultValue={thisCourse.schedule.shift[1]}
+                                                type="select" 
                                             >
                                                 <option value={1}>8.AM - 11.AM</option>
                                                 <option value={2}>14.PM - 17.PM</option>
@@ -335,7 +343,6 @@ const CourseModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            defaultValue={thisCourse.teacher}
                                             type="text"
                                         />
                                         </FormGroup>
@@ -354,7 +361,6 @@ const CourseModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            defaultValue={thisCourse.link}
                                             type="text"
                                         />
                                         </FormGroup>
@@ -368,7 +374,6 @@ const CourseModal = (props) => {
                                     className="form-control-alternative"
                                     placeholder="A few words about you ..."
                                     rows="4"
-                                    defaultValue={thisCourse.description}
                                     type="textarea"
                                 />
                                 </FormGroup>
@@ -384,4 +389,4 @@ const CourseModal = (props) => {
     )
 }
 
-export default CourseModal;
+export default CreateCourseModal;

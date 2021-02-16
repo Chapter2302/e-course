@@ -18,7 +18,6 @@
 import React, { useEffect, useState } from "react";
 // reactstrap components
 import {
-  Badge,
   Card,
   CardHeader,
   CardFooter,
@@ -30,16 +29,14 @@ import {
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
   Table,
   Container,
   Row,
-  UncontrolledTooltip,
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
-import ReactStars from "react-rating-stars-component";
 import CourseModal from "./CourseModal";
+import CreateCourseModal from "./CreateCourseModal";
 import { getAll } from "api";
 
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
@@ -51,6 +48,7 @@ const CourseTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [modalShow, setModalShow] = useState(false);
+  const [createModalShow, setCreateModalShow] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
 
   const renderPaginationItems = () => {
@@ -93,6 +91,10 @@ const CourseTable = () => {
         course = {selectedCourse}
         onHide = {() => setModalShow(false)} 
       />
+      <CreateCourseModal 
+        show = {createModalShow}
+        onHide = {() => setCreateModalShow(false)} 
+      />
       <Header />
       {/* Page content */}
       <Container className="mt--7" fluid>
@@ -105,8 +107,9 @@ const CourseTable = () => {
             </div>)
             : (<div className="col">
               <Card className="shadow">
-                <CardHeader className="border-0">
+                <CardHeader className="border-0 d-flex justify-content-between">
                   <h3 className="mb-0">Card tables</h3>
+                  <button className="btn btn-sm btn-primary" onClick={() => setCreateModalShow(true)}>Create</button>
                 </CardHeader>
                 <Table className="align-items-center table-flush" responsive>
                   <thead className="thead-light">
