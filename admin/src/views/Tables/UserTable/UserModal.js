@@ -24,7 +24,7 @@ const UserModal = (props) => {
         setThisUser(props.user ? props.user : null);
         setIsUpdating(false);
         setIsDeleting(false);
-    }, [props])
+    }, [props.show])
 
     const inputFileChange = e => {
         let reader = new FileReader()

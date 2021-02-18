@@ -1,14 +1,13 @@
+import React, { useState, useEffect } from "react"
 import { Modal } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 import {
-    Button,
     Card,
     CardHeader,
     CardBody,
     FormGroup,
     Form,
     Input,
-    Container,
     Row,
     Col,
     CardFooter,
@@ -17,11 +16,46 @@ import {
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
 const UserModal = (props) => {
-    const user  = props.user;
-    const isEdit = props.isEdit;
+    const [thisUser, setThisUser]  = useState(null);
+    const [isCreating, setIsCreating] = useState(false);
+
+    useEffect(() => {
+        setThisUser({
+            fullName: "",
+            bio: "",
+            role: "student",
+            address: "",
+            sex: "Male",
+            birthday: "",
+            photoUser: "",
+            authenticateMethod: {
+                local: {
+                    email: "",
+                    password: "",
+                },
+                facebook: {
+                    name: "",
+                    id: ""
+                },
+                google: {
+                    email : "",
+                    name: "",
+                    id: ""
+                }    
+            },
+            workPlace: "",
+            rating: 0,
+            bankId: "",
+            phoneNumber: "",
+            balance: 0
+        });
+    }, [])
+
+    useEffect(() => {
+        setIsCreating(false);
+    }, [props.show])
 
     return(
-        !props.user ? <></> : 
         <Modal {...props}  size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header><p></p></Modal.Header>
             <Modal.Body>
@@ -37,7 +71,7 @@ const UserModal = (props) => {
                                             className="rounded-circle"
                                             width="180px" height="180px"
                                             style={{backgroundColor: "rgb(173,181,189)"}}
-                                            src={user.photoUser ? user.photoUser : DefaultAvatar}
+                                            src={DefaultAvatar}
                                         />
                                         </a>
                                     </div>

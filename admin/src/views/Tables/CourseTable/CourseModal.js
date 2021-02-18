@@ -24,28 +24,29 @@ const CourseModal = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
-    const [carouselItems, setCarpuselItems] = useState([]);
+    const [carouselItems, setCarouselItems] = useState([]);
 
     useEffect(() => {
         setThisCourse(props.course ? props.course : null);
         setIsUpdating(false);
-    }, [props])
-
-    useEffect(() => {
-        setCarpuselItems([
+        setIsDeleting(false);
+        setCarouselItems([
             {
-                src: thisCourse ? thisCourse.pictures[0] : DefaultAvatar,
+                src: props.course ? props.course.pictures[0] : DefaultAvatar,
                 altText: 'Slide 1'
             },
             {
-              src: thisCourse ? thisCourse.pictures[1] : DefaultAvatar,
+              src: props.course ? props.course.pictures[1] : DefaultAvatar,
               altText: 'Slide 2'
             },
             {
-              src: thisCourse ? thisCourse.pictures[2] : DefaultAvatar,
+              src: props.course ? props.course.pictures[2] : DefaultAvatar,
               altText: 'Slide 3'
             }
         ]);
+    }, [props.show])
+
+    useEffect(() => {
     }, [thisCourse])
 
     const goToIndex = (newIndex) => {
@@ -116,7 +117,7 @@ const CourseModal = (props) => {
                                         <div className="d-flex justify-content-center">
                                             <ReactStars
                                                 count={5}
-                                                // onChange={ratingChanged}
+                                                onChange={newRate => setThisCourse({ ...thisCourse, rating: newRate })}
                                                 disabled={props.state === "edit" ? false : true}
                                                 value={thisCourse.rating}
                                                 size={30}
@@ -176,6 +177,7 @@ const CourseModal = (props) => {
                                             className="form-control-alternative"
                                             disabled={props.state === "edit" ? false : true}
                                             defaultValue={thisCourse.name}
+                                            onBlur={(e) => setThisCourse({ ...thisCourse, name: e.target.value })}
                                             type="text"
                                         />
                                         </FormGroup>
@@ -191,9 +193,11 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 disabled={props.state === "edit" ? false : true}
                                                 defaultValue={thisCourse.category}
+                                                onChange={(e) => setThisCourse({ ...thisCourse, category: e.target.value })}
                                                 type="select"
                                             >
-                                                <option value="Information Technology">Information Technology</option>
+                                                <option value="Information Technology">Information Technology</option>\
+                                                <option value="Marketing">Marketing</option>
                                                 <option value="Language">Language</option>
                                                 <option value="Economy">Economy</option>
                                                 <option value="Design">Design</option>
@@ -213,6 +217,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={(e) => setThisCourse({ ...thisCourse, isActive: e.target.value })}
                                                 defaultValue={thisCourse.isActive}
                                                 type="select"
                                             >
@@ -231,6 +236,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input className="form-control-alternative" 
                                                 type="number" defaultValue={thisCourse.maxStudent}
+                                                onBlur={(e) => setThisCourse({ ...thisCourse, maxStudent: e.target.value })}
                                                 disabled={props.state === "edit" ? false : true}
                                             />
                                         </FormGroup>
@@ -247,6 +253,7 @@ const CourseModal = (props) => {
                                             <Input className="form-control-alternative" 
                                                 type="number" defaultValue={thisCourse.quantity}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onBlur={(e) => setThisCourse({ ...thisCourse, quantity: e.target.value })}
                                             />
                                         </FormGroup>
                                     </Col>
@@ -264,6 +271,13 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 type="date" defaultValue={thisCourse.schedule.startDate}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={
+                                                    (e) => {
+                                                        let newSchedule = thisCourse.schedule;
+                                                        newSchedule.startDate = e.target.value;
+                                                        setThisCourse({ ...thisCourse, schedule: newSchedule })
+                                                    }
+                                                }
                                             />
                                         </FormGroup>
                                     </Col>
@@ -279,6 +293,13 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 type="date" defaultValue={thisCourse.schedule.endDate}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={
+                                                    (e) => {
+                                                        let newSchedule = thisCourse.schedule;
+                                                        newSchedule.endDate = e.target.value;
+                                                        setThisCourse({ ...thisCourse, schedule: newSchedule })
+                                                    }
+                                                }
                                             />
                                         </FormGroup>
                                     </Col>
@@ -293,6 +314,13 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.dayInWeek[0]}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={
+                                                    (e) => {
+                                                        let newSchedule = thisCourse.schedule;
+                                                        newSchedule.dayInWeek[0] = e.target.value;
+                                                        setThisCourse({ ...thisCourse, schedule: newSchedule })
+                                                    }
+                                                }
                                             >
                                                 <option value={"monday"}>Monday</option>
                                                 <option value={"tuesday"}>Tuesday</option>
@@ -313,6 +341,13 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.shift[0]}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={
+                                                    (e) => {
+                                                        let newSchedule = thisCourse.schedule;
+                                                        newSchedule.shift[0] = e.target.value;
+                                                        setThisCourse({ ...thisCourse, schedule: newSchedule })
+                                                    }
+                                                }
                                             >
                                                 <option value={1}>8.AM - 11.AM</option>
                                                 <option value={2}>14.PM - 17.PM</option>
@@ -331,6 +366,13 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.dayInWeek[1]}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={
+                                                    (e) => {
+                                                        let newSchedule = thisCourse.schedule;
+                                                        newSchedule.dayInWeek[1] = e.target.value;
+                                                        setThisCourse({ ...thisCourse, schedule: newSchedule })
+                                                    }
+                                                }
                                             >
                                                 <option value={"monday"}>Monday</option>
                                                 <option value={"tuesday"}>Tuesday</option>
@@ -351,6 +393,13 @@ const CourseModal = (props) => {
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.shift[1]}
                                                 disabled={props.state === "edit" ? false : true}
+                                                onChange={
+                                                    (e) => {
+                                                        let newSchedule = thisCourse.schedule;
+                                                        newSchedule.shift[1] = e.target.value;
+                                                        setThisCourse({ ...thisCourse, schedule: newSchedule })
+                                                    }
+                                                }
                                             >
                                                 <option value={1}>8.AM - 11.AM</option>
                                                 <option value={2}>14.PM - 17.PM</option>
@@ -372,6 +421,7 @@ const CourseModal = (props) => {
                                             className="form-control-alternative"
                                             defaultValue={thisCourse.teacher}
                                             type="text" disabled={props.state === "edit" ? false : true}
+                                            onBlur={(e) => setThisCourse({ ...thisCourse, teacher: e.target.value })}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -391,6 +441,7 @@ const CourseModal = (props) => {
                                             className="form-control-alternative"
                                             defaultValue={thisCourse.link}
                                             type="text" disabled={props.state === "edit" ? false : true}
+                                            onBlur={(e) => setThisCourse({ ...thisCourse, link: e.target.value })}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -405,6 +456,7 @@ const CourseModal = (props) => {
                                     rows="4" disabled={props.state === "edit" ? false : true}
                                     defaultValue={thisCourse.description}
                                     type="textarea"
+                                    onBlur={(e) => setThisCourse({ ...thisCourse, bio: e.target.value })}
                                 />
                                 </FormGroup>
                             </div>
