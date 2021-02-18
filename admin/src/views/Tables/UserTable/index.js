@@ -50,7 +50,7 @@ const UserTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedUser, setSelectedUser] = useState(null);
   const [modalShow, setModalShow] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
+  const [modalState, setModalState] = useState("detail");
 
   const renderPaginationItems = () => {
     let paginationItems = [];
@@ -88,7 +88,7 @@ const UserTable = () => {
     <>
       <UserModal
         show = {modalShow}
-        isEdit = {isEdit}
+        state = {modalState}
         user = {selectedUser}
         onHide = {() => setModalShow(false)} 
       />
@@ -167,7 +167,7 @@ const UserTable = () => {
                                         e.preventDefault(); 
                                         setModalShow(true);
                                         setSelectedUser(user);
-                                        setIsEdit(false);
+                                        setModalState("detail");
                                       }
                                     }
                                   >
@@ -179,7 +179,7 @@ const UserTable = () => {
                                         e.preventDefault(); 
                                         setModalShow(true);
                                         setSelectedUser(user);
-                                        setIsEdit(true);
+                                        setModalState("edit");
                                       }
                                     }
                                   >
@@ -191,7 +191,7 @@ const UserTable = () => {
                                         e.preventDefault(); 
                                         setModalShow(true);
                                         setSelectedUser(user);
-                                        setIsEdit(false);
+                                        setModalState("delete");
                                       }
                                     }
                                   >

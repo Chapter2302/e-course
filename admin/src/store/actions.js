@@ -1,5 +1,5 @@
-import { 
-    GET_ALL, 
+import {  
+    GET_ALL,
     UPDATE_TABLE_ITEMS,
     UPDATE_PAGES, 
     UPDATE_ENTRIES, 
@@ -8,7 +8,7 @@ import {
     UPDATE_FILTER,
     LOGIN, 
     LOGOUT
-} from  'constants'
+} from "../constants"
 
 import { 
     getAll,
@@ -18,11 +18,13 @@ import {
 const login = (email, password) => async dispatch => {
     const res = await localLogin(email, password)
     const session = await res.json()
-    localStorage.setItem("session", JSON.stringify(session))
-    dispatch({
-        type: LOGIN,
-        session
-    })
+    if(session) {
+        localStorage.setItem("session", JSON.stringify(session))
+        dispatch({
+            type: LOGIN,
+            session
+        });
+    }
 }
 
 const logout = () => async dispatch => {

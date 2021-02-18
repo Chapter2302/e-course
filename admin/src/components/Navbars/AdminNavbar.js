@@ -16,7 +16,7 @@
 
 */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 // reactstrap components
 import {
   DropdownMenu,
@@ -36,6 +36,14 @@ import {
 } from "reactstrap";
 
 const AdminNavbar = (props) => {
+  const clickLogOutBtn = () => {
+    const confirm = window.confirm("Confirm to log out")
+    if(confirm)  {
+      // localStorage.removeItem("session");
+      window.location.href = "/auth/login";
+    }
+  }
+
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -99,7 +107,7 @@ const AdminNavbar = (props) => {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#pablo" onClick={() => clickLogOutBtn()}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>

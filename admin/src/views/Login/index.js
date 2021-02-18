@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // reactstrap components
 import {
@@ -33,9 +33,38 @@ import {
   Col,
 } from "reactstrap";
 
+import { localLogin } from "api"
+
 const Login = () => {
+  const [account, setAccount] = useState({ email: "", password: "" });
+  const [isChecking, setIsChecking] = useState(false);
+  const [message, setMessage] = useState(null)
+
+  useEffect(() => { 
+    setIsChecking(false);
+    setMessage(null); 
+  }, [])
+
+  const clickLoginBtn = async () => {
+    setIsChecking(true);
+    setMessage(null);
+    setTimeout(async () => {
+      const resp = await localLogin(account.email, account.password);
+    
+      if(resp.status === 200) {
+        const session = await resp.json();
+        localStorage.setItem("session", JSON.stringify(session));
+        window.location.href = "/admin/index"
+      } else {
+        setIsChecking(false);
+        setMessage("Error, check again")
+      }
+    }, 3000);
+  }
   return (
     <>
+      {console.log("Admin: dchuong@ute.edu.vn - abc123")}
+      {console.log("Teacher: tcaselli0@ycombinator.com - abc123")}
       <Col lg="5" md="7">
         <Card className="bg-secondary shadow border-0">
           <CardHeader className="bg-transparent pb-5">
@@ -83,6 +112,20 @@ const Login = () => {
             <div className="text-center text-muted mb-4">
               <small>Or sign in with credentials</small>
             </div>
+            { 
+              isChecking 
+              ? <div className="text-center text-muted mb-2">
+                  <small className="font-weight-bold text-yellow">Checking Information...</small>
+                </div>
+              : <></>
+            }
+            { 
+              message 
+              ? <div className="text-center text-muted mb-2">
+                  <small className="font-weight-bold text-red">{message}</small>
+                </div>
+              : <></>
+            }
             <Form role="form">
               <FormGroup className="mb-3">
                 <InputGroup className="input-group-alternative">
@@ -95,6 +138,7 @@ const Login = () => {
                     placeholder="Email"
                     type="email"
                     autoComplete="new-email"
+                    onBlur={(e) => setAccount({ ...account, email: e.target.value })}
                   />
                 </InputGroup>
               </FormGroup>
@@ -109,6 +153,7 @@ const Login = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    onBlur={(e) => setAccount({ ...account, password: e.target.value })}
                   />
                 </InputGroup>
               </FormGroup>
@@ -126,7 +171,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="text-center">
-                <Button className="my-4" color="primary" type="button">
+                <Button className="my-4" color="primary" type="button" onClick={() => clickLoginBtn()}>
                   Sign in
                 </Button>
               </div>

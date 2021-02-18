@@ -18,7 +18,6 @@ const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
 const UserModal = (props) => {
     const user  = props.user;
-    const isEdit = props.isEdit;
 
     return(
         !props.user ? <></> : 
@@ -50,11 +49,15 @@ const UserModal = (props) => {
                                 <Row>
                                     <div className="col mt-4">
                                         <div className="card-profile-stats d-flex justify-content-center mt-md-5">
-                                            <input className="btn btn-primary" type="file"/>
+                                            <input 
+                                                className="btn btn-primary" 
+                                                type="file" disabled={props.state === "edit" ? false : true}
+                                            />
                                         </div>
                                         <div className="d-flex justify-content-center">
                                             <ReactStars
                                                 count={5}
+                                                edit={props.state == "edit" ? true : false}
                                                 // onChange={ratingChanged}
                                                 size={30}
                                                 emptyIcon={<i className="far fa-star"></i>}
@@ -67,7 +70,26 @@ const UserModal = (props) => {
                             </CardBody>
                             <CardFooter>
                                 <Row className="d-flex justify-content-center">
-                                    <button className="btn btn-lg btn-primary">CONFIRM</button>{' '}
+                                    {   
+                                        props.state === "edit"  
+                                        ?   <>
+                                                <button 
+                                                    className={"btn btn-primary"}>
+                                                    CONFIRM
+                                                </button>{' '}
+                                            </>
+                                        :   <></>
+                                    }
+                                    {   
+                                        props.state === "delete"  
+                                        ?   <>
+                                                <button 
+                                                    className={"btn btn-danger"}>
+                                                    DELETE
+                                                </button>{' '}
+                                            </>
+                                        :   <></>
+                                    }
                                     <button className="btn btn-lg btn-secondary" onClick={props.onHide}>CANCEL</button>
                                 </Row>
                             </CardFooter>
@@ -96,6 +118,7 @@ const UserModal = (props) => {
                                             id="input-username"
                                             placeholder="Username"
                                             type="text"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -112,6 +135,7 @@ const UserModal = (props) => {
                                             id="input-email"
                                             placeholder="jesse@example.com"
                                             type="email"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -128,6 +152,7 @@ const UserModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="date"
+                                                disabled={props.state === "edit" ? false : true}
                                             />
                                         </FormGroup>
                                     </Col>
@@ -143,6 +168,7 @@ const UserModal = (props) => {
                                                 className="form-control-alternative"
                                                 placeholder="Password"
                                                 type="password"
+                                                disabled={props.state === "edit" ? false : true}
                                             />
                                         </FormGroup>
                                     </Col>
@@ -158,8 +184,8 @@ const UserModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            placeholder="0987-6543-210"
-                                            type="text"
+                                            placeholder="0987-6543-210" type="text"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -173,8 +199,8 @@ const UserModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            placeholder="0987654321"
-                                            type="email"
+                                            placeholder="0987654321" type="email"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -193,8 +219,8 @@ const UserModal = (props) => {
                                         <Input
                                             className="form-control-alternative"
                                             defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                                            placeholder="Workplace Address"
-                                            type="text"
+                                            placeholder="Workplace Address" type="text"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -211,8 +237,8 @@ const UserModal = (props) => {
                                         <Input
                                             className="form-control-alternative"
                                             defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                                            placeholder="Home Address"
-                                            type="text"
+                                            placeholder="Home Address" type="text"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -228,8 +254,8 @@ const UserModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
-                                            placeholder="300"
-                                            type="number"
+                                            placeholder="300" type="number"
+                                            disabled={props.state === "edit" ? false : true}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -243,7 +269,7 @@ const UserModal = (props) => {
                                     </label>
                                     <Input
                                         className="form-control-alternative"
-                                        type="select"
+                                        type="select" disabled={props.state === "edit" ? false : true}
                                     >   
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -262,6 +288,7 @@ const UserModal = (props) => {
                                         className="form-control-alternative"
                                         type="select"
                                         id="input-postal-code"
+                                        disabled={props.state === "edit" ? false : true}
                                     >   
                                         <option value="student">Student</option>
                                         <option value="teacher">Teacher</option>
@@ -281,6 +308,7 @@ const UserModal = (props) => {
                                     defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and
                                     Open Source."
                                     type="textarea"
+                                    disabled={props.state === "edit" ? false : true}
                                 />
                                 </FormGroup>
                             </div>

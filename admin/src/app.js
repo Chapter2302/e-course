@@ -7,20 +7,22 @@ import AdminLayout from "layouts/Admin.js";
 import AuthLayout from "layouts/Auth.js";
 
 const App = ({isAuth}) => {
+    const session  = JSON.parse(localStorage.getItem("session"));
+
     useEffect(() => {
-        const session = JSON.parse(localStorage.getItem("session"))
-        if(session) {
-            store.dispatch({
-                type: 'LOGIN',
-                session
-            })
-        }
-    }, [])
+
+    }, [isAuth])
 
     return( 
         <Switch>
-            {console.log(isAuth)}
-            <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+            {console.log(session)}
+            <Route path="/admin" render={
+                (props) => { 
+                    return localStorage.getItem("session")
+                    ? <AdminLayout {...props} />
+                    : <Redirect from="/" to="/auth/login" />
+                }
+            }/>
             <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
             <Redirect from="/" to="/admin/index" />
         </Switch>
