@@ -49,7 +49,7 @@ const CourseTable = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [modalShow, setModalShow] = useState(false);
   const [createModalShow, setCreateModalShow] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
+  const [modalState, setModalState] = useState("detail");
 
   const renderPaginationItems = () => {
     let paginationItems = [];
@@ -87,7 +87,7 @@ const CourseTable = () => {
     <>
       <CourseModal
         show = {modalShow}
-        isEdit = {isEdit}
+        state = {modalState}
         course = {selectedCourse}
         onHide = {() => setModalShow(false)} 
       />
@@ -174,7 +174,7 @@ const CourseTable = () => {
                                         e.preventDefault(); 
                                         setModalShow(true);
                                         setSelectedCourse(course);
-                                        setIsEdit(false);
+                                        setModalState("detail");
                                       }
                                     }
                                   >
@@ -186,7 +186,7 @@ const CourseTable = () => {
                                         e.preventDefault(); 
                                         setModalShow(true);
                                         setSelectedCourse(course);
-                                        setIsEdit(true);
+                                        setModalState("edit");
                                       }
                                     }
                                   >
@@ -198,7 +198,7 @@ const CourseTable = () => {
                                         e.preventDefault(); 
                                         setModalShow(true);
                                         setSelectedCourse(course);
-                                        setIsEdit(false);
+                                        setModalState("delete");
                                       }
                                     }
                                   >

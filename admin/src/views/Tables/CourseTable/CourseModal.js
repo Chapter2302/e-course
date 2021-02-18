@@ -2,29 +2,25 @@ import React, { useEffect, useState } from "react"
 import { Modal } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 import {
-    Button,
     Card,
-    CardHeader,
     CardBody,
     FormGroup,
     Form,
     Input,
-    Container,
     Row,
     Col,
     CardFooter,
     Carousel,
     CarouselItem,
-    CarouselControl,
     CarouselIndicators,
-    CarouselCaption
   } from "reactstrap";
 
 const DefaultAvatar = 'https://maytinhquanganh.com/images/noavatar.jpg';
 
 const CourseModal = (props) => {
     const [thisCourse, setThisCourse]  = useState(null);
-    const [isUpdating, setIsUpdating] = useState(false)
+    const [isUpdating, setIsUpdating] = useState(false);
+    const [isDeleting, setIsDeleting] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
@@ -109,14 +105,19 @@ const CourseModal = (props) => {
                             <CardBody className="">
                                 <Row>
                                     <div className="col">
-                                        { isUpdating ? <div className="text-red text-sm font-weight-bold">Updating...</div> : <></> }
+                                        { isUpdating ? <div className="text-yellow text-sm font-weight-bold">Updating...</div> : <></> }
+                                        { isDeleting ? <div className="text-red text-sm font-weight-bold">Deleting...</div> : <></> }
                                         <div className="card-profile-stats d-flex justify-content-center">
-                                            <input className="btn btn-primary" type="file" multiple={false} onChange={e => inputFileChange(e)}/>
+                                            <input  className="btn btn-primary" type="file" 
+                                                    disabled={props.state === "edit" ? false : true}
+                                                    multiple={false} onChange={e => inputFileChange(e)}
+                                            />
                                         </div>
                                         <div className="d-flex justify-content-center">
                                             <ReactStars
                                                 count={5}
                                                 // onChange={ratingChanged}
+                                                disabled={props.state === "edit" ? false : true}
                                                 value={thisCourse.rating}
                                                 size={30}
                                                 emptyIcon={<i className="far fa-star"></i>}
@@ -129,7 +130,26 @@ const CourseModal = (props) => {
                             </CardBody>
                             <CardFooter>
                                 <Row className="d-flex justify-content-center">
-                                    <button className="btn btn-lg btn-primary" onClick={() => clickUpdateBtn()}>CONFIRM</button>{' '}
+                                {   
+                                        props.state === "edit"  
+                                        ?   <>
+                                                <button 
+                                                    className={"btn btn-primary"}>
+                                                    CONFIRM
+                                                </button>{' '}
+                                            </>
+                                        :   <></>
+                                    }
+                                    {   
+                                        props.state === "delete"  
+                                        ?   <>
+                                                <button 
+                                                    className={"btn btn-danger"}>
+                                                    DELETE
+                                                </button>{' '}
+                                            </>
+                                        :   <></>
+                                    }
                                     <button className="btn btn-lg btn-secondary" onClick={props.onHide}>CANCEL</button>
                                 </Row>
                             </CardFooter>
@@ -154,6 +174,7 @@ const CourseModal = (props) => {
                                         </label>
                                         <Input
                                             className="form-control-alternative"
+                                            disabled={props.state === "edit" ? false : true}
                                             defaultValue={thisCourse.name}
                                             type="text"
                                         />
@@ -168,6 +189,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
+                                                disabled={props.state === "edit" ? false : true}
                                                 defaultValue={thisCourse.category}
                                                 type="select"
                                             >
@@ -190,6 +212,7 @@ const CourseModal = (props) => {
                                             </label>
                                             <Input
                                                 className="form-control-alternative"
+                                                disabled={props.state === "edit" ? false : true}
                                                 defaultValue={thisCourse.isActive}
                                                 type="select"
                                             >
@@ -206,7 +229,10 @@ const CourseModal = (props) => {
                                             >
                                                 Max Student
                                             </label>
-                                            <Input className="form-control-alternative" type="number" defaultValue={thisCourse.maxStudent}/>
+                                            <Input className="form-control-alternative" 
+                                                type="number" defaultValue={thisCourse.maxStudent}
+                                                disabled={props.state === "edit" ? false : true}
+                                            />
                                         </FormGroup>
                                     </Col>
                                     <Col lg="4">
@@ -218,7 +244,10 @@ const CourseModal = (props) => {
                                                 
                                                 Quantity
                                             </label>
-                                            <Input className="form-control-alternative" type="number" defaultValue={thisCourse.quantity}/>
+                                            <Input className="form-control-alternative" 
+                                                type="number" defaultValue={thisCourse.quantity}
+                                                disabled={props.state === "edit" ? false : true}
+                                            />
                                         </FormGroup>
                                     </Col>
                                 </Row>
@@ -234,6 +263,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="date" defaultValue={thisCourse.schedule.startDate}
+                                                disabled={props.state === "edit" ? false : true}
                                             />
                                         </FormGroup>
                                     </Col>
@@ -248,6 +278,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="date" defaultValue={thisCourse.schedule.endDate}
+                                                disabled={props.state === "edit" ? false : true}
                                             />
                                         </FormGroup>
                                     </Col>
@@ -261,6 +292,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.dayInWeek[0]}
+                                                disabled={props.state === "edit" ? false : true}
                                             >
                                                 <option value={"monday"}>Monday</option>
                                                 <option value={"tuesday"}>Tuesday</option>
@@ -280,6 +312,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.shift[0]}
+                                                disabled={props.state === "edit" ? false : true}
                                             >
                                                 <option value={1}>8.AM - 11.AM</option>
                                                 <option value={2}>14.PM - 17.PM</option>
@@ -297,6 +330,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.dayInWeek[1]}
+                                                disabled={props.state === "edit" ? false : true}
                                             >
                                                 <option value={"monday"}>Monday</option>
                                                 <option value={"tuesday"}>Tuesday</option>
@@ -316,6 +350,7 @@ const CourseModal = (props) => {
                                             <Input
                                                 className="form-control-alternative"
                                                 type="select" defaultValue={thisCourse.schedule.shift[1]}
+                                                disabled={props.state === "edit" ? false : true}
                                             >
                                                 <option value={1}>8.AM - 11.AM</option>
                                                 <option value={2}>14.PM - 17.PM</option>
@@ -336,7 +371,7 @@ const CourseModal = (props) => {
                                         <Input
                                             className="form-control-alternative"
                                             defaultValue={thisCourse.teacher}
-                                            type="text"
+                                            type="text" disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -355,7 +390,7 @@ const CourseModal = (props) => {
                                         <Input
                                             className="form-control-alternative"
                                             defaultValue={thisCourse.link}
-                                            type="text"
+                                            type="text" disabled={props.state === "edit" ? false : true}
                                         />
                                         </FormGroup>
                                     </Col>
@@ -367,7 +402,7 @@ const CourseModal = (props) => {
                                 <Input
                                     className="form-control-alternative"
                                     placeholder="A few words about you ..."
-                                    rows="4"
+                                    rows="4" disabled={props.state === "edit" ? false : true}
                                     defaultValue={thisCourse.description}
                                     type="textarea"
                                 />
