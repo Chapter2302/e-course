@@ -18,7 +18,7 @@ const content =
         </div>
     `
 
-const sendMail = (to, subject) => {
+const sendMail = async (to, subject) => {
   const transporter = nodeMailer.createTransport({
     host: mailHost,
     port: mailPort,
@@ -34,8 +34,7 @@ const sendMail = (to, subject) => {
     subject: subject, 
     html: content
   }
-
-  return transporter.sendMail(options)
+  return await transporter.sendMail(options)
 }
 
 module.exports = {

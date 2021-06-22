@@ -1,0 +1,29 @@
+.messageContainer {
+    :hover {
+        cursor: pointer;
+        background-color: #f8f9fa;
+    }
+}
+
+.messageWrapper {
+    display: flex;
+    padding: 10px;
+}
+
+.messageAvatarImage {
+    width: 65px;
+    height: 65px;
+    border-radius: 50px;
+}
+
+.messageContent {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.isUnread {
+    font-weight: 600;
+    color: #e59285;
+}

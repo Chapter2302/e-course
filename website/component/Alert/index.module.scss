@@ -1,0 +1,15 @@
+.container {
+    position: fixed;
+    
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: -webkit-transform 0.8s ease 0s, transform 0.8s ease 0s, opacity 0.5s ease 0s, visibility 0.5s ease 0s;
+    z-index: 500
+}
+
+.isActive {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 15px;
+
+    .content {
+        width: fit-content;
+        max-width: 70%;
+        padding: 10px 15px;
+        border-radius: 20px;
+    }
+
+    .recieverMode {
+        background-color: #EBEBEB;
+    }
+
+    .senderMode {
+        align-self: flex-end;
+        background-color: #ce7852;
+        color: white;
+    }
+}

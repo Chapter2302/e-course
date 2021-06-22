@@ -3,14 +3,17 @@ const router                  = express.Router()
 const passport                = require("passport")
 const jwt                     = require("jsonwebtoken")
 const {sendMail}              = require("../../util.js/mailer")
-const {userExist, createUser} = require("../../controller/user")
+const {userExist, getUser, createUser} = require("../../controller/user")
 
 let newAccount = {}
 
 module.exports = (function() {
   router.get("/login/success", (req, res) => {
     console.log('req.user: ', req.user)
-    res.status(200).json(req.user)
+    if(req.user)
+      res.status(200).json(req.user)
+    else
+      res.status(404).json('Fail')
   })
 
   router.get("/login/failed", (req, res) => {
@@ -25,9 +28,9 @@ module.exports = (function() {
       if(req.user) {
         const data = {
           id: req.user._id,
-          fullName: req.user.fullName,
+          fullName: req.user.full_name,
           role: req.user.role,
-          photoUser: req.user.photoUser,
+          photoUser: req.user.avatar,
           token: jwt.sign({id: req.user._id}, 'Secret')
         }
         res.status(200).json(data)
@@ -36,30 +39,8 @@ module.exports = (function() {
         res.status(400)
     }
   )
-
-  router.get('/facebook',passport.authenticate('facebook', { scope:'email' }))
   
   router.get('/google',passport.authenticate('google', { scope: ['profile', 'email'] }))
-
-  router.get(
-    '/facebook/callback',
-    passport.authenticate('facebook', {session: false}),
-    (req, res) => {
-      if(req.user) {
-        const data = {
-          id: req.user._id,
-          fullName: req.user.fullName,
-          role: req.user.role,
-          photoUser: req.user.photoUser,
-          token: jwt.sign({id: req.user._id}, 'Secret')
-        }
-        res.cookie("session", JSON.stringify(data), {maxAge: 1000*60*60*24})
-        res.redirect("http://localhost:3000/home")
-      }
-      else 
-        res.status(400)
-    }
-  )
 
   router.get(
     "/google/redirect",
@@ -68,9 +49,9 @@ module.exports = (function() {
       if(req.user){
         const data = {
           id: req.user._id,
-          fullName: req.user.fullName,
+          fullName: req.user.full_name,
           role: req.user.role,
-          photoUser: req.user.photoUser,
+          photoUser: req.user.avatar,
           token: jwt.sign({id: req.user._id}, 'Secret')
         }
         res.cookie("session", JSON.stringify(data), {maxAge: 1000*60*60*24})
@@ -82,19 +63,23 @@ module.exports = (function() {
   )
 
   router.post("/is-user-exist", async (req, res) => {
-    const email = req.body.authenticateMethod.local.email
-    const result = await await userExist(email)
+    const email = req.body.local_email
+    const result = await userExist(email)
     if(result) {
-      res.status(400).json()
+      res.status(404).json("Email Existed")
     }
     else {
       try {
         newAccount = req.body
-        await sendMail(email, "[OnlineCourse] Validate Your Email")
-        res.status(200).json()
+        const data = await sendMail(email, "[ECourse] Validate Your Email")
+        if(data) {
+          res.status(200).send()
+        } else {
+          res.status(404).json("Cannot Send Mail")
+        }
       }
       catch(err) {
-        res.status(400).json()
+        res.status(404).json("Unknown")
       }
     }
   })
@@ -105,7 +90,7 @@ module.exports = (function() {
       res.redirect("http://localhost:3000/account/login")
     }
     catch {
-      res.status(400).json()
+      res.status(400)
     }
   })
 
@@ -117,20 +102,21 @@ module.exports = (function() {
       res.status(400)
   })
 
-  router.get('/check', passport.authenticate('jwt', {session: false}), (req, res) => {
-    console.log('user: ', req.user)
-    if(req.user) {
+  router.get('/check/:id', async (req, res) => {
+    const user = await getUser(req.params.id)
+    
+    if(user) {
       const data = {
-        id: req.user._id,
-        fullName: req.user.fullName,
-        role: req.user.role,
-        photoUser: req.user.photoUser,
-        token: jwt.sign({id: req.user._id}, 'Secret')
+        id: user._id,
+        fullName: user.full_name,
+        role: user.role,
+        photoUser: user.avatar,
+        token: jwt.sign({id: user._id}, 'Secret')
       }
       res.status(200).json(data)
     }
     else 
-      res.status(400)
+      res.status(404)
   })
     
 

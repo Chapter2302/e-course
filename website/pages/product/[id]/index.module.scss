@@ -1,0 +1,19 @@
+.chatButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    background-color: #e59285;
+    cursor: pointer;
+}
+
+.teacherAvatar {
+    max-width: 200px;
+    max-height: 200px;
+    padding: 5px;
+    margin: 0px 30px 10px 0px;
+    border: 1px solid #e59285;
+    border-radius: 20px;
+}
