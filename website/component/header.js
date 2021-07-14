@@ -7,6 +7,7 @@ import {setNation} from "../store/language"
 import {setSender} from "../store/chat"
 import ChatDropdown from "./ChatDropdown"
 import styled from "styled-components"
+import { toast } from "react-toastify"
 
 const LinkWrapper = styled.div` 
   cursor: pointer;
@@ -52,7 +53,7 @@ const Header = () => {
           window.location.href = "/"
         }
         catch {
-          alert("Sorry, We cannot logout!")
+          toast.error("Sorry, We cannot logout!")
         }
       }
     }
@@ -152,8 +153,8 @@ const Header = () => {
                     </li>
                     <li className="drop">
                         <a href="/shop">{language == "eng" ? "Courses" : "Khóa Học" }</a>
-                      <div className="megamenu mega02">
-                        <ul className="item item02">
+                      <div className="megamenu dropdown">
+                        <ul className="item item01">
                           <li className="title">{language == "eng" ? "Categories" : "Danh Mục" }</li>
                           <li>
                             <a href="/shop">{language == "eng" ? "All" : "Tất Cả" }</a>
@@ -172,30 +173,6 @@ const Header = () => {
                           </li>
                           <li>
                             <a href="/shop?category=language">{language == "eng" ? "Language" : "Ngôn Ngữ" }</a>
-                          </li>
-                        </ul>
-                        <ul className="item item02">
-                          <li className="title">{language == "eng" ? "Day In Week" : "Ngày Trong Tuần" }</li>
-                          <li>
-                            <a href="/shop?dayInWeek=monday">{language == "eng" ? "Monday" : "Thứ Hai" }</a>
-                          </li>
-                          <li>
-                            <a href="/shop?dayInWeek=tuesday">{language == "eng" ? "Tuesday" : "Thứ Ba" }</a>
-                          </li>
-                          <li>
-                            <a href="/shop?dayInWeek=wednesday">{language == "eng" ? "Wednesday" : "Thứ Tư" }</a>
-                          </li>
-                          <li>
-                            <a href="/shop?dayInWeek=thursday">{language == "eng" ? "Thursday" : "Thứ Năm" }</a>
-                          </li>
-                          <li>
-                            <a href="/shop?dayInWeek=friday">{language == "eng" ? "Friday" : "Thứ Sáu" }</a>
-                          </li>
-                          <li>
-                            <a href="/shop?dayInWeek=saturday">{language == "eng" ? "Saturday" : "Thứ Bảy" }</a>
-                          </li>
-                          <li>
-                            <a href="/shop?dayInWeek=sunday">{language == "eng" ? "Sunday" : "Chủ Nhật" }</a>
                           </li>
                         </ul>
                       </div>

@@ -1,15 +1,24 @@
 .container {
+    width: 100vw;
     position: fixed;
-    
-    height: 0px;
+    top: 0; left: 0;
     opacity: 0;
     visibility: hidden;
     transition: -webkit-transform 0.8s ease 0s, transform 0.8s ease 0s, opacity 0.5s ease 0s, visibility 0.5s ease 0s;
-    z-index: 500
+    z-index: 500;
 }
 
 .isActive {
-    height: auto;
+    height: 100vh;
     opacity: 1;
     visibility: visible;
+}
+
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+    background-color: black;
 }

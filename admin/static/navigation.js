@@ -1,8 +1,8 @@
 const adminNavigationContent = [
   {
-    name: "Home",
-    icon: "fas fa-home",
-    link: "/"
+    name: "Profile",
+    icon: "fas fa-user-circle",
+    link: "/profile"
   },
   {
     name: "User",
@@ -28,14 +28,9 @@ const adminNavigationContent = [
 
 const teacherNavigationContent = [
   {
-    name: "Home",
-    icon: "fas fa-home",
-    link: "/"
-  },
-  {
-    name: "User",
-    icon: "fas fa-users",
-    link: "/user"
+    name: "Profile",
+    icon: "fas fa-user-circle",
+    link: "/profile"
   },
   {
     name: "Course",

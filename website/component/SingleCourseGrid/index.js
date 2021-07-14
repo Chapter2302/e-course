@@ -17,7 +17,7 @@ const SingleCourseGrid = ({course}) => {
             </div>
             <div className={styles.productInfo}>
                 <div className="d-flex justify-content-between">
-                    <a className={styles.courseName} href="single-course.html">{course.name}</a>
+                    <a className={styles.courseName} href={`/product/${course._id}`}>{course.name}</a>
                     <div className={cx(styles.price, styles.currentPrice)}>
                         {language == "eng" ? `$${course.price}.00` : `${parseFloat(course.price*0.023).toFixed(1)}K VNĐ`}
                     </div>

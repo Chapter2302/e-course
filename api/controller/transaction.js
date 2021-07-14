@@ -2,8 +2,31 @@ const Transaction = require('../model/transaction')
 const User = require('../model/user')
 const Course = require('../model/course')
 
-const getAllTransactions = async () => {
-    return await Transaction.find({})
+const getAllTransactions = async (uid) => {
+    const user = await User.findOne({ '_id': uid }) 
+    
+    const transactions = await Transaction.find({})
+    const transactionCustom = await Promise.all(transactions.map(async item => {
+        const course = await Course.findOne({'_id': item.course})
+        const newItem = { 
+            ...item._doc,
+            courseName: course.name,
+            coursePrice: course.price
+        }
+        return newItem
+    }))
+
+    // console.log(transactionCustom)
+
+    if(user.role == "teacher") {
+        const filterTrans = transactionCustom.filter(async item => {
+            const course = await Course.findOne({ '_id': item.course })
+            return course.teacher == uid
+        })
+        return filterTrans
+    } else {
+        return transactionCustom
+    }
 }
 
 const getTransaction = async (tid) => {
@@ -72,7 +95,11 @@ const createTransaction = async (data) => {
 }
 
 const updateTransaction = async (data) => {
-    await Transaction.updateOne({_id: data._id}, { $set: data })
+    const { user, course, review, rating } = data
+    const transaction = await Transaction.findOne({ user, course }) 
+    transaction.review = review
+    transaction.rating = rating
+    await transaction.save()
     return await Transaction.findOne({ _id: data._id }) 
 }
 

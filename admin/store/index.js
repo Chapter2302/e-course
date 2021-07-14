@@ -3,6 +3,7 @@
 // import * as mutations from './mutations'
 import * as actions from './actions'
 import moduleChat from './chat'
+import moduleUser from './user'
 
 export default {
   namespaced: true,
@@ -11,6 +12,7 @@ export default {
 //   mutations,
   actions,
   modules: {
-    chat: moduleChat
+    chat: moduleChat,
+    user: moduleUser
   }
 }

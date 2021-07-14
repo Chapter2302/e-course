@@ -4,6 +4,7 @@ const passport                = require("passport")
 const jwt                     = require("jsonwebtoken")
 const {sendMail}              = require("../../util.js/mailer")
 const {userExist, getUser, createUser} = require("../../controller/user")
+require('dotenv').config()
 
 let newAccount = {}
 
@@ -55,7 +56,7 @@ module.exports = (function() {
           token: jwt.sign({id: req.user._id}, 'Secret')
         }
         res.cookie("session", JSON.stringify(data), {maxAge: 1000*60*60*24})
-        res.redirect("http://localhost:3000/home")
+        res.redirect(`${process.env.BASE_WEBSITE_URL}`)
       }
       else 
         res.status(400)
@@ -87,7 +88,7 @@ module.exports = (function() {
   router.get("/register", async (req, res) => {
     try {
       const user = await createUser(newAccount)
-      res.redirect("http://localhost:3000/account/login")
+      res.redirect(`${process.env.BASE_WEBSITE_URL}/account/login`)
     }
     catch {
       res.status(400)

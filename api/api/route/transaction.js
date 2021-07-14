@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const db = require('mongoose')
 const { getAllTransactions, 
         getTransaction, 
         getTransactionByCondition,
@@ -9,9 +8,9 @@ const { getAllTransactions,
         deleteTransaction } = require('../../controller/transaction')
 
 
-router.get('/get-all', async (req, res) => {
+router.get('/get-all/:uid', async (req, res) => {
     try {
-        let data = await getAllTransactions()
+        let data = await getAllTransactions(req.params.uid)
         res.status(200).json(data)
     } catch {
         res.status(404)

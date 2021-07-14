@@ -52,7 +52,7 @@ module.exports = (function() {
       {
         clientID: process.env.GOOGLE_APP_ID,
         clientSecret: process.env.GOOGLE_APP_SECRET,
-        callbackURL:"http://localhost:4000/auth/google/redirect",
+        callbackURL:`${process.env.BASE_URL}/auth/google/redirect`,
         profileFields: ['id', 'displayName', 'photos', 'email', 'gender']
       },
       async (token, tokenSecret, profile, done) => {

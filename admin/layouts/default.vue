@@ -22,7 +22,7 @@
                 target="_blank"
                 class="white--text text-decoration-none"
               >
-                abc.com.vn
+                e-course.vn
               </a>
               <v-icon
                 style="float: right"
@@ -110,7 +110,7 @@
         <template v-slot:activator="{ on, attrs }">
           <div v-on="on" v-bind="attrs">
             <v-avatar height="40" width="40">
-              <img :src="userAva ? userAva : require('../assets/medias/images/defaultuserimg.png')"/>
+              <img :src="currentUser.avatar ? currentUser.avatar : require('../assets/medias/images/defaultuserimg.png')"/>
             </v-avatar>
             <span>{{userName}}</span>
           </div>
@@ -167,6 +167,14 @@ import * as socketio from "../plugins/socket.client"
 export default {
   components: { Notification },
   computed: {
+    currentUser() {
+      return {
+        id: this.$store.state.user.id,
+        fullname: this.$store.state.user.fullname,
+        avatar: this.$store.state.user.avatar,
+        role: this.$store.state.user.role,
+      }
+    },
     isChatOpen() {
       return this.$store.state.chat.isOpen
     },
@@ -221,12 +229,17 @@ export default {
     if(!session) {
       this.$router.push("/login");
     } else {
-      const userId = session.id
-      this.userRole = session.role
-      this.userName = session.fullName
-      this.userAva = session.photoUser
+      const user = {
+        id: session.id,
+        role: session.role,
+        fullname: session.fullName,
+        avatar: session.photoUser
+      }
 
-      this.$store.commit('chat/setSenderID', userId)
+      const userId = user.id
+
+      this.$store.commit('user/setUser', user)
+      this.$store.commit('chat/setSenderID', user.id)
 
       if(session.role === "admin")
         this.navigationContent = adminNavigationContent

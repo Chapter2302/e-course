@@ -11,8 +11,9 @@ const Alert = (props) => {
                 {[styles.isActive]: type && message}
             )}
         >
-            <ReactBootstrap.Alert variant={type}>
-                <b>{message}</b>
+            <div className={styles.background}></div>
+            <ReactBootstrap.Alert className={styles.alert} variant={type}>
+                <h5>{message}</h5>
             </ReactBootstrap.Alert>
         </div>
     )

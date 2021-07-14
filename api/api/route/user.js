@@ -34,7 +34,7 @@ router.get('/:id', async (req,res) => {
     }
 })
 
-router.get('/get/history/:id', async (req, res) => {
+router.get('/history/:id', async (req, res) => {
     try {
         const data = await getUserHistoryTransaction(req.params.id)
         res.status(200).json(data)

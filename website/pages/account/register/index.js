@@ -4,6 +4,7 @@ import HeadContent from '../../../component/head'
 import Header from '../../../component/header'
 import Footer from '../../../component/footer'
 import Cookies from "js-cookie"
+import { toast } from 'react-toastify'
 
 const Register = () => {
     const router = useRouter()
@@ -48,7 +49,7 @@ const Register = () => {
         }
         else {
             const err = await response.json()
-            alert(`Error: ${err}`)
+            toast.error(`Error: ${err}`)
         }   
     }
 

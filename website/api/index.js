@@ -1,5 +1,8 @@
+const BASE_API_URL = 'http://localhost:4000'
+
 const localLogin = async (email, password) => {
-    let url = "http://localhost:4000/auth/local"
+    console.log('cvc', email, password, process.env.BASE_API_URL)
+    let url = `${BASE_API_URL}/auth/local`
     let response = await fetch(url, { 
         headers: {
             'Content-Type': 'application/json'
@@ -11,13 +14,13 @@ const localLogin = async (email, password) => {
 }
 
 const localLogout = async () => {
-    let url = `http://localhost:4000/auth/logout`
+    let url = `${BASE_API_URL}/auth/logout`
     let response = await fetch(url, { method : 'GET' })
     return response
 }
 
 const getAll = async () => {
-    const url = 'http://localhost:4000/course/get-all-guess'
+    const url = `${BASE_API_URL}/course/get-all-guess`
     const response = await fetch(url, { method : 'GET' })
     if(response.status == 200) {
         const result = await response.json()
@@ -28,7 +31,7 @@ const getAll = async () => {
 
 const getUserHistoryTransaction = async () => {
     const uid = JSON.parse(localStorage.getItem("session")).id
-    const response = await fetch(`http://localhost:4000/user/get/history/${uid}`, {method: 'GET'})
+    const response = await fetch(`${BASE_API_URL}/user/history/${uid}`, {method: 'GET'})
     if(response.status == 200) {
         const result = await response.json()
         return result
@@ -37,7 +40,7 @@ const getUserHistoryTransaction = async () => {
 }
 
 const create = async (endpoint, data) => {
-    let url = 'http://localhost:4000/' + endpoint + '/add'
+    let url = `${BASE_API_URL}/${endpoint}/add`
     let response = await fetch(url, {
         headers: {
             'Content-Type': 'application/json'
@@ -49,7 +52,7 @@ const create = async (endpoint, data) => {
 }
 
 const update = async (endpoint , data) => {
-    let url = 'http://localhost:4000/' + endpoint
+    let url = `${BASE_API_URL}/${endpoint}`
     let response = await fetch(url, {
         headers: {
             'Content-Type': 'application/json'
@@ -61,7 +64,7 @@ const update = async (endpoint , data) => {
 }
 
 const remove = async (endpoint , id) => {
-    let url = 'http://localhost:4000/' + endpoint + '/delete'
+    let url = `${BASE_API_URL}/${endpoint}/delete`
     let response = await fetch(url, {
         headers: {
             'Content-Type': 'application/json'
@@ -73,7 +76,7 @@ const remove = async (endpoint , id) => {
 }
 
 const uploadMedia = async (endpoint , data) => {
-    let url = 'http://localhost:4000/' + endpoint
+    let url = `${BASE_API_URL}/${endpoint}`
     let response = await fetch(url, {
         method : 'POST',
         body: data
@@ -83,7 +86,7 @@ const uploadMedia = async (endpoint , data) => {
 
 const getChatRooms = async (data) => {
     const { userId } = data
-    let url = `http://localhost:4000/chat-room/${userId}`
+    let url = `${BASE_API_URL}/chat-room/${userId}`
     try {
         let response = await fetch(url, {
             method : 'GET'
@@ -97,7 +100,7 @@ const getChatRooms = async (data) => {
 
 const getUser = async (data) => {
     const { id } = data
-    let url = `http://localhost:4000/user/${id}`
+    let url = `${BASE_API_URL}/user/${id}`
     let response = await fetch(url, {
         method : 'GET'
     })
@@ -105,7 +108,7 @@ const getUser = async (data) => {
 }
 
 const createTransaction = async (data) => {
-    let url = 'http://localhost:4000/trans'
+    let url = `${BASE_API_URL}/trans`
     let response = await fetch(url, {
         headers: {
             'Content-Type': 'application/json'
@@ -117,6 +120,7 @@ const createTransaction = async (data) => {
 }
 
 export { 
+    BASE_API_URL,
     localLogin, 
     localLogout, 
     getAll, 

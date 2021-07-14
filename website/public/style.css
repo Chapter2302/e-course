@@ -447,7 +447,7 @@ body {
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans';
   color: #333;
   font-weight: 400; }
 
@@ -469,7 +469,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, address, p, pre, blockquot
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans';
   line-height: 1.35; }
 
 h1,
@@ -842,9 +842,9 @@ a {
 
 /* Font specialized */
 .body--font {
-  font-family: "Poppins", sans-serif; }
+  font-family: 'Open Sans'; }
 .heading--font {
-  font-family: "Poppins", sans-serif; }
+  font-family: 'Open Sans'; }
 
 /* Height and width */
 .fullscreen {
@@ -2774,7 +2774,7 @@ nav.menu {
   max-width: 50%;
   padding-right: 50px; }
 .product-info h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans';
   font-size: 22px;
   margin-bottom: 10px;
   text-transform: capitalize; }
@@ -2807,7 +2807,7 @@ nav.menu {
   display: flex;
   font-size: 16px;
   text-transform: capitalize;
-  font-family: "Poppins", sans-serif; }
+  font-family: 'Open Sans'; }
 .product-info .select__color .color__list {
   align-items: center;
   display: flex;
@@ -2837,7 +2837,7 @@ nav.menu {
 	font-weight:600;
     font-size: 16px;
     text-transform: capitalize;
-    font-family: "Poppins", sans-serif; }
+    font-family: 'Open Sans'; }
   .product-info .select__size .color__list {
     display: flex; }
     .product-info .select__size .color__list li {
@@ -2862,7 +2862,7 @@ h3.widget-title-modal {
   font-weight: 600;
   font-size: 16px;
   text-transform: capitalize;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans';
   padding-right: 14px; }
 .addtocart-btn {
   margin-top: 66px;
@@ -3005,7 +3005,7 @@ h3.widget-title-modal {
   text-align: center;
   text-transform: uppercase;
   top: 0;
-  font-family: Poppins;
+  font-family: 'Open Sans';
   transition: all 300ms ease-in 0s;
 }
       .newsletter__block .newsletter__box button:hover {
@@ -3066,7 +3066,7 @@ h3.widget-title-modal {
 .slide .slider__content h2 {
   color: #3c3c3c;
   font-size: 68px;
-  font-family: poppins;
+  font-family: 'Open Sans';
   font-weight: 700;
   line-height: 1.2; }
 .slide .slider__content h1 {
@@ -5069,7 +5069,7 @@ h3.widget-title-modal {
   box-shadow: none;
   color: #333;
   display: inline-block;
-  font-family: Poppins,Arial,Helvetica,sans-serif;
+  font-family: 'Open Sans',Arial,Helvetica,sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 34px;
@@ -5342,7 +5342,7 @@ h3.widget-title-modal {
   background: #fff none repeat scroll 0 0;
   border-radius: 5px;
   display: block;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: 400;
   height: 50px;
@@ -5366,7 +5366,7 @@ h3.widget-title-modal {
   padding: 0 40px; }
 .cart__total__list li {
   color: #333444;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans';
   font-size: 16px;
   height: 60px;
   line-height: 60px; }

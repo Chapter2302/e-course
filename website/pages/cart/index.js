@@ -5,10 +5,11 @@ import Footer from "../../component/footer"
 import ConfirmDialog from "../../component/Dialog/ConfirmDialog"
 import Alert from "../../component/Alert"
 import {setCart} from "../../store/cart"
-import { create, createTransaction } from "../../api"
+import { createTransaction } from "../../api"
 import styles from './index.module.scss'
 import cx from 'classnames'
 import React, { useEffect, useState } from "react"
+import { toast } from 'react-toastify'
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -27,11 +28,9 @@ const Cart = () => {
             newCart.splice(index, 1)
             localStorage.setItem("cart", JSON.stringify(newCart))
             dispatch(setCart())
-            setAlertType("success")
-            setAlertMessage("Remove Success")
+            toast.success("Remove Successfully")
         } catch(e) {
-            setAlertType("danger") 
-            setAlertMessage("Remove Fail. Try Again")
+            toast.error("Remove Fail. Try Again")
         }
     }
 

@@ -7,7 +7,7 @@ export async function authLogin(
     { data, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/auth/local`,
+      url: `${process.env.baseAPI}/auth/local`,
       method: "POST",
       data,
     })
@@ -34,7 +34,7 @@ export async function authCheck(
     { userId, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/auth/check/${userId}`,
+      url: `${process.env.baseAPI}/auth/check/${userId}`,
       method: "GET"
     })
     .then(res => {
@@ -62,7 +62,7 @@ export async function getUserList(
     { onSuccess, onError }
 ) {
     return await axios({
-        url: `http://localhost:4000/user/get-all`,
+        url: `${process.env.baseAPI}/user/get-all`,
         method: "GET",
         headers: {}
     })
@@ -88,7 +88,7 @@ export async function getUser(
     { userId, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/user/${userId}`,
+        url: `${process.env.baseAPI}/user/${userId}`,
         method: "GET"
       })
     .then(res => {
@@ -114,7 +114,7 @@ export async function createUser(
     { data, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/user/`,
+      url: `${process.env.baseAPI}/user/`,
       method: "POST",
       data,
     })
@@ -141,7 +141,7 @@ export async function updateUser(
     { data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/user/`,
+        url: `${process.env.baseAPI}/user/`,
         method: "PUT",
         data
       })
@@ -168,7 +168,7 @@ export async function deleteUser(
     { userId, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/user/${userId}`,
+      url: `${process.env.baseAPI}/user/${userId}`,
       method: "DELETE",
     })
     .then(res => {
@@ -196,7 +196,7 @@ export async function getCourseList(
     { onSuccess, onError }
 ) {
     return await axios({
-        url: `http://localhost:4000/course/get-all`,
+        url: `${process.env.baseAPI}/course/get-all`,
         method: "GET",
         headers: {}
     })
@@ -222,7 +222,7 @@ export async function getCourse(
     { courseId, data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/course/${courseId}`,
+        url: `${process.env.baseAPI}/course/${courseId}`,
         method: "GET",
         data
       })
@@ -249,7 +249,7 @@ export async function createCourse(
     { data, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/course/`,
+      url: `${process.env.baseAPI}/course/`,
       method: "POST",
       data,
     })
@@ -276,7 +276,7 @@ export async function updateCourse(
     { data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/course/`,
+        url: `${process.env.baseAPI}/course/`,
         method: "PUT",
         data
       })
@@ -303,7 +303,7 @@ export async function deleteCourse(
     { courseId, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/course/${courseId}`,
+      url: `${process.env.baseAPI}/course/${courseId}`,
       method: "DELETE",
     })
     .then(res => {
@@ -331,7 +331,7 @@ export async function getMediaList(
     { onSuccess, onError }
 ) {
     return await axios({
-        url: `http://localhost:4000/media/get-all`,
+        url: `${process.env.baseAPI}/media/get-all`,
         method: "GET",
         headers: {}
     })
@@ -357,7 +357,7 @@ export async function getMedia(
     { mediaId, data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/media/${mediaId}`,
+        url: `${process.env.baseAPI}/media/${mediaId}`,
         method: "GET",
         data
       })
@@ -384,7 +384,7 @@ export async function uploadMedia(
     { data, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/media/`,
+      url: `${process.env.baseAPI}/media/`,
       method: "POST",
       data,
     })
@@ -411,7 +411,7 @@ export async function updateMedia(
     { mediaId, data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/media/${mediaId}`,
+        url: `${process.env.baseAPI}/media/${mediaId}`,
         method: "PUT",
         data
       })
@@ -438,7 +438,7 @@ export async function deleteMedia(
     { mediaId, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/media/${mediaId}`,
+      url: `${process.env.baseAPI}/media/${mediaId}`,
       method: "DELETE",
     })
     .then(res => {
@@ -463,10 +463,10 @@ export async function deleteMedia(
 //---------------------- Transaction ----------------------//
 export async function getTransactionList(
     { dispatch, commit },
-    { onSuccess, onError }
+    { userId, onSuccess, onError }
 ) {
     return await axios({
-        url: `http://localhost:4000/trans/get-all`,
+        url: `${process.env.baseAPI}/trans/get-all/${userId}`,
         method: "GET",
         headers: {}
     })
@@ -492,7 +492,7 @@ export async function getTransaction(
     { tranId, data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/trans/${tranId}`,
+        url: `${process.env.baseAPI}/trans/${tranId}`,
         method: "GET",
         data
       })
@@ -519,7 +519,7 @@ export async function createTransaction(
     { data, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/trans/`,
+      url: `${process.env.baseAPI}/trans/`,
       method: "POST",
       data,
     })
@@ -546,7 +546,7 @@ export async function updateTransaction(
     { tranId, data, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/trans/${tranId}`,
+        url: `${process.env.baseAPI}/trans/${tranId}`,
         method: "PUT",
         data
       })
@@ -573,7 +573,7 @@ export async function deleteTransaction(
     { mediaId, onSuccess, onError }
 ) {
     return await axios({
-      url: `http://localhost:4000/trans/${tranId}`,
+      url: `${process.env.baseAPI}/trans/${tranId}`,
       method: "DELETE",
     })
     .then(res => {
@@ -601,7 +601,7 @@ export async function getChatRooms(
     { userId, onSuccess, onError }
 ) { 
     return await axios({
-        url: `http://localhost:4000/chat-room/${userId}`,
+        url: `${process.env.baseAPI}/chat-room/${userId}`,
         method: "GET"
     })
     .then(res => {
@@ -621,3 +621,4 @@ export async function getChatRooms(
         }
     });
 }
+

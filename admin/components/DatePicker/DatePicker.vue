@@ -16,6 +16,7 @@
         </template>
         <v-date-picker
           v-model="newDate"
+          :disabled="disable"
           color="primary"
           scrollable
         >
@@ -42,7 +43,8 @@
 export default {
     props: {
         date: {type: String},
-        label: {type: String}
+        label: {type: String},
+        disable: {type: Boolean, default: false}
     },
     data() {
         return {

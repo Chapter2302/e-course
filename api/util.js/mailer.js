@@ -9,13 +9,13 @@ const mailPort = 587
 
 const content = 
     `
-        <div style="padding: 10px; background-color: #003375">
-            <div style="padding: 10px; background-color: white;">
-                <h4 style="color: #0085ff">Send mail with nodemailer</h4>
-                <span style="color: black">This is test mail</span>
-                <a href="http://localhost:4000/auth/register">Click Here To Validate Your Email</a>
-            </div>
-        </div>
+      <div style="padding: 10px; background-color: #003375">
+          <div style="padding: 10px; background-color: white;">
+              <h4 style="color: #0085ff">Send mail with nodemailer</h4>
+              <span style="color: black">This is test mail</span>
+              <a href="${process.env.BASE_WEBSITE_URL}/auth/register">Click Here To Validate Your Email</a>
+          </div>
+      </div>
     `
 
 const sendMail = async (to, subject) => {

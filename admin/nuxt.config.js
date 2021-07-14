@@ -80,9 +80,10 @@ export default {
   },
 
   env: {
-    baseAPI:
-      process.env.NODE_ENV !== "production"
-        ? "http://data.cams.vn/v1/api"
-        : "http://data.cams.vn/v1/api"
+    // baseAPI:
+    //   process.env.NODE_ENV !== "production"
+    //     ? "http://data.cams.vn/v1/api"
+    //     : "http://data.cams.vn/v1/api"
+    baseAPI: "http://localhost:4000"
   }
 }

@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react"
 import {useDispatch, useSelector} from "react-redux"
-import ChatModal from "./ChatModal"
 
 const Footer = () => {
     const language = useSelector(state => state.language.nation)
@@ -102,7 +101,6 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <ChatModal show={modalShow} onHide={() => setModalShow(false)} recieverID={"5f5439fbcd57871ad4d97473"}/>
         </>
     )
 }

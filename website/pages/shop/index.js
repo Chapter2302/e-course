@@ -87,13 +87,14 @@ const Shop = ({courses}) => {
                 minPrice: router.query.minPrice ? router.query.minPrice : 0, 
                 maxPrice: router.query.maxPrice ? router.query.maxPrice : 200
             }
-            dispatch(setFilter(initialFilter))
+            console.log(initialFilter)
+            dispatch(setFilter({...initialFilter}))
         }
     }, [router.query])
 
     useEffect(() => {
+        console.log("cxcds", filter)
         setCurrentPage(1)
-        console.log(filter)
     }, [filter])
 
     return(
@@ -234,43 +235,34 @@ const Shop = ({courses}) => {
                         </div>
                     </aside>
                     <aside className="wedget__categories poroduct--tag">
-                    <h3 className="wedget__title">Product Tags</h3>
-                    <ul>
-                    <li>
-                        <a href="#">
-                            {language == "eng" ? "Information Technology" : "Công Nghệ Thông Tin"}
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#">
-                            Marketing
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#">
-                            {language == "eng" ? "Economy" : "Kinh Tế"}
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#">
-                            {language == "eng" ? "Design" : "Thiết Kế"}
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#">
-                            {language == "eng" ? "Language" : "Ngôn Ngữ"}
-                        </a>
-                        </li>
-                    </ul>
-                    </aside>
-                    <aside className="wedget__categories sidebar--banner">
-                    <img src="/images/others/banner_left.jpg" alt="banner images" />
-                    <div className="text">
-                        <h2>new products</h2>
-                        <h6>
-                        save up to <br /> <strong>40%</strong>off
-                        </h6>
-                    </div>
+                        <h3 className="wedget__title">Product Tags</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    {language == "eng" ? "Information Technology" : "Công Nghệ Thông Tin"}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Marketing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    {language == "eng" ? "Economy" : "Kinh Tế"}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    {language == "eng" ? "Design" : "Thiết Kế"}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    {language == "eng" ? "Language" : "Ngôn Ngữ"}
+                                </a>
+                            </li>
+                        </ul>
                     </aside>
                 </div>
                 </div>

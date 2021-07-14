@@ -1,3 +1,21 @@
-.slideFont {
-    font-family: 'Open Sans' !important;
+.container {
+    .slideFont {
+        font-family: 'Open Sans' !important;
+    }
+
+    .productThumbCustom {
+        a {
+            &::after {
+                background: unset !important;
+            }
+        }
+    }
+
+    .sliderBrand {
+        max-height: 150px;
+    }
+
+    .brandImage {
+        height: 160px;
+    }
 }

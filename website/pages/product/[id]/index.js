@@ -9,18 +9,54 @@ import StarRate from "../../../component/starRate"
 import ReactStars from "react-rating-stars-component"
 import { addToCart } from "../../../store/cart"
 import { setReciever, setIsOpen } from "../../../store/chat"
-import { getUser, update } from "../../../api"
+import { getUser, getUserHistoryTransaction, update } from "../../../api"
+import { toast } from "react-toastify";
 import Alert from "../../../component/Alert"
+import { ToastBody } from "react-bootstrap"
 
 const Product = ({course, reviews, teacher}) => {
   const dispatch = useDispatch()
   const language = useSelector(state => state.language.nation)
+  const [isOwner, setIsOwner] = useState(null)
   const [stars, setStars] = useState(null)
   const [reviewContent, setReviewContent] = useState("")
-  const [alertMessage, setAlertMessage] = useState(null)
-  const [alertType, setAlertType] = useState(null)
+
+  const checkIsOwner = async () => {
+    const historyTrans = await getUserHistoryTransaction()
+
+    const checkOwner = historyTrans && historyTrans.some(item => item._doc._id == course._id)
+    setIsOwner(checkOwner)
+  }
+
+  const  handleSubmitReviewClick = async () => {
+    try {
+      if(localStorage.getItem("session")) {
+        const user = JSON.parse(localStorage.getItem("session")).id
+        const data = {
+          user,
+          course: course._id,
+          review: reviewContent
+        }
+        if(stars) {
+          data.rating = stars
+        }
+        const response = await update("trans", data)
+        if(response.status == 200) {
+          toast.success("Reviewed Successfully")
+        }
+        else {
+          toast.error("Buy This Course To Comment")
+        }
+      }
+    }
+    catch {
+      toast.error("Something wrong, please try again!")
+    }
+  }
 
   useEffect(() => {
+    checkIsOwner()
+
     const videos = document.getElementsByClassName("video-lesson")
     const videoDurations = document.getElementsByClassName("video-duration-lesson")
     for(let i=0; i<videos.length; i++) {
@@ -30,15 +66,6 @@ const Product = ({course, reviews, teacher}) => {
       });
     }
   }, [])
-
-  useEffect(() => {
-    if(!alertMessage && !alertType) {
-      setInterval(() => {
-        setAlertType(null)
-        setAlertMessage(null)
-      }, 8000);
-    }
-  }, [alertMessage, alertType])
 
   const teacherChatButtonClick = () => {
     dispatch(setReciever({ 
@@ -63,17 +90,14 @@ const Product = ({course, reviews, teacher}) => {
         items.push(item)
         localStorage.setItem("cart", JSON.stringify(items))
         dispatch(addToCart(item))
-        setAlertType("success")
-        setAlertMessage("Check Your Cart")
+        toast.success("Successfully. Check Your Cart")
       }
       else {
-        setAlertType("danger")
-        setAlertMessage("Course Existed")
+        toast.error("Course Existed In Cart")
       }
     }
     catch(e) {
-      setAlertType("danger")
-      setAlertMessage("Sorry, Try Later")
+      toast.error("Something Wrong, Try Again")
     }
   }
 
@@ -174,7 +198,6 @@ const Product = ({course, reviews, teacher}) => {
                         Hoodie promises superior warmth with every wear.{" "}
                       </p>
                     </div>
-                    <Alert type={alertType} message={alertMessage}/>
                     <div className="box-tocart d-flex">
                       <div className="addtocart__actions">
                         <button
@@ -235,7 +258,7 @@ const Product = ({course, reviews, teacher}) => {
                   <div id="accordion" className="checkout_accordion mt--30" role="tablist">
                     {
                       (() => {
-                        return course.content.map(part => {
+                        return course.content.map((part, indexPart) => {
                           return(
                             <div key={'part-' + part.index} className="payment">
                               <div className="che__header" role="tab" id={`heading${part.index}`}>
@@ -245,14 +268,22 @@ const Product = ({course, reviews, teacher}) => {
                               </div>
                               <div id={`part${part.index}`} className="collapse" role="tabpanel" aria-labelledby={`heading${part.index}`} data-parent="#accordion">
                                 {
-                                  part.lessons.map(lesson => {
+                                  part.lessons.map((lesson, indexLesson) => {
                                     return(
                                       <div key={'lesson-' + lesson.index} className="payment-body d-block d-md-flex align-items-center ml-2">
-                                        <video className="video-lesson mr-0 mr-md-4" width={140} height={100} src={lesson.videoUrl} controls></video>
+                                        {
+                                          ((indexPart == 0 || indexPart == 1) && (indexLesson == 0)) 
+                                          ? <video className="video-lesson mr-0 mr-md-4" width={140} height={100} src={lesson.videoUrl} controls></video>
+                                          : <video className="video-lesson mr-0 mr-md-4" width={140} height={100} src={isOwner ? lesson.videoUrl : ""} controls></video>
+                                        }
                                         <div style={{cursor: "pointer", width: "100%", fontSize: "14px"}} className="d-block d-md-flex justify-content-between align-items-center">
                                           <div className="d-flex justify-content-center">
                                             <div className="mr-2"><i className="zmdi zmdi-play-circle mr-2"></i> Lesson {lesson.index}:</div> 
-                                            <a href={lesson.videoUrl} target="_blank">{lesson.name}</a>
+                                            {
+                                              ((indexPart == 0 || indexPart == 1) && (indexLesson == 0))
+                                              ? <a href={lesson.videoUrl} target="_blank">{lesson.name} - Trial</a> 
+                                              : <a href={lesson.videoUrl} target="_blank">{lesson.name}</a>
+                                            }
                                           </div>
                                           <div className="d-flex justify-content-center video-duration-lesson mr-2">00:00:00</div>
                                         </div>
@@ -260,11 +291,11 @@ const Product = ({course, reviews, teacher}) => {
                                     )
                                   })
                                 }
-                                {
+                                {/* {
                                   (() => {
                                     
                                   })()
-                                }
+                                } */}
                               </div>
                             </div>
                           )
@@ -378,30 +409,7 @@ const Product = ({course, reviews, teacher}) => {
                         <textarea className="form-control" name="review" defaultValue={""} onBlur={e => setReviewContent(e.target.value)}/>
                       </div>
                       <div className="review-form-actions">
-                        <button onClick={async () => {
-                          try {
-                            if(localStorage.getItem("session")) {
-                              const user = JSON.parse(localStorage.getItem("session")).id
-                              const data = {
-                                user,
-                                course: course._id,
-                                review: reviewContent
-                              }
-                              if(stars) data.rating = stars
-                              const response = await update("trans", data)
-                              if(response.status == 200)
-                                alert("Success: Reviewed")
-                              else
-                                alert("Fail: Own This Course To Comment")
-                            }
-                            else {
-                              alert("Fail: Login Please")
-                            }
-                          }
-                          catch {
-                            alert("Fail: Try Later")
-                          }
-                        }}>Submit Review</button>
+                        <button onClick={handleSubmitReviewClick}>Submit Review</button>
                       </div>
                     </div>
                   </div>
@@ -797,27 +805,27 @@ const Product = ({course, reviews, teacher}) => {
                     </a>
                   </li>
                   <li>
-                    <a href="/shop?category=information+technology">
+                    <a href="/shop?category=Information+Technology">
                       {language == "eng" ? "Information Technology" : "Công nghệ thông tin"}
                     </a>
                   </li>
                   <li>
-                    <a href="/shop?category=marketing">
+                    <a href="/shop?category=Marketing">
                         Marketing 
                     </a>
                   </li>
                   <li>
-                    <a href="/shop?category=economy">
+                    <a href="/shop?category=Economy">
                         {language == "eng" ? "Economy" : "Kinh Tế"}
                       </a>
                   </li>
                   <li>
-                    <a href="/shop?category=design">
+                    <a href="/shop?category=Design">
                         {language == "eng" ? "Design" : "Thiết Kế"}
                     </a>
                   </li>
                   <li>
-                    <a href="/shop?category=language">
+                    <a href="/shop?category=Language">
                         Language
                     </a>
                   </li>
@@ -837,7 +845,7 @@ const Product = ({course, reviews, teacher}) => {
                             <div className="price--output">
                                 <span>Price :</span> 
                                 $<span id="minPrice">0</span> - 
-                                $<span id="maxPrice">200</span>
+                                $<span id="maxPrice">150</span>
                             </div>
                             <div className="price--filter float-right">
                                 <a href="#">Filter</a>

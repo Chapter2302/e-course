@@ -5,6 +5,8 @@ import {storage} from "../../../firebase"
 import HeadContent from "../../../component/head"
 import Footer from "../../../component/footer"
 import Header from "../../../component/header"
+import React from "react"
+import { toast } from 'react-toastify'
 
 const Profile = () => {
     const router = useRouter()
@@ -13,7 +15,7 @@ const Profile = () => {
 
     const getProfile = async () => {
         if(localStorage.getItem("session")) {
-            const response = await fetch(`http://localhost:4000/auth/profile`, { 
+            const response = await fetch(`${api.BASE_API_URL}/auth/profile`, { 
                 headers: {
                     Authorization: 'bearer ' + JSON.parse(localStorage.getItem("session")).token
                 }, 
@@ -76,7 +78,7 @@ const Profile = () => {
                 const uploadMedia = await uploadMediaRes.json()
                 newUser.avatar = uploadMedia.url
             } else {
-                alert("Cannot Upload Image")
+                toast.error("Cannot Upload Image")
             }
         }
 
@@ -88,9 +90,9 @@ const Profile = () => {
             session.fullName = updateUser.full_name
             localStorage.setItem("session", JSON.stringify(session))
             setData(updateUser)
-            alert("Profile Update Success")
+            toast.success("Profile Update Success")
         } else {
-            alert("Profile Update Fail")
+            toast.error("Profile Update Fail")
         }
     }
 
@@ -103,13 +105,13 @@ const Profile = () => {
             <div className="row">
                 <div className="col-lg-12">
                 <div className="bradcaump__inner text-center">
-                    <h2 className="bradcaump-title">Checkout</h2>
+                    <h2 className="bradcaump-title">Profile</h2>
                     <nav className="bradcaump-content">
-                    <a className="breadcrumb_item" href="index.html">
+                    <a className="breadcrumb_item" href="/">
                         Home
                     </a>
                     <span className="brd-separetor">/</span>
-                    <span className="breadcrumb_item active">Checkout</span>
+                    <span className="breadcrumb_item active">Profile</span>
                     </nav>
                 </div>
                 </div>
@@ -118,8 +120,8 @@ const Profile = () => {
         </div>
         {/* End Bradcaump area */}
         {
-            !data ? <></> 
-            : <>
+            !data ? <React.Fragment></React.Fragment> 
+            : <React.Fragment>
                 <div className="container mt-4">
                     <div className="row flex-lg-nowrap">
                     <div className="col-12 col-lg-auto mb-3" style={{width: 200}}>
@@ -143,7 +145,7 @@ const Profile = () => {
                                     <div className="col-12 col-sm-auto mb-3">
                                     <div className="mx-auto" style={{width: 180}}>
                                         <div className="d-flex justify-content-center align-items-center rounded" style={{height: 180, backgroundColor: 'rgb(233, 236, 239)'}}>
-                                            <img className="avatar_preview" src={data.avatar ? data.avatar : "http://localhost:4000/media-resource/default-avatar.png"} alt="Avatar"/>
+                                            <img className="avatar_preview" style={{maxHeight: "180px"}} src={data.avatar ? data.avatar : "http://localhost:4000/media-resource/default-avatar.png"} alt="Avatar"/>
                                         </div>
                                     </div>
                                     </div>
@@ -345,152 +347,7 @@ const Profile = () => {
                     </div>
                     </div>
                 </div>
-            </>
-            
-            
-            
-            
-            
-            
-            // <>
-            //     {/* Start Checkout Area */}
-            //     <section className="wn__checkout__area section-padding--lg bg__white">
-            //         <div className="container">
-            //             <form id='register-form' onSubmit={(e) => {e.preventDefault()}}>
-            //                 <div className="row">
-            //                     {/*-------------*/ }
-            //                     <div className="col-lg-8 col-md-12 col-sm-12">
-            //                         <div className="customer_details">
-            //                             <div className="customar__field">
-            //                                 <div className="margin_between" style={{margin: '0px -15px'}}>
-            //                                     <div>
-            //                                         <img 
-            //                                             className="avatar_preview" 
-            //                                             style={{width: '100%', height: '228px'}} 
-            //                                             src={data.avatar} alt="Avatar"
-            //                                         />
-            //                                         <button 
-            //                                             type="file" className="btn w-full mt-2" 
-            //                                             onChange = {e => previewInputImage(e)}
-            //                                         >Upload Image <i className="fas fa-file-upload" /></button>
-            //                                     </div>
-            //                                     <div className="input_box space_between">
-            //                                         <div className="input_box">
-            //                                             <label>
-            //                                             Fullname <span>*</span>
-            //                                             </label>
-            //                                             <input type="text" defaultValue={data.full_name} onBlur={e => data.full_name = e.target.value}/>
-            //                                         </div>
-            //                                         <div className="margin_between">
-            //                                             <div className="input_box space_between">
-            //                                                 <label>
-            //                                                     Gender <span>*</span>
-            //                                                 </label>
-            //                                                 <select className="select__option" defaultValue={data.sex} onBlur={e => data.sex = e.target.value}>
-            //                                                     <option value="male">Male</option>
-            //                                                     <option value="female">Female</option>
-            //                                                 </select>
-            //                                             </div>
-            //                                             <div className="input_box space_between">
-            //                                                 <label>
-            //                                                     Role <span>*</span>
-            //                                                 </label>
-            //                                                 <select className="select__option" defaultValue={data.role} onBlur={e => data.role = e.target.value}>
-            //                                                     <option value="student">Student</option>
-            //                                                     <option value="teacher">Teacher</option>
-            //                                                 </select>
-            //                                             </div>
-            //                                         </div>
-            //                                         <div className="margin_between">
-            //                                             <div className="input_box space_between">
-            //                                                 <label>
-            //                                                     Birthday <span>*</span>
-            //                                                 </label>
-            //                                                 <input 
-            //                                                     type="date" 
-            //                                                     placeholder="DD-MM-YYYY"
-            //                                                     pattern='^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$'
-            //                                                     defaultValue= {data.birthday} 
-            //                                                     onChange={e => data.birthday =  e.target.value}
-            //                                                 />
-            //                                             </div>
-            //                                             <div className="input_box space_between">
-            //                                                 <label>
-            //                                                     Balance
-            //                                                 </label>
-            //                                                 <input defaultValue={data.balance} disabled/>
-            //                                             </div>
-            //                                         </div>
-            //                                     </div>
-            //                                 </div>
-            //                                 <div className="input_box">
-            //                                     <label>
-            //                                     Biology <span>*</span>
-            //                                     </label>
-            //                                     <textarea className="form-control" defaultValue={data.bio} onBlur= {e => data.bio = e.target.value}></textarea>
-            //                                 </div>
-            //                             </div>
-            //                         </div>
-            //                     </div>
-            //                     {/*-------------*/ }
-            //                     <div className="col-lg-4 col-sm-12">
-            //                         <div className="customer_details">
-            //                             <div className="customar__field">
-            //                                 <div className="margin_between">
-            //                                     <div className="input_box space_between">
-            //                                     <label>
-            //                                         Email <span>*</span>
-            //                                     </label>
-            //                                     <input type="email" defaultValue={data.local_email} onBlur= {e => data.local_email = e.target.value}/>
-            //                                     </div>
-            //                                     <div className="input_box space_between">
-            //                                     <label>
-            //                                         Password <span>*</span>
-            //                                     </label>
-            //                                     <input type="text" defaultValue={data.local_password} onBlur= {e => data.local_password = e.target.value}/>
-            //                                     </div>
-            //                                 </div>
-            //                                 <div className="margin_between">
-            //                                     <div className="input_box space_between">
-            //                                         <label>
-            //                                             BankID <span>*</span>
-            //                                         </label>
-            //                                         <input type="text" defaultValue={data.bank_id} onBlur= {e => data.bank_id = e.target.value}/>
-            //                                     </div>
-            //                                         <div className="input_box space_between">
-            //                                         <label>
-            //                                             Phone-number <span>*</span>
-            //                                         </label>
-            //                                         <input type="text" defaultValue={data.phone_number} onBlur= {e => data.phone_number = e.target.value}/>
-            //                                     </div>
-            //                                 </div>
-            //                                 <div className="margin_between">
-            //                                     <div className="input_box space_between">
-            //                                         <label>
-            //                                             Address <span>*</span>
-            //                                         </label>
-            //                                         <input type="text" defaultValue={data.address} onBlur= {e => data.address = e.target.value}/>
-            //                                     </div>
-            //                                         <div className="input_box space_between">
-            //                                         <label>
-            //                                             Work-place <span>*</span>
-            //                                         </label>
-            //                                         <input type="text" defaultValue={data.work_place} onBlur= {e => data.work_place = e.target.value}/>
-            //                                     </div>
-            //                                 </div>
-            //                                 <div className="input_box">
-            //                                     <label><b>Update: </b></label>
-            //                                     <button className='btn btn-outline-dark btn-xm btn-block' onClick={submitForm}><b>Submit</b></button>
-            //                                 </div>
-            //                             </div>
-            //                         </div>
-            //                     </div>
-            //                 </div>
-            //             </form>
-            //         </div>
-            //     </section>
-            //     {/* End Checkout Area */}
-            // </>
+            </React.Fragment>
         }
         <Footer/>
         </>

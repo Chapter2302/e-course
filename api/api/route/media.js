@@ -45,7 +45,7 @@ router.post('/', upload.single('files'), async (req,res) => {
     try {
         const updatedMedia = await updateMedia({
             _id: req.file.filename.slice(0, 24),
-            url: `http://localhost:4000/media-resource/${req.file.filename}`,
+            url: `${process.env.BASE_URL}/media-resource/${req.file.filename}`,
             name: req.file.filename,
             type: req.body.type
         })

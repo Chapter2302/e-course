@@ -1,26 +1,35 @@
 <template>
     <div class="wrapper px-4">
         <v-row class="mt-3">
-            <v-col cols="4">
+            <v-col cols="3">
                 <v-combobox
-                    :items="['all', 'succes', 'pending', 'fail']"
+                    v-model="filter.status"
+                    :items="['all', 'success', 'fail']"
                     label="Status" dense outlined hide-details="true"
                 ></v-combobox>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="3">
+                <!-- <v-text-field
+                    dense label="Course Name" outlined hide-details="true"
+                ></v-text-field> -->
                 <v-text-field
+                    v-model="filter.date"
                     dense label="Created Date" outlined hide-details="true"
+                    placeholder="E.g: 1-1-2021"
                 ></v-text-field>
             </v-col>
-            <v-col cols="2" class="flex align-center">
-                <v-btn color="primary" style="width: 100%">
+            <v-col cols="3">
+                
+            </v-col>
+            <v-col cols="3" class="flex align-center">
+                <v-btn color="primary" style="width: 100%" @click="filterClick">
                     Filter
                     <v-icon small right>mdi-filter</v-icon>
                 </v-btn>
             </v-col>
         </v-row>
 
-        <v-row :v-if="userRole === 'admin'">
+        <!-- <v-row :v-if="userRole === 'admin'">
             <v-col cols="4" class="d-flex">
                 <v-text-field 
                     dense v-model="newTransaction.course" outlined
@@ -45,16 +54,21 @@
                 <v-alert dense :type="editorAlert.type">{{editorAlert.message}}</v-alert>
                 <v-alert dense :type="createAlert.type">{{createAlert.message}}</v-alert>
             </v-col>
-        </v-row>
+        </v-row> -->
         
         <v-row>
             <v-col cols="4">
-                <PieChart :data="pieChartData" :options="pieChartOptions" :height="250"/>
-                <div class="text-center pt-2">Status Ratio</div>
+                <PieChart 
+                    v-if="pieChartData.labels.length !== 0 && pieChartData.datasets[0].data.length !== 0"
+                    :data="pieChartData" 
+                    :options="pieChartOptions" 
+                    :height="250"
+                />
+                <div class="text-center pt-2"><b>Total Revenue: {{revenue}}$</b></div>
             </v-col>
             <v-col cols="8">
                 <AreaChart :data="areaChartData" :options="areaChartOptions" :height="250"/>
-                <div class="text-center pt-2">Area Status Chart</div>
+                <div class="text-center pt-2"><b>6 Months Nearest Chart</b></div>
             </v-col>
         </v-row>
 
@@ -81,7 +95,7 @@
                 <v-card-text>
                     <v-combobox
                         v-model="selectedTransaction.status"
-                        :items="['success', 'pending', 'fail']"
+                        :items="['success', 'fail']"
                         label="Status" dense outlined hide-details="true"
                     ></v-combobox>
                 </v-card-text>
@@ -153,15 +167,12 @@
                 <v-tooltip bottom>
                     <template v-slot:activator="{ on, attrs }">
                         <v-btn 
-                            small icon @click="onStatusClick(item)"
+                            small icon
                             class="mx-1"
                             v-on="on" v-bind="attrs"
                         >
                             <v-icon color="#22BB33" v-if="item.status === 'success'" small dense>
                                fas fa-check-circle
-                            </v-icon>
-                            <v-icon color="#F0AD4E" v-else-if="item.status === 'pending'" small dense>
-                                fas fa-hourglass-half
                             </v-icon>
                             <v-icon color="#BB2124" v-else small dense>
                                 fas fa-times-circle
@@ -169,11 +180,16 @@
                         </v-btn>
                     </template>
                     <span v-if="item.status === 'success'">Success</span>
-                    <span v-else-if="item.status === 'pending'">Pending</span>
                     <span v-else>Fail</span>
                 </v-tooltip>
             </template>
             <!-- Transaction Custom -->
+
+            <!-- Date Time Custom -->
+            <template v-slot:[`item.date`]="{ item }">
+                {{new Date(item.date)}}
+            </template>
+            <!-- Date Time Custom -->
         </v-data-table>
         <!-- Transaction Table -->
     </div> 
@@ -181,19 +197,34 @@
 
 <script>
 import rules from "@/mixins/validationRules"
+import utils from "@/mixins/utils.js"
 import CourseDialog from "../../components/CourseDialog/CourseDialog.vue"
 import UserDialog from "../../components/UserDialog/UserDialog.vue"
 import PieChart from "../../components/PieChart.vue"
 import AreaChart from "../../components/AreaChart.vue"
 
 export default {
-    mixins: [rules],
+    mixins: [rules, utils],
     components: { CourseDialog, UserDialog, PieChart, AreaChart },
+    computed: {
+        currentUser() {
+            return {
+                id: this.$store.state.user.id,
+                fullname: this.$store.state.user.fullname,
+                avatar: this.$store.state.user.avatar,
+                role: this.$store.state.user.role,
+            }
+        }
+    },
     data() {
         return {
-            userRole: "",
             isLoading: false,
+            revenue: 0,
             selectedTransaction: {},
+            filter: {
+                status: "all",
+                date: ""
+            },
             createAlert: {
                 message: "",
                 type: ""
@@ -209,7 +240,7 @@ export default {
             newTransaction: {
                 course: "",
                 user: "",
-                status: "pending",
+                status: "fail",
                 review: "",
                 rate: "",
                 date: (new Date()).toISOString().slice(0, 10),
@@ -225,28 +256,20 @@ export default {
             ],
             transactionTableItems: [],
             pieChartData: {
-                labels: ["Success", "Pending", "Fail"],
+                labels: [],
                 datasets: [
                     {
                         label: "Status Pie Chart",
                         borderWidth: 1,
                         borderColor: "rgba(0, 0, 0, 0.5)",
-                        backgroundColor: ["rgb(0, 204, 0, 0.5)", "rgb(255, 204, 0, 0.5)", "rgba(255, 0, 0, 0.5)"],
-                        data: [60, 20, 5]
+                        backgroundColor: ["#58508d", "#bc5090", "#ff6361", "#ffa600"],
+                        data: []
                     }
                 ]
             },
             pieChartOptions: { responsive: true, maintainAspectRatio: false },
             areaChartData: {
-                labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July"
-                ],
+                labels: [],
                 datasets: [
                     {
                         label: "Success",
@@ -254,15 +277,7 @@ export default {
                         pointBackgroundColor: "rgb(0, 204, 0)",
                         backgroundColor: "rgb(0, 0, 0, 0.04)",
                         borderWidth: 2,
-                        data: [40, 48, 42, 50, 57, 41, 30]
-                    },
-                    {
-                        label: "Pending",
-                        borderColor: "rgb(255, 204, 0)",
-                        pointBackgroundColor: "rgb(255, 204, 0)",
-                        borderWidth: 2,
-                        backgroundColor: "rgb(0, 0, 0, 0.04)",
-                        data: [20, 35, 24, 30, 18, 32, 12]
+                        data: [27, 35, 30, 25, 34, 29]
                     },
                     {
                         label: "Fail",
@@ -270,7 +285,7 @@ export default {
                         pointBackgroundColor: "rgba(255, 0, 0, 0.5)",
                         backgroundColor: "rgb(0, 0, 0, 0.04)",
                         borderWidth: 2,
-                        data: [10, 20, 12, 16, 25, 17, 15]
+                        data: [10, 20, 12, 16, 18, 12]
                     }
                 ]
             },
@@ -278,25 +293,68 @@ export default {
         }
     },
     async created() {
+        this.areaChartData.labels = this.monthLabelsAreaChartGenerate()
+        this.pieChartData.labels = ['a', 'b', 'c']
         const session = JSON.parse(localStorage.getItem("session"))
         this.userRole = session.role
         await this.fetchTransactionList()
+        await this.findTopThreeTransaction()
     },
     methods: {
         async fetchTransactionList() {
             this.isLoading = true;
+            const userId = this.currentUser.id
             await this.$store.dispatch("getTransactionList", {
+                userId,
                 onSuccess: async data => {
-                    this.transactionTableItems = data
+                    this.transactionTableItems = data.filter(tran => {
+                        const date = new Date(tran.date)
+                        const dateStr = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
+                        return (
+                            (this.filter.date == "" ? true : dateStr.includes(this.filter.date))
+                            && ((this.filter.status == "all") || (tran.status == this.filter.status))
+                        )
+                    })
                 },
                 onError: async data => {
                     console.log('transactions fetch error: ', data)
                 }
             })
         },
-        onStatusClick(item) {
-            this.selectedTransaction = {...item}
-            this.editorDialog = true
+        async filterClick() {
+            this.selectedTransaction = {}
+            await this.fetchTransactionList()
+        },
+        async findTopThreeTransaction() {
+            const listCourse = this.transactionTableItems.reduce((preArr, tran) => {
+                let flag = false
+                if(tran.status == "success") {
+                    this.revenue += tran.coursePrice
+                    if(preArr.length > 0) {
+                        preArr = preArr.map(item => {
+                            if(item.id == tran.course) {
+                                flag = true
+                                item.value += tran.coursePrice
+                            }
+                            return item
+                        })
+                    }
+
+                    if(!flag) {
+                        preArr.push({
+                            id: tran.course,
+                            name: tran.courseName,
+                            value: tran.coursePrice
+                        })
+                    }
+                }
+
+                return preArr
+            }, [])
+
+            await listCourse.sort((a, b) => (b.value  - a.value))
+            this.pieChartData.labels = this.courseNameLabelsPieChartGenerate(listCourse)
+            this.pieChartData.datasets[0].data = this.courseNameDataPieChartGenerate(listCourse, this.revenue)
         },
         clickCreateBtn() {
             const data = this.newTransaction
